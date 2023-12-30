@@ -1,1 +1,98 @@
+                                                                           Advance Excel Assignment 1
+
+1. What do you mean by cells in an excel sheet?
+In the context of Microsoft Excel, a cell is a rectangular-shaped box that is located at the intersection of a row and a column an Excel worksheet.
+Cells are the basic building blocks of an Excel worksheet, and they are used to store and organize data in a spread.
+Each cell has its own unique address, which is determined by its column and row location. For example, the cell that is located at the intersection of column C and row 5 would have a cell address of C5.
+Excel allows users to enter various types of data into cells, including numeric, text, date, and time data.
+Cells can also contain formulas and functions that can be used to perform calculations and analyze data.
+
+
+
+
+---------------------------------------------------------------------------------------2------------------------------------------------------------------------------------------------------
+2. How can you restrict someone from copying a cell from your worksheet?
+Lock the cells: You can lock the cells that you don't want users to modify. Here's how:
+a. Select the range of cells you want to lock.
+b. Right-click and select "Format Cells."
+c. Go to the "Protection" tab and check the "Locked" box.
+d. Click "OK" to close the dialog box. 
+e. Now, protect the sheet by going to the "Review" tab and clicking "Protect Sheet." 
+f. In the "Protect Sheet" dialog box, enter a password and make sure the "Select locked cells" option is checked. This will allow users to select cells, but not modify them.
+
+Use data validation: You can use Excel's data validation feature to restrict users from entering anything other than the values in the drop-down list. Here's how:
+a. Select the range of cells where you want to apply the drop-down list.
+b. Go to the "Data" tab and click "Data Validation." 
+c. In the "Data Validation" dialog box, go to the "Settings" tab and select "List" from the "Allow" drop-down list.
+d. In the "Source" box, enter the range of cells that contains the drop-down list values.
+e. Go to the "Input Message" tab and enter a message that instructs users to select a value from the drop-down list. 
+f. Go to the "Error Alert" tab and select "Stop" from the "Style" drop-down list. This will prevent users from entering any value other than the ones in the drop-down list.
+
+Use a third-party add-on: There are several third-party add-ons available that can help you restrict copying in Excel.
+For example, "Cellbrush" is a popular add-on that allows you to apply various restrictions, such as preventing copying, pasting, and printing.
+Note: These methods may not prevent users from copying cells using external tools or software, but they can help prevent accidental copying or modification of cells within Excel.
+
+
+
+
+
+--------------------------------------------------------------------------------------3----------------------------------------------------------------------------------------------------------
+3. How to move or copy the worksheet into another workbook?
+To move or copy a worksheet into another Excel workbook, you can use the following steps:
+
+Open both the source and destination workbooks
+Right-click the sheet tab that you want to move copy.
+Click "Move or Copy" from the context menu.
+In the "Move or" dialog box, the destination workbook from the "To book" dropdown list.
+Check the "Create a copy" box if you want to create a copy of the worksheet instead of moving it.
+Select the location in the destination workbook where you want to move or copy the worksheet.
+Click "OK" to move or copy the worksheet.
+Alternatively, you can also move or copy a worksheet by dragging and dropping it from one workbook to another. To do this, follow these steps:
+
+Open both the source and destination workbooks.
+Arrange the workbook windows side by side.
+Click and drag the sheet tab that you want to move or copy to the destination workbook.
+Release the mouse button to drop the worksheet in the desired location.
+Note: If you are moving a worksheet, it will be removed from the source workbook and added to the destination workbook.
+If you are copying a worksheet, a copy of the worksheet will be added to the destination workbook, while the original worksheet will remain in the source workbook.
+
+
+
+------------------------------------------------------------------------------4-------------------------------------------------------------------------------------------------------------------------
+4. Which key is used as a shortcut for opening a new window document?
+To move or copy a worksheet into another Excel workbook, you can use the following steps:
+
+Open both the source and destination work. 2.-click the sheet that you want to move copy.
+Click "Move or Copy" from the context menu.4. In the "Move or" dialog box, the destination workbook from the "To book" dropdown list.
+Check the "Create a copy" box if you want to create a copy of the worksheet instead of moving it.
+Select where you want to place the worksheet in the destination workbook by checking the box next to the sheet name.
+Click "OK" to move or copy the worksheet.
+Alternatively, you can also move or copy a worksheet by dragging and dropping it from one workbook to another.
+To do this, make sure both workbooks are open and side by side on the screen. 
+Then, click and drag the worksheet tab to the destination workbook and drop it in the desired location. 
+If you want to create a copy of the worksheet, hold down the "Ctrl" key while dragging and dropping.
+------------------------------------------------------------------------------5-----------------------------------------------------------------------------------------------------------------------
+
+5. What are the things that we can notice after opening the Excel interface?
+After opening the Excel interface, there are several things that we can notice:
+
+Ribbon: The ribbon is located at the top of the Excel interface and contains tabs that organize commands by topic. Each tab contains related commands, and you can use the ribbon to access various features in Excel.
+1.Quick Access Toolbar: The Quick Access Toolbar is located above the ribbon and provides one-click access to frequently used commands. You can customize the Quick Access Toolbar to add your favorite commands.
+2.Name Box: The Name Box is located to the left of the formula bar and displays the cell location of the active cell. You can also use the Name Box to quickly navigate to a specific cell or range of cells.
+3.Formula Bar: The Formula Bar is located above the grid of cells and displays the contents of the active cell. You can use the Formula Bar to enter or edit data in a cell.
+4.Columns and Rows: The Excel interface contains columns and rows that make up the cells of the worksheet. Columns are labeled with letters, and rows are labeled with numbers. Each cell has a unique address that corresponds to its column and row location.
+5.Sheet Tabs: The Excel interface contains sheet tabs that allow you to switch between different worksheets in a workbook. A workbook can contain multiple worksheets, and each worksheet has its own tab.
+6.Workspace: The Excel interface contains a workspace where you can enter and edit data in the cells of the worksheet. The workspace is where you will spend most of your time working in Excel.
+7.Backstage View: The Backstage View is located in the File tab and provides access to various options and settings for the workbook. You can use the Backstage View to open, save, print, and share workbooks.
+8.Help and Support: The Excel interface provides access to Help and Support resources, including templates, clip art, and tutorials. You can use these resources to get started with Excel or to learn new skills.
+9.Advertising and Upgrade Options: If you are using Excel Starter, you may notice display advertising and an option to upgrade to the full version of Excel. Excel Starter is a limited version of Excel that is designed for everyday tasks, while the full version of Excel includes advanced features and tools.
+
+
+
+------------------------------------------------------------------------------6-----------------------------------------------------------------------------------------------------------------------
+6. When to use a relative cell reference in excel?
+Relative Cell References
+
+This is the most widely used type of cell reference in formulas. Relative cell references are basic cell references that adjust and change when copied or when using AutoFill. 
+Example: =SUM(B5:B8), as shown below, changes to =SUM(C5:C8) when copied across to the next cell.
 
