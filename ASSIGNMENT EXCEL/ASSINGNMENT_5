@@ -1,1 +1,123 @@
+                                                                             Advance Excel Assignment 5
+
+1. How many types of conditions are available in conditional formatting on Excel?
+There are five main types of conditional formatting in Excel, which are:
+
+Highlight Cells Rules
+Top and Bottom Rules
+Data Bars
+Color Scales
+Icon Sets
+Each type has its own set of sub-types, which can be used to format cells based on specific conditions.
+
+--------------------------------------------------------------------------------------------2--------------------------------------------------------------------------------------------------
+2. How to insert border in Excel with Format Cells dialog?
+To insert a border in Excel using the Format Cells, follow these steps:
+
+Select the cell or range of cells that you to add borders to.
+Right-click on the selected cells and choose "Format Cells" the context menu. Alternatively, you can the keyboard shortcut "Ctrl + 1" to open the Format Cells.
+In the Format Cells dialog, navigate to the "Border" tab.
+Select the line style that you want to use for the border from the "Line style" dropdown list.
+Select the color that you want to use for your border from the "Color" dropdown list.
+Select the location of the border that you want to add. You can add a border to the top, bottom, left, and right of the current selection,
+and also the option to add a border between rows and columns.
+Click "OK" to apply the border to the selected cells.
+Note that the Format Cells dialog provides you with easy access to all the settings for adding borders, 
+including the line color and thickness as well as a nice diagram preview. It is a more effective method than applying borders directly from the ribbon.
+
+----------------------------------------------------------------------------------------------3-----------------------------------------------------------------------------------------------------
+3. How to Format Numbers as Currency in Excel?
+Sources: content.byui.edu (1) support.microsoft.com (2) support.microsoft.com (3) support.microsoft.com (4)
+
+To format numbers as currency in Excel, you can use the Accounting or Currency number format. Here are the steps to apply these formats:
+
+Select the cell or range of cells that you want to format.
+Go to the Home tab and click the drop-down arrow next to the Number Format button in the Number group.
+Select Accounting or Currency from the list.
+If you want to use a currency symbol other than the default, click the arrow next to the Accounting Number Format button and select another currency symbol.
+To display a monetary value without a currency symbol, click None.
+In the Decimal places box, enter the number of decimal places that you want for the number.
+In the Negative numbers box, select the display style you want to use for negative numbers.
+Alternatively, you can press Ctrl+1 to open the Format Cells dialog box and select Currency or Accounting in the Category list.
+Then, select the currency symbol, decimal places, and negative number display style that you want.
+
+To create a custom Excel format with a specific currency, you can use the following steps:
+
+Select the cell or range of cells that you want to format.
+Press Ctrl+1 to open the Format Cells dialog box.
+In the Format Cells dialog box, in the Category list, click Currency or Accounting.
+In the Symbol box, click the currency symbol that you want.
+In the Decimal places box, enter the number of decimal places that you want for the number.
+In the Negative numbers box, select the display style you want to use for negative numbers.
+To create a custom format, click the Custom category and enter the format code that you want to use.
+
+------------------------------------------------------------------------------------------4-----------------------------------------------------------------------------------------------------
+4. What are the steps to format numbers in Excel with the Percent style?
+To format numbers as a percentage in Excel, you follow these steps:
+
+Select the cell range of cells you want to format.
+Click the "Home" tab in the ribbon.
+In the "Number" group, click the "Percent Style" button. This will apply the percentage format to selected cells.
+If you want to display the percentage value with decimal places, you can use the "Increase Decimal" button in the "Number" group to add more decimal places.
+Alternatively, you can use the "Format Cells" dialog box to apply the percentage format:
+
+Select the cell or range of cells you want to format.
+Right-click and choose "Format Cells" from the context menu.
+In the "Format Cells" dialog box, go to the "Number" tab.
+Select the "Percentage" category.
+Use the "Decimal places" spinbox to specify the number of decimal places you want to display.
+Click "OK" to apply the formatting.
+Keep in mind that when you apply the percentage format to a cell, Excel multiplies the value in the cell by 100 and displays it with a percent sign.
+So, if you have a value of 0.2 in a cell and you apply the percentage format, Excel will display it as 20%.
+
+If you want to format empty cells as percentages, you can follow the same steps as above. However, 
+keep in mind that Excel will not display any value in the cell until you enter a number and apply the percentage format.
+
+If you want to convert a number to a percentage as you type, you can use the following steps:
+
+Select the cell where you want to enter the percentage.
+Type the number you want to convert to a percentage followed by the percent sign (e.g. "0.2%").
+Press Enter.
+Excel will automatically apply the percentage format to the cell and display the number as a percentage.
+
+It's also worth noting that you can use keyboard shortcuts to apply the percentage format.
+To apply the percentage format to the currently selected cell, you can press "Ctrl + Shift + %". 
+To increase the number of decimal places displayed in the selected cells, you can press "Ctrl + Shift + ,",
+and to decrease the number of decimal places, you can press "Ctrl + Shift + .".
+
+------------------------------------------------------------------------------------5------------------------------------------------------------------------------------------------------------
+5. What is a shortcut to merge two or more cells in excel?
+The shortcut key forging cells in Excel is Alt > H > M. 
+This will display merge options in the Ribbon. 
+To merge cells, you then press the key tips for the merge option you want such as Alt + H + M + M for Merge & Center. To unmerge cells, you can use the shortcut key Ctrl + M.
+
+------------------------------------------------------------------------------------------6--------------------------------------------------------------------------------------------------------------
+6. How do you use text commands in Excel?
+To convert a time field in Excel to a time range of 17:00-17:59 using the numbers in the time field, you can use the following formula:
+
+=TEXT(INT(A2/60)&":"&MOD(A2,60),"17:00-17:59")
+
+This formula extracts the hour and minutes from the time field in cell A2, converts the hour to an integer, and then formats the result as a time range of 17:00-17:59.
+
+Here's how the formula works:
+
+INT(A2/60) extracts the hour from the time field in cell A2 and converts it to an integer.
+MOD(A2,60) extracts the minutes from the time field in cell A2.
+& is used to concatenate (or join) the hour and minutes together with a colon (:) between them.
+TEXT(result,"17:00-17:59") formats the result as a time range of 17:00-17:59.
+You can copy this formula to other cells in the same column to apply it to a range of time fields.
+
+For example, if you have time fields in cells A2 to A10, you can use the following formula in cell B2 and then copy it to cells B3 to B10:
+
+=TEXT(INT(A2:A10/60)&":"&MOD(A2:A10,60),"17:00-17:59")
+
+This formula uses an array of time fields in cells A2 to A10 and applies the formula to each time field in the array.
+
+Note that when using an array formula, you need to press Ctrl+Shift+Enter instead of just Enter to enter the formula. 
+This will insert curly braces ({}) around the formula, indicating that it is an array formula.
+
+
+
+
+
 
