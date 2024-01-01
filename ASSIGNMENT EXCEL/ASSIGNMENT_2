@@ -1,1 +1,100 @@
+                                                                        Advance Excel Assignment 2
 
+1. What does the dollar($) sign do?
+In Excel, the dollar sign ($) is used to anchor cell references in a formula, 
+which can be useful when you want to copy the formula to other cells without changing the referenced cells.
+it locks the column reference so that it doesn't change when you copy the formula to other cells. 
+When you use the dollar sign before the row reference
+For example, if you have a formula in cell E1 that multiplies the value in cell D23 by the value in cell C12 (i.e., =D23C12),
+and you want to copy this formula to cell E2 without changing the referenced cells, you can use the dollar sign to anchor the cell references.
+In summary, the dollar sign in Excel allows you to anchor cell references in a formula,
+which can be useful when you want to copy the formula to other cells without changing the referenced cells.
+-------------------------------------------------------------------------------2----------------------------------------------------------------------------------------------------
+2. How to Change the Reference from Relative to Absolute (or Mixed)?
+In Excel, you can change a cell reference from relative to absolute or mixed using the "Convert Formula" method.
+The 4th parameter of this method determines whether the reference is absolute or relative.
+A value of 1 sets it to absolute, and a value of 4 sets it to relative However,
+if you want to change multiple cell references in a selection's cell formulas, you can use a macro.
+
+Here's an example of how to change all relative cell references in a selection to absolute:
+
+Sub MakeAbsolute() Dim rng As Range Dim cell As Range
+
+Set rng = Selection
+
+For Each cell In rng If cell.HasFormula Then cell.Formula = Application.ConvertFormula(cell.Formula, xlA1, xlA1, xlRelative, xlAbsolute) End If Next cell
+
+End Sub
+
+This macro goes through each cell in the selection and checks if it has a formula.
+If it does, the macro converts the formula to absolute references using the ConvertFormula method.
+
+If you want to change the references to mixed references, it's a bit more complex. 
+You would need to extract individual addresses from the formula, determine what kind of formula it is, and then change the references accordingly.
+
+Note that changing cell references can affect the calculations and formulas in your worksheet, so it's important to double-check your formulas after making any changes.
+
+---------------------------------------------------------------------------------------3-------------------------------------------------------------------------------------------------------
+3. Explain the order of operations in excel?
+In Excel, the order of operations is a rule that dictates the sequence in which calculations are performed in a formula.
+Excel follows a standard math protocol called "order of operations" or PEMDAS, which stands for Parentheses, 
+Exponents, Multiplication and Division (from left to right), and Addition and Subtraction (from left to right). 
+This rule ensures that calculations are performed accurately, even if a formula contains multiple operators.
+
+Excel first evaluates any expressions in parentheses, then resolves references, performs exponentiation, negation, and percentage conversions,
+followed by multiplication and division, addition and subtraction, and concatenation.
+Finally, Excel evaluates any logical operators.
+
+If a formula contains operators with the same precedence, Excel evaluates them from left to right. To change the order of evaluation,
+you can enclose a part of the formula in parentheses to be calculated first.
+
+Here's the order of operations in Excel:
+
+Parentheses
+Exponents
+Multiplication and Division (from left to right)
+Addition and Subtraction (from left to right)
+Concatenation
+Logical operators
+By following this order, Excel ensures that calculations are performed accurately and consistently, regardless of the complexity of the formula.
+
+------------------------------------------------------------------------------4-------------------------------------------------------------------------------------------------------------------------
+4. What, according to you, are the top 5 functions in excel and write a basic syntax
+for any of two?
+In my opinion, the top5 Excel functions:
+
+SUM: Adds all the numbers in a range of cells. Basic syntax: =SUM(range of cells)
+AVERAGE: Calculates the average of the numbers in a range of cells. Basic syntax: =AVERAGE(range of cells)
+COUNT: Counts the number of cells that contain numbers in a range of cells. Basic syntax: =COUNT(range of cells)
+MAX: Returns the largest number in a range of cells. Basic syntax: =MAX(range of cells)
+MIN: Returns the smallest number in a range of cells. Basic syntax: =MIN(range of cells)
+Here are the basic syntaxes for two of those functions:
+
+SUM function: The SUM function adds all the numbers in a range of cells. Here is the basic syntax: =SUM(range of cells)
+For example, if you want to add the values in cells A1 to A10, you would enter the following formula:
+
+=SUM(A1:A10)
+
+AVERAGE function: The AVERAGE function calculates the average of the numbers in a range of cells. Here is the basic syntax: =AVERAGE(range of cells)
+For example, if you want to find the average of the values in cells B1 to B10, you would enter the following formula:
+
+=AVERAGE(B1:B10)
+-------------------------------------------------------------------------------5-------------------------------------------------------------------------------------------------------------------
+5. When would you use the subtotal function?
+The subtotal function is used in Excel to return a subtotal in a list or database and can perform different arithmetic and logical operations such as cells, calculating average, 
+finding the minimum or maximum value, and. It is especially useful in Excel Tables or filtered data because it ignores cells that have been "ed out" and can optionally exclude values in rows that have been manually hidden.
+The subtotal function uses a range of cells and a function number to determine the type of calculation to perform.
+----------------------------------------------------------------------------------6---------------------------------------------------------------------------------------------------------------------
+6.What is the syntax of the vlookup function? Explain the terms in it?
+The syntax of the VOKUP function incel is as follows:
+=VLOOKUP(lookup_value,_array, col_index_num, [range_lookup])
+The terms used in the VLOOKUP function are:
+
+lookup_value: This is the value that you want to search for in the first column of table range. It can be a number, text, or a reference to a cell containing the value.
+table_array: This is the range of cells where you want to perform the search. It should include the column that contains the return value.
+col_index_num: This is the column number in the table range from which the return value should be taken. The first column is numbered 1.
+[range_lookup]: This is an optional argument that specifies whether you want an exact match or an approximate match. 
+If you want an exact match, set this argument to FALSE or 0. 
+If you want an approximate match, set this argument to TRUE or 1. If you omit this argument, Excel assumes a value of TRUE.
+In summary, the VLOOKUP function searches for a value in the first column of a table range and returns a corresponding value from another column in the same row.
+The syntax includes four parameters: lookup_value, table_array, col_index_num, and [range_lookup].
