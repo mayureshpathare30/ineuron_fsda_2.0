@@ -1,1 +1,91 @@
+                                                                         Advance Excel Assignment 3
 
+1. How and when to use the AutoSum command in excel?
+The AutoSum command in Excel is used to automatically sum numbers in a range of cells. To use the AutoSum command,
+you can either go to the Home menu and select AutoSum from the Formulas tab, or use the keyboard shortcut Alt+=. Excel will automatically select the range of cells to sum,
+and you can simply press Enter to insert the SUM formula.
+This feature is useful when you want to quickly sum a column or row of numbers without manually entering the formula.
+
+Additionally, you can also use the AutoSum command to sum multiple ranges of cells at once. Simply select the range of cells that you want to sum,
+then go to the Formulas tab and select AutoSum. Excel will automatically insert a SUM formula for each selected range.
+
+Another useful feature of AutoSum is the ability to sum only visible cells in a filtered range. 
+To use this feature, first apply a filter to your data, then select the range of cells that you want to sum. 
+Go to the Formulas tab and select AutoSum, then choose the SUBTOTAL function instead of SUM. 
+The SUBTOTAL function will only sum the visible cells in the filtered range.
+
+Overall, the AutoSum command is a convenient and time-saving feature in Excel that can help you quickly sum numbers in your worksheets.
+
+---------------------------------------------------------------------------------2----------------------------------------------------------------------------------------------------------------------
+2. What is the shortcut key to perform AutoSum?
+The shortcut key for AutoSum in Excel is "Alt + =" on Windows or "Command + Shift + T" on Mac.
+
+
+----------------------------------------------------------------------------------3-------------------------------------------------------------------------------------------------------------------
+3. How do you get rid of Formula that omits adjacent cells?
+To use the AutoSum command in Excel, you can follow these steps:
+Select the cell where you want the sum to appear. * Click on the "Formulas" tab in the ribbon
+Click "AutoSum" in "Function Library" group.Excel will automatically select the range of cells to be summed up. If the selection is correct, press Enter.
+You can also use the keyboard shortcut Alt + = to quickly access the AutoSum command.
+
+You should use the AutoSum command in Excel when you want to quickly calculate the sum of a range of cells without having to manually enter the SUM formula.
+
+The shortcut key for AutoSum in Excel is Alt + =.
+To remove a formula that excludes adjacent cells in Excel, you can follow these steps:
+Select the cell with the formula you want to remove.
+Press Ctrl + C to copy the formula to the clipboard.
+Select the range of cells that you want to apply the formula to.
+Press Ctrl + V to paste the formula into the selected range.
+Excel will automatically adjust the formula to include the correct range of cells.
+Alternatively, you can also edit the formula in the cell to include the adjacent cells. To do this, click on the cell with the formula, 
+and then use the arrow keys to select the cell reference that you want to change. Type the new cell reference, and then press Enter.
+
+-------------------------------------------------------------------------------------4-------------------------------------------------------------------------------------------------------------
+4. How do you select non-adjacent cells in Excel 2016?
+To select non-adj cells in Excel 2016, you can use the methods:
+
+Using the keyboard and Control key:
+Select the first cell or range of cells
+While holding down the Control key, select additional non-adjacent cells or ranges of cells
+Release the Control key when you have finished making your selections
+Using the Name Box:
+Click on any cell to make it the active cell
+Click on the Name Box to the left of the formula bar
+Type the cell references you want to select, separated by commas (for example, "A1, C3, E5")
+Press Enter to select the non-adjacent cells
+Using the Go-To option:
+Click on any cell to make it the active cell
+Press Ctrl+G to open the Go To dialog box
+In the Reference field, type the cell references you want to select, separated by commas (for example, "A1, C3, E5")
+Click OK to select the non-adjacent cells
+These methods can be used to select non-adjacent cells or ranges of cells for various operations such as formatting, data analysis, or applying functions.
+
+-----------------------------------------------------------------------------------------------5--------------------------------------------------------------------------------------------------------
+
+
+5. What happens if you choose a column, hold down the Alt key and press the letters
+ocw in quick succession?
+OCW, or OpenCourseWare, refers to course lessons that are created at universities and published for free via the Internet.
+The OCW movement started in 1999 in Germany and gained traction in Europe and the United States before spreading worldwide.
+MIT OpenCourseWare, launched in 2002, was a major contributor to the movement and has inspired other universities to create their own OCW platforms.
+
+OCW projects typically include video lectures, notes, exams, and other course materials that are available for anyone to access and use. 
+The goal of OCW is to enhance human learning worldwide by making educational content freely available.
+
+In Japan, the OCW movement has been gaining popularity, with universities such as the University of Tokyo and Kyoto University creating their own OCW platforms.
+However, due to a lack of experts in content production, many Japanese universities have had to outsource the production of OCW.
+
+OCW platforms offer a variety of courses across different fields, including Africana Studies, Energy Entrepreneurship, Environment & Sustainability, Introductory Programming,
+MIT Open Learning Library, and Transportation. Some OCW platforms, such as edX, also offer the possibility of earning academic credit or certificates based on supervised examinations.
+
+Overall, OCW provides a valuable resource for learners around the world, offering free access to high-quality educational content from top universities.
+
+---------------------------------------------------------------------------------------------6----------------------------------------------------------------------------------------------------
+
+
+6. If you right-click on a row reference number and click on Insert, where will the row
+be added?
+Select the row header of a row where you want the new row added. The entire row is highlighted.
+Right-click on the selected row to open the context menu.
+Choose Insert from the menu.
+A new row is added above the selected row.
