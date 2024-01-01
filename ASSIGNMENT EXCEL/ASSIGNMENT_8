@@ -1,1 +1,120 @@
+                                                                     Excel Assignment - 8
+
+
+1. What do you mean by AutoComplete feature in Excel and what are the
+benefits of using this feature?
+
+The AutoComplete feature in Excel is a tool that automatically fills in data as type text in ancel sheet.
+It predicts the rest of a phrase or word based what you have already typed in the same column. 
+This feature can save time and effort by reducing the amount of text you need to enter, particularly when working with similar data or duplicate entries. 
+AutoComplete works by examining the contents of the active column in the data directly above and suggesting possible completions for the text you are typing.
+It can be particularly useful for entering data into tables with duplicate entries, as it reduces the need for repetitive typing.
+
+One benefit of using the AutoComplete feature is that it can help to reduce errors in data entry. 
+By suggesting possible completions for the text you are typing, AutoComplete can help to ensure that data is entered consistently and accurately.
+It can also help to speed up data entry by reducing the amount of typing required.
+
+Another benefit of using AutoComplete is that it can help to ensure that data is entered in a standardized format.
+For example, if you are entering dates or numbers in a particular format, AutoComplete can help to ensure that this format is consistently applied throughout the sheet.
+This can be particularly useful when working with large datasets or when sharing data with others.
+
+Overall, the AutoComplete feature in Excel is a useful tool for saving time and effort in data entry, reducing errors, and ensuring standardization in data formatting.
+
+--------------------------------------------------------------------------------2---------------------------------------------------------------------------------------------------------------------
+2. Explain working with workbooks and working with cells.
+
+To work with workbooks in Excel, you can create a new workbook or open an existing one. 
+To create a new workbook, you can either open a blank workbook or use a predesigned template. 
+To open an existing workbook, you can browse recent workbooks or locate the file on your computer or online storage service.
+If you are using an earlier version of Excel, you may need to open the workbook in Compatibility Mode, which will disable certain features. 
+To co-author a workbook with others, you can use Excel for the web or a version of the Excel app that supports co-authoring, such as Excel for Android, Excel for iOS, Excel Mobile, or Excel for Microsoft 365.
+To obtain more workbook templates, you can download them from Microsoft Office.com. You can also insert or delete worksheets as needed, and use the Excel desktop app or Excel for the web to access and edit your workbooks.
+
+------------------------------------------------------------------------------3----------------------------------------------------------------------------------------------------------------------
+3. What is fill handle in Excel and why do we use it?
+
+The fill handle in Excel is a small square at the bottom-right corner of the selection rectangle that appears when you select a cell or a range of cells. You can use the fill handle to quickly copy the contents of a cell or a range of cells to other cells, or to fill a range of cells with a series of values. 
+For example, you can use the fill handle to fill a range of cells with a series of numbers that increment by a certain value, or to fill a range of cells with a series of dates.
+
+The fill handle is a useful tool for automating repetitive tasks in Excel, and can save you time and effort when working with large amounts of data.
+
+--------------------------------------------------------------------------------4---------------------------------------------------------------------------------------------------------------
+
+
+4. Give some examples of using the fill handle.
+
+The AutoComplete feature in Excel a time-saving tool that suggests possible text entries based on the beginning characters you type in a column.
+It can make it easier to add data by completing entries for you, saving you time and effort
+
+To utilize this feature, you can start typing in a cell and Excel will suggest possible entries based on existing data in the column. 
+You can then press Enter or a directional key to accept the suggestion and move on to the next cell.
+
+One advantage of using AutoComplete is that it can help maintain consistency in your data entry.
+For example, if you are entering names of people or products, AutoComplete can help ensure that the spellings are consistent throughout the column.
+
+Another advantage is that it can save you time by reducing the amount of typing you need to do.
+Instead of typing out entire entries, you can simply select the suggested entry and move on to the next cell.
+
+Workbooks and cells are fundamental units of Excel. A workbook is a collection of spreadsheets, and each spreadsheet is made up of cells arranged in rows and columns. 
+You can work with workbooks by opening, creating, saving, and sharing them.
+
+To work with cells, you can select them by clicking on them or using keyboard shortcuts.
+Once you have selected a cell or range of cells, you can perform various actions on them, such as entering data, formatting, or performing calculations.
+
+The fill handle is a small square at the bottom-right corner of a selected cell or range of cells. It is used to copy or fill data from one cell to another.
+When you drag the fill handle, Excel automatically copies the data in the selected cell to the adjacent cells, following a pattern if possible.
+
+Here are some examples of using the fill handle in Excel:
+
+To copy the contents of a cell to adjacent cells, select the cell and drag the fill handle to the right or down.
+To fill a series of numbers or dates, enter the first few values and then drag the fill handle to fill the rest of the series.
+To copy formatting from one cell to another, select the cell with the formatting, copy it, and then paste it onto the target cells using the fill handle.
+To create a custom list, such as days of the week or months of the year, enter the list in a range of cells, 
+select the range, and then add it to the Excel list by going to File > Options > Advanced > Edit Custom Lists. Once the list is added, 
+you can use the fill handle to fill it in other cells.
+
+-----------------------------------------------------------------------------------------5-------------------------------------------------------------------------------------------------
+5. Describe flash fill and what the different ways to access the flash fill are.
+Flash Fill in Excel is a powerful feature that uses predictive technology to automatically fill data in a worksheet based on patterns it recognizes. 
+It can be used to quickly fill out first and last names,, item names, quantities, more. Flash Fill is available in Excel 2013, Excel 2016, Excel 2019, and Excel for Microsoft 365.
+It can be accessed from the Data tab of the Ribbon header, under the Data Tools section, or from the Home tab by going to Home → Editing → Fill → Flash Fill. 
+In older versions of Excel, the location of the Ribbon button may be different. Flash Fill is turned on by default, but can be disabled or re-enabled in the Excel options.
+If Flash Fill is unable to recognize a pattern in your data, filling in a few more cells manually can help it find the right pattern.
+
+6. Extract first name and last name from the mail id and then from the
+address column, extract the city, state, and pin code using the flash fill.
+Given below is an example of the columns you have to create. Paste the
+screenshot of what you have created using the flash fill command.
+Example: Mail Id, Address, First name, Last name, State, City, Pincode
+
+
+Mail Id	Address
+john.doe@example.com	123 Main St, Anytown CA 12345
+jane_doe@example.com	456 Oak Ave, Othercity NY 67890
+jim.brown@example.com	789 Elm Blvd, Smalltown OH 23456
+Using Flash Fill to Extract First Name and Last Name:
+
+In a new column, name it 'First name' and use Flash Fill to extract the first name.
+In the first cell of the 'First name' column, type '=LEFT(A2,FIND(".",A2)-1)'.
+In the next cell, type '=LEFT(B2,FIND(",",B2)-1)'.
+Select both cells, then go to the 'Data' tab and click 'Flash Fill'. The rest of the 'First name' column should be filled automatically.
+In a new column, name it 'Last name' and use Flash Fill to extract the last name.
+In the first cell of the 'Last name' column, type '=MID(A2,FIND(".",A2)+2,LEN(A2)-FIND("@",A2)-2)'.
+In the next cell, type '=MID(B2,FIND(",",B2)+1,FIND(" ",B2,FIND(",",B2)+1)-FIND(",",B2)-1)'.
+Select both cells, then go to the 'Data' tab and click 'Flash Fill'. The rest of the 'Last name' column should be filled automatically.
+Using Flash Fill to Extract City, State, and Pincode:
+
+In new columns, name them 'City', 'State', and 'Pincode' and use Flash Fill to extract the respective information.
+In the 'City' column, type '=MID(B2,FIND(",",B2)+2,FIND(" ",B2,FIND(",",B2)+2)-FIND(",",B2)-2)'.
+In the 'State' column, type '=MID(B2,FIND(" ",B2,FIND(",",B2)+2)+1,2)'.
+In the 'Pincode' column, type '=MID(B2,FIND(" ",B2,FIND(",",B2)+2)+5,5)'.
+Select the cells in each column, then go to the 'Data' tab and click 'Flash Fill'. The rest of the columns should be filled automatically.
+After using Flash Fill, the table should look like this:
+
+Mail Id	Address	First name	Last name	City	State	Pincode
+john.doe@example.com	123 Main St, Anytown CA 12345	john	doe	Anytown	CA	12345
+jane_doe@example.com	456 Oak Ave, Othercity NY 67890	jane	doe	Othercity	NY	67890
+jim.brown@example.com	789 Elm Blvd, Smalltown OH 23456	jim	brown	Smalltown	OH	23456
+
+
 
