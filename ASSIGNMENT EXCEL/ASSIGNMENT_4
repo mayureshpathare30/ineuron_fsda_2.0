@@ -1,1 +1,72 @@
+                                                                      Advance Excel Assignment 4
 
+1. To use the ribbon commands, what menu and grouping of commands will you
+   find the Insert and Delete command?
+To find the Insert and Delete commands in the ribbon, you will look for them in the "Home" tab, under the "Cells" group. This group contains commands for working with cell ranges,
+including inserting and deleting cells, rows, and columns.
+----------------------------------------------------------------------------------------2----------------------------------------------------------------------------------------------------------------
+2. If you set a row height or column width to 0 (zero), what happens to the row and
+column?
+When you set the height or width of a row or column to 0 (zero), it becomes hidden.
+
+-------------------------------------------------------------------------------------3-------------------------------------------------------------------------------------------------------------
+3. Is there a need to change the height and width in a cell? Why?
+The text in the provided context discusses how to modify the height and width of rows and columns in an Excel worksheet, 
+but it does not explicitly state why it is necessary to change height and width of cell.
+However, there are several reasons why a user might want to change height and width of cell:
+
+To fit the content: If the content of a cell is too long to fit within the default cell width,
+the user can increase the width of the cell to display the entire content. Similarly, if the content of a cell is too tall to fit within the default cell height,
+the user can increase the height of the cell.
+To improve readability: Increasing the height and width of a cell can make the content more readable by providing more space around the text.
+To create a specific layout: Changing the height and width of cells can help the user create a specific layout for their worksheet.
+For example, they might want to create a title heading by merging several cells together.
+No, this question is not a duplicate of the previous one. 
+The previous question asked about the purpose of changing the height and width of rows and columns, 
+while this question asks about the purpose of changing the height and width of a cell. Although the concepts are related, they are not the same.
+
+---------------------------------------------------------------------------------------4------------------------------------------------------------------------------------------------------------
+
+
+4. What is the keyboard shortcut to unhide rows?
+The keyboard shortcut tohide columns in Excel is:
+
+Alt → H → O → U → L
+
+This shortcut will unhide all columns in the active worksheet. If you want to un a specific range of columns, 
+you select the column range in which the cells are located and use the same shortcut.
+
+--------------------------------------------------------------------------------------------5-----------------------------------------------------------------------------------------------------
+
+
+5. How to hide rows containing blank cells?
+To hide rows where the last 8 columns contain no blank cells, you use the following steps:
+
+Select the entire range of data that you want to the filter to.
+Go to the "Data" tab in the Excel ribbon and click on "Filter". This will add drop-down arrows to each column header.
+Click on the drop-down arrow for the column that contains the blank cells you want to filter.
+At the bottom of the drop-down list, click on "Text Filters" or "Number Filters" (depending on the type of data in the column), then select "Does Not Equal".
+In the box that appears, enter a value that is not in the column (for example, if the column contains only numbers, you can enter a text value like "XXX"). 
+This will effectively filter out all rows that contain blank cells in that column.
+Repeat steps 3-5 for each of the last 8 columns.
+This will filter out all rows where any of the last 8 columns contain blank cells. 
+If you want to show all rows again, simply click on the "Clear" button in the "Sort & Filter" group on the "Data" tab.
+
+----------------------------------------------------------------------------------------6-----------------------------------------------------------------------------------------------------
+6. What are the steps to hide the duplicate values using conditional formatting in
+excel?
+To hide rows containing blank cells in Excel, you can follow these steps:
+
+Select the data range which contains the blank cells want to hide.
+Click on Home > Find & Select Go To Special.
+In the Go To Special dialog box, select Blanks option and click OK. This will select all the blank cells in the selection.
+Press Ctrl + 9 to hide the rows containing blank cells.
+Alternatively, you can also use conditional formatting to hide the contents of some rows:
+
+Select the entire table but exclude the headers.
+Navigate to Conditional Formatting on the Home ribbon tab, select it, and choose New Rule.
+From the drop-down list, select Use a formula to determine which cells to format.
+Type the following formula in the formula bar: =$C1="". Note: Replace C with the column that has the value you are inspecting, and 1 with the row that contains the active cell.
+Choose the formatting style you want to apply to the hidden cells.
+Click OK to apply the formatting rule.
+This will hide the contents of the rows where the specified column is blank, but the rows will still be visible.
