@@ -1,1 +1,182 @@
+                                                                           Excel Assignment - 7
+
+1. Using Insert Function, give examples of any function available in the
+different dropdowns present in the function library. For example
+AutoSum, Recently Used, Text, Date & Time, etc.
+
+AutoSum: This function is useful for quickly calculating the sum, average, count, minimum, or maximum of a range of cells. Here are some examples:
+SUM: Adds all the numbers in a range of cells. Example: =SUM(A1:A10)
+AVERAGE: Calculates the average of the numbers in a range of cells. Example: =AVERAGE(B1:B10)
+COUNT: Counts the number of cells that contain numbers in a range of cells. Example: =COUNT(C1:C10)
+MIN: Returns the smallest number in a range of cells. Example: =MIN(D1:D10)
+MAX: Returns the largest number in a range of cells. Example: =MAX(E1:E10)
+Recently Used: This category shows a list of functions that you have used recently. Here are some examples of functions that might appear in this category:
+LEFT: Returns a specified number of characters from a text string, starting from the left. Example: =LEFT(A1, 3)
+RIGHT: Returns a specified number of characters from a text string, starting from the right. Example: =RIGHT(B1, 2)
+MID: Returns a specified number of characters from a text string, starting at the position you specify. Example: =MID(C1, 2, 3)
+LEN: Returns the number of characters in a text string. Example: =LEN(D1)
+TRIM: Removes extra spaces from text. Example: =TRIM(E1)
+Text: This category contains functions that are used to manipulate text. Here are some examples:
+CONCATENATE: Joins two or more text strings together. Example: =CONCATENATE(A1, " ", B1)
+UPPER: Converts text to uppercase. Example: =UPPER(C1)
+LOWER: Converts text to lowercase. Example: =LOWER(D1)
+PROPER: Capitalizes the first letter of each word in a text string. Example: =PROPER(E1)
+TEXT: Converts a number to text. Example: =TEXT(A1, "Currency")
+Date & Time: This category contains functions that are used to work with dates and times. Here are some examples:
+TODAY: Returns the current date. Example: =TODAY()
+NOW: Returns the current date and time. Example: =NOW()
+DATE: Converts a year, month, and day into a date. Example: =DATE(2022, 2, 14)
+TIME: Converts a hour, minute, and second into a time. Example: =TIME(12, 30, 0)
+WEEKDAY: Returns the day of the week for a given date. Example: =WEEKDAY(A1)
+Logical: This category contains functions that are used to make decisions based on logical tests. Here are some examples:
+IF: Performs a logical test to return one value if the condition is TRUE, and another value if the condition is FALSE. Example: =IF(A1>10, "Greater than 10", "Less than or equal to 10")
+AND: Returns TRUE if all the arguments are TRUE. Example: =AND(A1>10, B1<20)
+OR: Returns TRUE if any of the arguments are TRUE. Example: =OR(A1>10, B1<20)
+NOT: Reverses the value of its argument. Example: =NOT(A1>10)
+IFERROR: Returns a value you specify if a formula or function generates an error. Example: =IFERROR(A1/B1, "Error")
+Mathematical: This category contains functions that are used to perform mathematical calculations. Here are some examples:
+SQRT: Returns the square root of a number. Example: =SQRT(A1)
+ABS: Returns the absolute value of a number. Example: =ABS(A1)
+ROUND: Rounds a number to a specified number of decimal places. Example: =ROUND(A1, 2)
+PI: Returns the value of pi. Example: =PI()
+RAND: Returns a random number between 0 and 1. Example: =RAN
+
+----------------------------------------------------------------------------------------2------------------------------------------------------------------------------------------------------------
+
+What are the different ways you can select columns and rows?
+
+To use the Insert Function dialog box, follow these steps:
+a. Click on the cell where you want the result to be displayed.
+
+b. Click on the Formulas tab in the Excel ribbon, then click on the Insert Function buttonfx) in the Function Library group.
+
+c Select a category from the drop-down list, such as AutoSum, Recently Used, Text, Date & Time, or any other category that fits your needs.
+
+d. Functions in the selected category will display in alphabetical order in the Select a function box. Double-click on the desired function.
+
+e. The Function Arguments wizard will appear, which helps you add correct arguments. For example, 
+if you select the SUM function, you will be prompted to select the cells or ranges you want to sum.
+
+AutoSum: To total cells, click on the cell where you want the result, then click on the AutoSum button in the Editing group on the Home tab or click on the AutoSum button in the Function Library group on the Formulas tab.
+Excel will automatically select the range it thinks you want to sum. If the selection is correct, press Enter.
+Recently Used: In the Insert Function dialog box, click on the Recently Used category.
+Functions you have inserted in the recent past will display in alphabetical order in the Select a function box. Double-click on the desired function to use it.
+Text: Select the Text category in the Insert Function dialog box. 
+You will find functions like CONCATENATE, LEFT, RIGHT, LEN, etc. Double-click on the desired function to use it. For example, to combine the contents of two cells (A1 and B1) with a space in between, 
+use the CONCATENATE function with the following formula: =CONCATENATE(A1, " ", B1)
+Date & Time: Select the Date & Time category in the Insert Function dialog box. You will find functions like TODAY, NOW, DATE, TIME, etc. 
+Double-click on the desired function to use it. For example, to insert the current date in a cell, use the TODAY function with the following formula: =TODAY()
+To select columns and rows in Excel, you can use the following methods:
+a. Click and drag: Click on the letter heading of the column you want to select, hold the mouse button, and drag it across the desired range. 
+Release the mouse button to select the columns. Similarly, click on the number heading of the row you want to select, 
+hold the mouse button, and drag it across the desired range. Release the mouse button to select the rows.
+
+b. Ctrl + Shift + arrow keys: Click on the cell you want to use as the starting point, then press and hold Ctrl + Shift, and use the arrow keys to select the range of columns or rows.
+
+c. Ctrl + Spacebar and Shift + Spacebar: Click on the cell you want to use as the starting point, then press Ctrl + Spacebar to select the entire column or Shift + Spacebar to select the entire row.
+
+d. Using the Go To command: Press F5 to open the Go To dialog box, enter the cell reference, column letter, or row number, and click OK. The specified cells will be selected.
+
+e. Using the Name Box: Click on the Name Box (top left corner of the Excel window), type the cell reference, column letter, or row number, and press Enter. 
+The specified cells will be selected.
+
+-----------------------------------------------------------------------------------------3-------------------------------------------------------------------------------------------------------
+
+3. What is AutoFit and why do we use it?
+AutoFit in Excel is a feature that allows you to quickly adjust the row height or column width to fit text completely within a cell. 
+Its purpose is to ensure that all the cell content is visible and within the, and to prevent text or data from spilling over to other.
+AutoFit be used in various ways, such as by selecting the rows or columns and using the 'Autofit Row Height' or 'Autofit Column Width' option, or by using keyboard shortcuts.
+However, there are some cases where AutoFit may not work, such as when there are merged cells or when 'Wrap Text' is applied to a cell.
+In such cases, there are alternatives to AutoFit, such as manually setting the row height or column width, or using the 'Shrink to Fit' format.
+---------------------------------------------------------------------------------------------4--------------------------------------------------------------------------------------------------
+4. How can you insert new rows and columns into the existing table?
+To insert new rows or columns in an existing table in Microsoft Excel, you can follow these steps:
+
+Open your Excel workbook and select the table where you want to add rows or columns.
+To insert a new row, place your cursor in the row above or below where you want to insert new row. 
+Then, right-click and select "Insert" from the context menu.
+Alternatively, you can go to the "Home" tab and click on "Insert" in the "Cells" group. This will insert a new row above or below the selected row.
+To insert a new column, place your cursor in the column to the left or right of where you want to insert the new column. 
+Then, right-click and select "Insert" from the context menu. Alternatively, you can go to the "Home" tab and click on "Insert" in the "Cells" group.
+This will insert a new column to the left or right of the selected column.
+If you want to insert multiple rows or columns at once, you can select the number of rows or columns you want to insert before you click on "Insert".
+Once you have inserted the new rows or columns, you can enter data into the new cells as needed.
+In Microsoft Word, you can insert new rows or columns in a table by following these steps:
+
+Open your Word document and select the table where you want to add rows or columns.
+To insert a new row, place your cursor in the row above or below where you want to insert the new row. Then, right-click and select "Insert Row" from the context menu.
+Alternatively, you can go to the "Table Design" tab and click on "Insert Above" or "Insert Below" in the "Rows & Columns" group.
+To insert a new column, place your cursor in the column to the left or right of where you want to insert the new column.
+Then, right-click and select "Insert Column" from the context menu. Alternatively, you can go to the "Table Design" tab and click on "Insert Left" or "Insert Right" in the "Rows & Columns" group.
+If you want to insert multiple rows or columns at once, you can select the number of rows or columns you want to insert before you click on "Insert".
+Once you have inserted the new rows or columns, you can enter data into the new cells as needed.
+
+------------------------------------------------------------------------------------5-----------------------------------------------------------------------------------------------------------------
+
+5. How do you hide and unhide columns in excel?
+To add new rows and columns to existing table in Ex, you can use the Resize Table command. Here's how:
+
+Click anywhere in the table, and the Table Tools option appears.2. Click Design > Resize Table
+Select the entire range of cells you want your table to include, with the upper-most cell.
+Press OK.
+To add a row or column to a table, you can also type in a cell just below the last row or to the right of the last column, paste data into a cell, or insert rows or columns between existing rows or columns.
+
+To hide or reveal hidden columns in a worksheet, you can use the following steps:
+
+Select one or more columns, and then press Ctrl to select additional columns that aren't adjacent.
+Right-click the selected columns, and then click Hide or Unhide.
+Note: The double line between two columns is an indicator that you've hidden a column. To unhide the first column or row in a worksheet, you can use the following steps:
+
+Select the adjacent columns for the hidden columns.
+Right-click the selected columns, and then click Unhide.
+Alternatively, you can double-click the double line between the two columns where hidden columns exist.
+
+If you have multiple hidden columns in your table, you can use the Go To Special functionality or the Document Inspector to reveal them. Here's how:
+
+Press Ctrl+G to open the Go To dialog box.
+Click Special.
+Select Visible cells only, and then click OK.
+This will select all the visible cells in the worksheet, and you can then use the formula bar to see if there are any hidden columns or rows.
+
+To use the Document Inspector, you can follow these steps:
+
+Click File > Info > Check for Issues > Inspect Document.
+In the Document Inspector dialog box, select the options you want to inspect, and then click Inspect.
+Review the results of the inspection, and then click Close.
+The Document Inspector can help you find hidden data, such as comments, hidden rows and columns, and more.
+
+------------------------------------------------------------------------------------------------6-----------------------------------------------------------------------------------------------
+6. Create an appropriate table within the worksheet and use different
+functions available in the AutoSum command.
+
+Select the cell where you want to place the result of the sum function.
+
+In the AutoSum group of the Excel toolbar, click the cell you want to use as the start of the sum range.
+
+Hold down the Shift key, click the cell you want to use as the end of the sum range, and then release the Shift key.
+
+Excel will now automatically calculate the sum of the values within the specified range. If you need to modify the sum range, 
+simply click on the start or end cell reference in the formula bar, select the desired range, and then press Enter.
+
+Alternatively, you can manually type the SUM function in the cell where you want the result to appear. The syntax for the SUM function is as follows:
+
+=SUM(start_cell:end_cell)
+
+Replace start_cell and end_cell with the cell references of the start and end of the sum range.
+
+Here is an example of how you can use the SUM function in Excel:
+
+Suppose you have a range of cells A1 to A10, which contains numbers that you want to sum.
+
+In an empty cell, let's say B1, you can type the following formula:
+
+=SUM(A1:A10)
+
+Press Enter, and Excel will calculate the sum of the numbers in the range A1 to A10.
+If you want to add or remove cells from the sum range, you can easily modify the formula in cell B1.
+
+In the above example, we used the SUM function, but Excel provides several other functions for calculating subtotals and totals.
+Some of these functions include COUNT, COUNTA, SUMIF, AVERAGE, MIN, and MAX. These functions can be used individually or in combination to perform complex calculations and generate detailed reports.
+
+
 
