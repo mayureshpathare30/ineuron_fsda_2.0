@@ -1,1 +1,130 @@
-A
+                                                                             Power BI Assignment 3
+
+
+
+1.List and explain different PowerBi products?
+
+Power BI is a of tools and services from Microsoft that helps users to ingest, model, and visualize. Here are some of the products and features in Power BI:
+
+Power BI Desktop: This is a free application that you can download to your computer to create and publish Power BI reports. 
+It includes data connectors, data modeling tools, and a visualization designer.
+
+Power BI Service: This is the cloud-based version of Power BI, where you can publish and share your reports.
+It includes features like dashboards, natural language query, and mobile app support.
+
+Power BI Mobile Apps: Power BI offers mobile apps for Windows, iOS, and Android devices, allowing you to view and interact with your reports on the go.
+
+Power BI Dataflows: This is a self-service data preparation tool that allows you to clean, transform, and enrich your data before visualizing it.
+It integrates with Azure Data Lake Storage Gen2 to enable collaboration on data across Power BI and Azure data services.
+
+Power BI Embedded: This is a service that allows developers to embed Power BI reports and dashboards into their own applications.
+It includes features like single sign-on, row-level security, and custom branding.
+
+Power BI Premium: This is a paid offering that provides dedicated capacity for your Power BI reports and dashboards.
+It includes features like larger data model sizes, longer refresh intervals, and the ability to publish content to a broader audience without requiring individual licenses.
+
+Power BI Report Builder: This is a tool for creating paginated reports, which are reports that are designed to be printed or exported to PDF.
+
+Power BI Visuals: Power BI supports a wide range of custom visuals, which are visualizations created by third-party developers. 
+These visuals can be used to create unique and interactive reports.
+
+Power BI Template Apps: These are pre-built solutions that you can use to get started quickly with Power BI. 
+They include templates for specific industries or use cases, such as sales analysis or social media analytics.
+
+Power BI Connectors: Power BI includes a wide range of connectors to popular data sources, such as Salesforce, Google Analytics, and SQL Server. 
+These connectors make it easy to import and analyze data from these sources.
+
+Overall, Power BI offers a powerful and flexible set of tools for data analysis and visualization, with a range of products and features to suit different needs and use cases.
+
+-----------------------------------------------------------------------------------------2----------------------------------------------------------------------------------------------------------------
+
+2.What limitations of Excel, Microsoft solved by PowerBi?
+
+ Microsoft addressed several limitations of Excel with PowerBI, including:
+
+Data size limitation: Excel has a limit of just over 1 million rows and 16 thousand columns, while PowerBI does not have such restrictions and can handle millions of rows of data.
+PowerBI Service has a 1 GB dataset limit, but PowerBI Premium capacity is available for larger datasets.
+Publishing and sharing reports: Excel does not offer a cloud-based publishing service to share reports, datasets, and dashboards. 
+PowerBI, on the other hand, allows for publishing reports to the PowerBI Service and sharing them with others.
+Complexity and components: PowerBI has a more complex structure than Excel, with various components such as PowerBI Desktop, PowerBI Gateway, and PowerBI Services. 
+This complexity can be a limitation for users who are not familiar with these components.
+End-user usability: PowerBI can be challenging to use for business users who are not Microsoft Excel power users, as it was designed in a more complex manner.
+It is important to note that PowerBI is a more powerful tool than Excel in many scenarios, but it may not be the best tool for all use cases. 
+The choice between PowerBI and Excel will depend on the specific needs and resources of the organization and its users.
+
+-----------------------------------------------------------------------------------------3------------------------------------------------------------------------------------------------------------
+
+3.Explain PowerQuery?
+
+Power Query is a powerful data transformation and preparation engine that is part of Microsoft's suite of business intelligence tools. 
+It provides a user-friendly graphical interface for connecting to various data sources, cleaning and transforming data, and preparing it for analysis. 
+Power Query is available in Microsoft Excel and Microsoft Power BI, and it enables users to perform Extract, Transform, and Load (ETL) processes on their data.
+
+Here are some of the key features of Power Query:
+
+Data Connectors: Power Query supports a wide range of data sources, including CSV files, Excel workbooks, databases, web pages, and cloud storage services. 
+It provides a vast array of connectors to simplify the process of connecting to these data sources.
+Data Cleaning and Transformation: Power Query provides a wide range of data cleaning and transformation tools, including data profiling, data type detection, data transformation, and data merging.
+These tools enable users to clean, transform, and merge data from various sources into a single, cohesive dataset.
+Data Preview: Power Query provides a data preview feature that enables users to preview their data before loading it into their analysis tool.
+This feature helps users to identify any issues with their data and make any necessary adjustments before loading it.
+Data Reusability: Power Query enables users to save their data cleaning and transformation steps as a query, which can be reused on new data.
+This feature saves users time and effort by enabling them to automate their data cleaning and transformation processes.
+Data Refresh: Power Query enables users to refresh their data on a schedule, ensuring that their analysis is always up-to-date.
+This feature is particularly useful for users who are working with large datasets that are updated frequently.
+Data Mashup: Power Query enables users to combine data from multiple sources into a single dataset.
+This feature is particularly useful for users who are working with data from multiple sources that need to be analyzed together.
+Data Privacy: Power Query provides features that enable users to protect sensitive data, such as data masking and data encryption. 
+These features help users to comply with data privacy regulations and protect sensitive data.
+Overall, Power Query is a powerful data transformation and preparation engine that simplifies the process of connecting to data sources, 
+cleaning and transforming data, and preparing it for analysis. Its user-friendly graphical interface, data connectors, data cleaning and transformation tools,
+data preview, data reusability, data refresh, data mashup, and data privacy features make it an essential tool for business users who need to analyze data.
+
+----------------------------------------------------------------------------------4--------------------------------------------------------------------------------------------------------------
+
+4.Explain PowerMap?
+
+Power Map is a powerful tool in the Power BI suite that contributes to data visualization and analysis by allowing users to create 3D maps from their data.
+It helps to plot geographic and temporal data on a 3D globe or custom map, making it easier to discover insights and share stories with others.
+Power Map can handle more than a million rows of data visually from an Excel table or Data Model in Excel,
+and it allows users to gain new understandings by viewing their data in geographic space and seeing time-stamped data change over time. With Power Map, users can create cinematic, 
+guided video tours and share them broadly, engaging audiences like never before. Overall, Power Map provides a unique and interactive way to explore and analyze geospatial data, 
+making it a valuable addition to the Power BI suite.
+
+-----------------------------------------------------------------------------------------------5---------------------------------------------------------------------------------------------
+
+5.How powerBi eliminated the need to host SharePoint Server on premises?
+
+Power BI Report Server does not eliminate the need for hostingPoint Server on-premises. Instead, Power BI Report Server you to connect to and access data stored in SharePoint Server,
+which can be hosted either on-premises or in the cloud. This means that if you have an existing SharePoint Server installation on-premises,
+you can use PowerI Report Server to and publish Power BI reports that can access and visualize data stored in SharePoint. However,
+the Power BI Report Server itself still needs to be installed and hosted on-premises.
+
+Additionally, if you are using SharePoint Online in the cloud, you can still connect to and access data stored in SharePoint Online using Power BI Report Server.
+In this case, you would need to use the appropriate authentication method, such as Office 365 or Azure Active Directory (AAD) authentication, to connect to SharePoint Online.
+
+In summary, Power BI Report Server does not eliminate the need for hosting SharePoint Server on-premises, but it does allow you to connect to and access data stored in SharePoint Server, 
+whether it is hosted on-premises or in the cloud.
+
+---------------------------------------------------------------------------------------------------6------------------------------------------------------------------------------------------------
+
+6.Explain the updates done in Power Bi Service(power BI 2.0) as compared to older version ?
+
+ Power BI has not completely eliminated the need for-premises SharePoint as there are still use cases for on-premises.
+However, PowerI has introduced various features and capabilities to provide a comprehensive and integrated BI experience, 
+which can reduce the dependency on on-premises solutions in certain scenarios.
+
+Power BI offers two hosting options: Power BI Service and Power BI Report Server. Power BI Service is a cloud-based solution,
+while Power BI Report Server is an on-premises solution. The choice between these options depends on the organization's requirements and preferences.
+
+Power BI Report Server can be a cost-effective and viable solution for on-premises BI needs, especially when a significant portion of the users will only consume reports. 
+Power BI Pro licenses can be assigned to the users who will create and deploy reports, while the consumers can access the reports without a Pro license.
+
+For hybrid scenarios, where both on-premises and cloud-based solutions are utilized, 
+Power BI Service can offer modern features and capabilities that can complement the on-premises solutions.
+Power BI Premium might be expensive for small to medium-sized organizations; however, it can provide advanced sharing, 
+collaboration, and performance features for large enterprises. Power BI Pro licenses can still be used in conjunction with Premium capacities for specific user roles and scenarios.
+
+In summary, Power BI has not entirely eliminated the need for on-premises SharePoint, but it has introduced various features and hosting options to cater to diverse BI requirements.
+The choice between on-premises and cloud-based solutions depends on the organization's specific needs, budget, and preferences.
+
