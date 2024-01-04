@@ -1,1 +1,131 @@
+                                                                                   Power BI Assignment 5
 
+
+1.Explain DAX.
+
+DAX (Data Analysis Expressions is a formula language used in Power B, Analysis Services, and Power Pivot in Excel for data analysis and calculation. 
+It is made up of expressions, operators, and constants that perform advanced calculations and queries on in related tables and columns in tabular data models.
+
+DAX formulas are used in measures, calculated columns, tables, and row-level security.asures are dynamic calculation formulas where the results change depending on context, 
+while calculated columns are created by using a DAX formula to derive a new column based on an existing column in the table.
+
+The basic syntax of DAX is similar to Excel formulas, with additional functions and operators specific to Power BI.
+The three fundamental concepts of DAX are tables, columns, and measures. Tables store data, columns describe the attributes of the data, and measures perform calculations on the data.
+These concepts form the foundation of DAX and are used to create complex data models and analyses in Power BI.
+
+To write DAX for Power BI, you need to create a new calculated column or measure in the table or visual and enter the DAX formula in the formula bar. 
+Power BI provides an easy way to see the list of all functions, and when you start typing your function in the formula bar, 
+you can see the list of all functions starting with that alphabet.
+
+DAX has various function types to analyze data and create new columns and measures, including functions from different categories such as mathematical,text, logical, date and time, 
+and more. The use of some DAX functions may have limitations in measures and calculated columns, and some functions are deprecated and not recommended for use.
+
+---------------------------------------------------------------------------------------2---------------------------------------------------------------------------------------------------------
+
+
+
+2.Explain datasets, reports, and dashboards and how they relate to each other?
+In data analysis, datasets are the raw or processed data that is used for generating insights.
+Reports and dashboards are two different ways of presenting and visualizing the data from one or multiple datasets to communicate insights and facilitate decision-making.
+
+A report is a more detailed and comprehensive presentation of data, often including tables, charts, and text that provide a thorough analysis of a specific topic or question. 
+Reports can be used to provide a snapshot of data at a specific point in time or to document the results of an in-depth analysis.
+Reports can be used to communicate the findings of a data analysis project to stakeholders, or to provide a detailed overview of a particular aspect of a business or organization.
+
+A dashboard, on the other hand, is a visual representation of key metrics and data that is designed to provide a quick and easy-to-understand overview of a specific topic or question.
+Dashboards typically include a small number of charts and visualizations that are carefully selected to provide a high-level view of the data.
+Dashboards are often used to monitor the performance of a business or organization in real-time, or to provide a quick overview of key metrics to decision-makers.
+
+In summary, datasets are the raw or processed data that is used for generating insights, while reports and dashboards are two different ways of presenting and 
+visualizing the data from one or multiple datasets to communicate insights and facilitate decision-making. 
+Reports are more detailed and comprehensive, while dashboards are designed to provide a quick and easy-to-understand overview of key metrics and data.
+
+----------------------------------------------------------------------------------------------3---------------------------------------------------------------------------------------------------------
+
+
+
+
+3.How reports can be created in power BI, explain two ways with Navigation of each.
+
+I can explain two ways to create reports in Power BI with navigation of each.
+
+Using Power BI Des: Power BI Desktop is a powerful tool that allows you to create reports with dynamic perspectives and insights into your data. Here are the steps to create a using Power BI Desktop:
+a. Download and install Power BI Desktop on your computer.
+
+b. Open Power BI Desktop and click on "Get Data" to connect to your data source. You can connect to a variety of data sources, including Excel, CSV, SQL Server, and more.
+
+c. Once you have connected to your data source, you can start creating your report by adding visualizations to the report canvas. 
+You can add tables, charts, graphs, and other visualizations to your report.
+
+d. To navigate between pages in your report, you can use the page navigation buttons at the bottom of the report canvas.
+You can also use the "New Page" button to add new pages to your report.
+
+e. Once you have finished creating your report, you can publish it to the Power BI service to share it with others.
+
+Using Power BI Service: Power BI Service is a web-based version of Power BI that allows you to create reports and dashboards in the cloud.
+Here are the steps to create a report using Power BI Service:
+a. Go to the Power BI Service website and sign in with your Microsoft account.
+
+b. Click on "Create" and select "Report" to start creating a new report.
+
+-------------------------------------------------------------------------------------------------4---------------------------------------------------------------------------------------------
+
+4.How to connect to data in Power BI? How to use the content pack to connect to google analytics? Mention the steps.
+
+Sources: learn.microsoft.com (1) iterationinsights.com (2) powerbi.microsoft.com (3) linkedin.com (4)
+
+To connect to data in Power BI, can use the built-in features or the Google Analytics content pack. Here are the steps for each method:
+
+Method 1: Built-in features
+
+Open Power BI and click on "Get Data" in the Home ribbon. . In the "Get Data window, you can search for the data source you want to connect to select it from the list of categories on the left.
+Once you have selected the data source, click on "Connect" to proceed.
+You will be prompted to enter your credentials for the data source and grant permission to Power BI to access it.
+After you have successfully connected, you can choose the tables you want to import and click on "Load" to bring the data into Power BI.
+Method 2: Google Analytics content pack
+
+Open Power BI and click on "Get Data" in the Home ribbon.
+In the "Get Data" window, search for "Google Analytics" or select it from the list of data sources.
+Click on "Google Analytics" to open the content pack.
+Enter your Google Analytics account information and click on "Sign In".
+Select the property and view you want to connect to and click on "Next".
+Power BI will then create a dashboard, report, and dataset based on your Google Analytics data.
+You can customize the dashboard and report to fit your needs and explore your data using the built-in features of Power BI.
+By using either of these methods, you can connect to data in Power BI and start creating reports and dashboards to gain insights into your business.
+
+-------------------------------------------------------------------------------------------5----------------------------------------------------------------------------------------------------
+
+
+
+5.How to import Local files in Power BI? Mention the Steps.
+
+here are the general steps to import local files in Power BI:
+
+Open Power BI and click on "Home" in the navigation pane.
+Click on "Get Data" in the top ribbon.
+In the "Get Data" dialog box select "Files" and then choose the type of local file you want to import (e.g. Excel, CSV, or text file).
+Browse your computer for the file you want to import and select it.
+Click "Open" to begin the import process.
+If prompted, select the tables or data ranges you want to import and transform the data as necessary.
+Click "Load" to complete the import process.
+The specific steps may vary slightly depending on the type of local file you are importing.
+
+------------------------------------------------------------------------------------------------6-----------------------------------------------------------------------------------------------------------
+
+6.In Power BI visualization, what are Reading View and Editing view?
+
+The difference between Reading View anditing View in PowerI visualization.
+
+Reading View is default view in Power BI and is intended for report consumers who only need to view and interact with the report.
+Reading View, users can explore the report, interact with visualizations, and filter data. However, they cannot make any changes to the report.
+
+Editing View, on the other hand, is intended for report owners and creators who need to modify the report. 
+In Editing View, users have access to additional features and tools that allow them to make changes to the report, such as adding or removing visualizations, 
+changing the layout, and modifying the data model. Editing View also allows users to access the Fields, Filters, and Visualizations panes, 
+which provide additional options for customizing the report.
+
+To access Editing View, users must have a Power BI Pro or Premium Per User (PPU) license and be a report owner or creator,
+or have at least a Contributor role in the workspace that houses the report.
+
+In summary, Reading View is intended for report consumers who only need to view and interact with the report,
+while Editing View is intended for report owners and creators who need to modify the report.
