@@ -1,1 +1,166 @@
+                                                                                  Power BI Assignment 2
 
+1. Explain the advantages of Natural Queries in PowerBi with an example?
+
+Business intelligence (BI) is a set of strategies technologies that organizations use to analyze business information and transform it intoable insights to inform strategic and tactical business decisions.
+BI tools access and analyze data sets, presenting analytical findings in reports, summaries, dashboards, graphs, charts, and maps to provide users with detailed intelligence about the state of business. 
+The term BI often also refers to a range of tools that provide quick, easy-to-digest access to insights about an organization’s current state, based on available data.
+Power BI is a business analytics service by Microsoft that delivers insights throughout your organization. It allows analysts to connect to hundreds of data sources, 
+simplify data prep, and drive ad hoc analysis. Power BI enables analysts to produce beautiful reports, which can be published and shared with colleagues on any device. 
+With Power BI, organizations can quickly access critical data, set up dashboards, and track key performance indicators (KPIs) in real time, allowing for informed decision-making.
+Descriptive analytics is the process of identifying trends and relationships in data using historical and current data. 
+It involves understanding what has happened in the past and is used to quantify and understand trends in the data.
+Descriptive analytics is often performed using data aggregation and data mining techniques, and it helps organizations to gain insights from their data, identify patterns, and make data-driven decisions.
+Predictive analytics is a form of advanced analytics that uses both new and historical data to forecast future activity, behavior, and trends.
+It involves applying statistical algorithms and machine learning techniques to data sets to create predictive models that answer the question “what is likely to happen?”
+Predictive analytics can be used to identify risks and opportunities, optimize operations, and improve customer experiences.
+Prescriptive analytics is a form of advanced analytics that provides recommendations on what actions to take.
+It goes beyond predictive analytics by suggesting various courses of action and their potential outcomes. 
+Prescriptive analytics uses optimization algorithms, machine learning, and computational modeling to identify the best course of action,
+enabling organizations to make informed decisions and take optimal actions in real time.
+
+Five real-life questions that BI and analytics can help answer are:
+What were our sales figures for the last quarter, and how do they compare to the same quarter last year? (Descriptive analytics)
+What are the projected sales figures for the next quarter based on historical trends and current market conditions? (Predictive analytics)
+Which products or services are driving the most revenue and profit, and how can we optimize our product mix to increase revenue and profit? (Descriptive and Prescriptive analytics)
+What factors are contributing to customer churn, and how can we identify at-risk customers to proactively address their concerns and reduce churn? (Predictive and Prescriptive analytics)
+Which marketing channels are most effective in driving conversions and revenue, and how can we optimize our marketing spend to maximize ROI? (Descriptive and Predictive analytics)
+
+--------------------------------------------------------------------------------------2--------------------------------------------------------------------------------------------------------------
+
+2.Explain Web Front End(WFE) cluster from Power BI Service Architecture?
+
+Business Intelligence (BI) is a set of strategies and technologies that enterprises use to analyze business information and transform it into actionable insights to inform strategic and tactical business decisions.
+BI tools access and analyze data sets and present analytical findings in reports, summaries, dashboards, graphs, charts, and maps to provide users with detailed intelligence about the state of the business.
+The term BI often also refers to a range of tools that provide quick, easy-to-digest access to insights about an organization’s current state, based on available data.
+Power BI is a business analytics service by Microsoft that delivers insights throughout your organization.
+It allows you to connect to your data sources, simplify data prep, and drive ad hoc analysis.
+Power BI enables self-service BI, where users can create their reports and dashboards by themselves, without having to depend on IT. 
+It provides interactive visualizations and business intelligence capabilities with an interface simple enough for end users to create their own reports and dashboards. 
+Power BI assists analysts by providing a comprehensive set of tools to connect, prepare, model, analyze, visualize, and share data.
+Descriptive analytics is the process of identifying trends and relationships in data using historical and current data.
+It provides a summary of what has happened in the past and is used to understand the current state of the business, such as sales trends, customer behavior, and market trends.
+Descriptive analytics helps organizations to answer questions like "What are the sales figures for the last quarter?" or "What is the average customer spend?"
+Predictive analytics is a form of advanced analytics that uses both new and historical data to forecast future activity, behavior, and trends. 
+It involves applying statistical analysis techniques, analytical queries, and automated machine learning algorithms to data sets to create predictive models that place a numerical value, or score, on the likelihood of a particular event happening. 
+Predictive analytics helps organizations to answer questions like "What is the likelihood of a customer churning?" or "What will be the sales for the next quarter?"
+I believe there is a typo in your question, and you meant to ask about "prescriptive analytics" instead of "perspective analytics." Prescriptive analytics is the final phase of business analytics,
+where the focus is on finding the best course of action to achieve specific goals. It combines optimization, simulation, and decision-making algorithms to suggest actions and decisions based on the insights gained from descriptive and predictive analytics. 
+Prescriptive analytics helps organizations to answer questions like "What should we do to increase sales?" or "Which product should we promote to which customer segment?"
+
+Here are five real-life examples of questions that Power BI can answer:
+
+What are the sales figures for each product category in the last quarter?
+Which regions have the highest customer satisfaction scores?
+What is the average revenue per user (ARPU) for each subscription plan?
+Which sales representatives have the highest conversion rates?
+How many open support tickets do we have, and what is the average time to resolution?
+
+--------------------------------------------------------------------------------------------3-------------------------------------------------------------------------------------------------------------------
+3.Explain Back End cluster from Power BI Service Architecture?
+
+Definition of Business Intelligence (BI): BI is a set of strategies and technologies that enterprises use to analyze information and transform it intoable insights to inform strategic and tactical business decisions. 
+BI tools access and analyze data sets, presenting analytical findings in reports, summaries, dashboards, graphs, charts, and maps to provide users with detailed intelligence about the state of business. 
+It helps business decision-makers get the information they need to make informed decisions.
+Power BI contributes to Business Intelligence by providing a robust, user-friendly platform for data visualization, analysis, and reporting.
+It assists analysts by simplifying the data analysis process, enabling them to create interactive dashboards and reports, and providing advanced data modeling and analytical capabilities.
+Power BI integrates with various data sources, allowing analysts to combine, clean, and shape data for analysis,
+and it offers real-time insights and collaboration features, making it easier for analysts to share their findings with stakeholders.
+Descriptive analytics is the process of identifying trends and relationships in data using historical and current data.
+It focuses on understanding what has happened in the past and what is currently happening in the business. Descriptive analytics involves statistical analysis,
+data aggregation, and data mining techniques to summarize and visualize data in a way that is easily understood by users. Examples of descriptive analytics include generating sales reports, analyzing website traffic,
+and calculating key performance indicators (KPIs).
+Predictive analytics is a branch of advanced analytics that uses data, statistical algorithms, and machine learning techniques to identify the likelihood of future outcomes based on historical data.
+It involves creating predictive models that can analyze large data sets, identify patterns and trends, and generate predictions about future events. 
+Predictive analytics can be used for various purposes, such as forecasting sales, identifying customer churn, detecting fraud, and optimizing marketing campaigns.
+Prescriptive analytics is the final stage of the analytics maturity model, which goes beyond descriptive and predictive analytics to provide recommendations and actions based on the insights generated. 
+It uses optimization algorithms, machine learning, and artificial intelligence to identify the best course of action for a given situation.
+Prescriptive analytics can help organizations make better decisions, optimize resources, and improve business outcomes.
+
+Five real-life questions that Power BI can answer:
+
+What are the sales trends for each product category in the past year?
+Which regions are generating the most revenue, and which ones are underperforming?
+How many new customers have we acquired in the past quarter, and what are their demographics?
+What is the average response time for customer support tickets, and how does it vary by agent?
+Which marketing channels are driving the most traffic and conversions to our website?
+
+----------------------------------------------------------------------------------4--------------------------------------------------------------------------------------------------------
+
+4.What ASP.NET component does in Power BI Service Architecture?
+
+Intelligence (BI) is the use of technology, data processing, and analytical to convert raw data meaningful insights that help organizations make informed decisions achieve their goals.
+I systems integrate data from various sources, providing a unified view that enables users to analyze and monitor performance, identify trends, and make data-driven decisions.
+2. Power BI is a of software services, apps, and connectors that work together to turn data into interactive, immersive visual reports and dashboards.
+Power BI contributes to BI by providing an easy-to-use, self-service platform that empowers analysts and business users to connect to various data sources, perform data preparation, data modeling, and data visualization without requiring advanced technical skills. 
+Power BI benefits analysts by enabling them to quickly and easily create customized reports and dashboards, share insights with others, and collaborate on data-driven decision-making.
+Descriptive analytics is the process of analyzing historical and current data to identify trends, patterns, and summarize information. 
+It helps organizations understand what has happened in the past and provides a snapshot of the current situation.
+Descriptive analytics often involves using data aggregation, data mining, and statistical methods to extract insights from large datasets. 
+Common techniques used in descriptive analytics include mean, median, mode, standard deviation, correlation, and frequency distributions.
+Predictive analytics is the process of using statistical algorithms, machine learning techniques, 
+and data models to identify the likelihood of future outcomes based on historical data and trends.
+It helps organizations forecast what might happen in the future, enabling them to make proactive decisions and take appropriate actions. 
+Predictive analytics often involves using advanced techniques such as regression analysis, time series analysis, decision trees, and neural networks to analyze data and generate predictions.
+Prescriptive analytics is the process of using optimization algorithms, simulation models, and decision support tools to recommend specific actions or courses of action based on data analysis and modeling.
+It helps organizations determine the best course of action to achieve specific goals or objectives.
+Prescriptive analytics often involves using advanced techniques such as linear programming, integer programming, and stochastic optimization to model complex decision problems and identify optimal solutions.
+
+---------------------------------------------------------------------------------------------5-------------------------------------------------------------------------------------------------
+
+5.Compare Microsoft Excel and PowerBi Desktop on the following features:
+Data import
+Data transformation
+Modeling
+Reporting
+Server Deployment
+Convert Models
+Cost
+
+Microsoft Excel and Power BI Desktop based on the features you've listed.
+
+Data Import: Both Excel and Power BI Desktop can import data from various sources, including CSV, Excel, SQL Server, and otherabases. 
+Power BI Desktop however, has a more extensive list of data sources, including cloud services like Salesforce, Google Analytics, and more.
+Power BI Desktop also allows for live connections to data sources, whereas Excel typically requires data to be imported and stored locally.
+Data Transformation: Power BI Desktop has a more robust data transformation engine compared to Excel.
+Power Query, which is built into Power BI Desktop, allows for data cleansing, shaping, and transformation.
+Power Query can handle large datasets and can be used to combine data from multiple sources. Excel also has data transformation capabilities,
+but they are not as extensive as Power Query.
+Modeling: Both Excel and Power BI Desktop allow for data modeling, but Power BI Desktop has more advanced features. Power BI Desktop supports dimensional modeling,
+which is useful for creating data models that can be used for reporting and analysis. Excel has data modeling capabilities, but they are not as advanced as Power BI Desktop.
+Reporting: Power BI Desktop has more advanced reporting capabilities compared to Excel.
+Power BI Desktop supports creating interactive reports with a variety of visualizations.
+Power BI Desktop also supports creating dashboards, which can be used to monitor key performance indicators (KPIs) and other metrics. Excel has reporting capabilities,
+but they are not as extensive as Power BI Desktop.
+Server Deployment: Power BI Desktop can be published to the Power BI service, which allows for server deployment.
+Power BI service allows for sharing reports and dashboards with other users, collaborating on data, and creating content packs. Excel does not have server deployment capabilities.
+Convert Models: Power BI Desktop allows for converting data models into Power BI templates, which can be used to create reports and dashboards quickly.
+Excel does not have this feature.
+
+
+------------------------------------------------------------------------------------6------------------------------------------------------------------------------------------------------------------
+
+6.List 20 data sources supported by Power Bi desktop.
+
+Based on the context provided, here are 20 data sources by Power BI:
+
+Excel workbook
+CSV file
+Text file
+file
+XML file
+Folder
+Server database
+Oracle database
+MySQL database
+IBM DB2 database
+PostgreSQL database
+Sybase database
+IBM Netezza database
+Teradata database
+SAP HANA database
+Google BigQuery database
+Amazon Redshift database
+Snowflake database
+Azure Synapse Analytics (formerly SQL DW)
+Common data model folder
