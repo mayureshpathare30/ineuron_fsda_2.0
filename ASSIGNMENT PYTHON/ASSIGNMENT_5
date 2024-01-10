@@ -1,1 +1,124 @@
+                                                                                Python Assignment-5
+
+1. What does an empty dictionary's code look like?
+
+In Python, an empty dictionary can be created using curly braces {}, or by using the dict() built-in function with no arguments. Here are examples of both:
+
+# Using curly braces
+empty_dict1 = {}
+
+# Using dict()
+empty_dict2 = dict()
+
+Both empty_dict1 and empty_dict2 are empty dictionaries. You can check if a dictionary is empty by using the len() function, which returns the number of items in the dictionary. 
+If the length is 0, then the dictionary is empty. Here's an example:
+
+if len(empty_dict1) == 0:
+    print("The dictionary is empty.")
+else:
+    print("The dictionary is not empty.")
+
+This will output:
+
+The dictionary is empty.
+
+--------------------------------------------------------------------------------------------2---------------------------------------------------------------------------------------------------
+
+2. What is the value of a dictionary value with the key 'foo' and the value 42?
+
+The value of a dictionary with the 'foo' and the value 42 in Python would be represented as {'foo': 42}.
+
+--------------------------------------------------------------------------------------------3---------------------------------------------------------------------------------------------------------
+
+3. What is the most significant distinction between a dictionary and a list?
+
+The most significant distinction between a dictionary and a list is that a list is a collection of value pairs like that of an array in C++, 
+while a dictionary is ahed structure of various pairs of keys and.
+
+------------------------------------------------------------------------------------------------4-------------------------------------------------------------------------------------------------
+
+4.4. What happens if you try to access spam['foo'] if spam is {bar : 100}?
+
+n the given context, the variable spam is an object with a single key-value pair, where the key is 'bar' and the value is100. 
+If you try to accessspam['foo'], it would return undefined because there is no key named 'foo' in the spam object.
+
+Here's the code to demonstrate this:
+
+let spam = {'bar': 100};
+console.log(spam['foo']); // Output: undefined
+
+In this example, we define an object spam with a single key-value pair. When we try to access spam['foo'], 
+JavaScript returns undefined because there is no key named 'foo' in the spam object.
+
+-----------------------------------------------------------------------------------------------5--------------------------------------------------------------------------------------------------
+
+5.If a dictionary is stored in spam, what is the difference between the expressions 'cat' in spam and
+'cat' in spam.key()
+
+Both 'cat' in spam and 'cat' in spam.keys() check if the key 'cat' is present in the dictionary spam. However, the difference lies in how they perform the check.
+
+'cat' in spam checks if the key '' is present in the keys of the dictionary directly. 
+It is a more straightforward and faster approach, as it doesn't require creating a separate list of keys first.
+
+On the other hand, 'cat' in spam.keys() checks for the presence of the key 'cat' in the list of keys returned by the keys() method.
+This approach is more explicit and may be useful in certain situations, such as when you need to iterate over the keys in a specific order or manipulate the list of keys in some way.
+However, it is generally slower than 'cat' in spspam, as it requires creating a separate list of keys first.
+
+In summary, both expressions are equivalent in terms of their result, but they differ in their implementation and performance.
+
+---------------------------------------------------------------------------------------------6----------------------------------------------------------------------------------------------------
+
+6. If a dictionary is stored in spam, what is the difference between the expressions 'cat' in spam and
+'cat' in spam.values()?
+
+In the context of checking for the key 'cat' in a dictionary stored in the variable spam, 
+the expression 'cat' in spam will return True if the dictionary contains a key named 'cat', and False otherwise.
+
+On the other hand, the expression 'cat' in spam.values() will return True if the dictionary contains a value that is equal to the string 'cat', and False otherwise.
+
+Here's an example to illustrate the difference:
+
+spam = {'dog': 'fido', 'cat': 'whiskers', 'bird': 'polly'}
+
+# This will return True because 'cat' is a key in the dictionary
+print('cat' in spam)  # Output: True
+
+# This will return True because 'whiskers' is a value in the dictionary
+print('whiskers' in spam.values())  # Output: True
+
+# This will return False because 'cat' is not a value in the dictionary
+print('cat' in spam.values())  # Output: False
+
+In the example above, 'cat' in spam returns True because 'cat' is a key in the dictionary,
+while 'cat' in spam.values() returns False because 'cat' is not a value in the dictionary.
+
+---------------------------------------------------------------------------------------------------7-----------------------------------------------------------------------------------------------------
+7. What is a shortcut for the following code?
+if color not in spam:
+spam ['color'] = 'black';
+
+The shortcut for the given code is spam.setdefault('color', 'black'). 
+This will return the value 'black' if the key 'color' does not exist in the spam dictionary, and will not modify the dictionary if the key already exists.
+
+-------------------------------------------------------------------------------8---------------------------------------------------------------------------------------------------------------
+
+8. How do you &quot;pretty print&quot; dictionary values using which module and function?
+
+To pretty print dictionary values in Python, you can use the pprint module's pprint() function. Here's an example:
+
+import pprint
+
+my_dict = {'key1': 'value1', 'key2': 'value2', 'key3': 'value3'}
+
+pprint.pprint(my_dict)
+
+This will output:
+
+{'key1': 'value1',
+ 'key2': 'value2',
+ 'key3': 'value3'}
+
+The pprint() function makes it easier to read and understand the contents of the dictionary by adding indentation and formatting the output in a more human-readable way.
+
+
 
