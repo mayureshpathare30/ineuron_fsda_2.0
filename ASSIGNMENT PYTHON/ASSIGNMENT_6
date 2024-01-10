@@ -2,23 +2,310 @@
 
 
 1. What are escape characters, and how do you use them?
-2. What do the escape characters n and t stand for?
-3. What is the way to include backslash characters in a string?
-4. The string &quot;Howl&#39;s Moving Castle&quot; is a correct value. Why isn&#39;t the single quote character in the
-word Howl&#39;s not escaped a problem?
-5. How do you write a string of newlines if you don&#39;t want to use the n character?
-6. What are the values of the given expressions?
-&#39;Hello, world!&#39;[1]
-&#39;Hello, world!&#39;[0:5]
-&#39;Hello, world!&#39;[:5]
-&#39;Hello, world!&#39;[3:]
 
-7. What are the values of the following expressions?
-&#39;Hello&#39;.upper()
-&#39;Hello&#39;.upper().isupper()
-&#39;Hello&#39;.upper().lower()
-8. What are the values of the following expressions?
-&#39;Remember, remember, the fifth of July.&#39;.split()
-&#39;-&#39;.join(&#39;There can only one.&#39;.split())
+In Python, escape characters or sequences are used to include special characters in strings. 
+To do this, you add a backslash () before the character you want to escape. example, if you want to include a single quote inside a string that is closed with single quotes, 
+you can the single quote using a backslash.
+
+Here are some common escape sequences in Python:
+
+\n: newline
+\t: tab
+\\: backslash
+\": double quote
+\': single quote
+You can also use the chr() function to create escape sequences. For example, chr(9) will return a tab character.
+
+Raw strings can be used to include backslashes in strings without escaping them. To create a raw string, you add an r or R before the string. 
+For example, r"C:\Users\username" is a raw string that includes backslashes without escaping them.
+
+Here are some examples of using escape characters in Python:
+# Escape single quote inside a string closed with single quotes
+print('It\'s raining')
+
+# Include a newline in a string
+print("Hello\nWorld")
+
+# Include a tab in a string
+print("Column1\tColumn2")
+
+# Include a backslash in a string
+print("C:\\Users\\username")
+
+# Use chr() function to create a tab escape sequence
+print("Column1" + chr(9) + "Column2")
+
+# Use raw strings to include backslashes in strings without escaping them
+print(r"C:\Users\username")
+
+Output:
+
+It's raining
+Hello
+World
+Column1	Column2
+C:\Users\username
+Column1	Column2
+-------------------------------------------------------------------------------2----------------------------------------------------------------------------------------------------------------
+
+2. What do the escape characters n and t stand for?
+
+The escape character \n stands for a newline character, which causes the cursor to move to the beginning of the next line The escape character \t stands for a tab character,
+which causes the cursor to move to the next tab stop.
+
+--------------------------------------------------------------------------------------3-------------------------------------------------------------------------------------------------------
+
+3. What is the way to include backslash characters in a string?
+
+In Python, you can include backslash characters in string by using the escape character ''. 
+For example, to include a single backslash in a string, you use '\'. This is because the first backslash escapes the second backslash,
+removing its special meaning and allowing it to be interpreted as a literal backslash character.
+
+Alternatively, you can use raw strings, which treat the backslash character as a literal character. T
+o create a raw string, you can prefix the string literal with an 'r' or 'R'. For example, r'\n' is a raw string that contains a newline character, 
+and r'\' is a raw string that contains a single backslash character.
+
+Here are some examples of how to include backslash characters in strings in Python:
+
+# Using escape characters
+s1 = 'Hello,\\nWorld'  # contains a newline character
+s2 = 'Hello,\\World'  # contains a single backslash character
+
+# Using raw strings
+r1 = r'Hello,\nWorld'  # contains a newline character
+r2 = r'Hello,\World'  # contains a single backslash character
+
+In the above examples, s1 and r1 contain newline characters, while s2 and r2 contain single backslash characters.
+
+-----------------------------------------------------------------------------------4-----------------------------------------------------------------------------------------------------------
+
+4. The string "Howl's Moving Castle" is a correct value. Why isn't the single quote character in the word Howl's not escaped a problem?
+
+The single quote in "Howl's" is not escaped because the entire string is enclosed in double quotes so there is no confusion between the single quote in the string and the string delimiters. 
+If the string were enclosed in single quotes, then the single quote in "Howl's" would need to be escaped to avoid confusing it with the string delimiters.
+
+-------------------------------------------------------------------------------------5---------------------------------------------------------------------------------------------------------
+
+5.How do you write a string of newlines if you don't want to use the n character?
+
+In Python, you can use print function with the end parameter set to an empty string to print a string of newlines without using the 'n' character.'s an example:
+
+print("Hello", end="")
+print("")
+
+In this example, the first print statement prints "Hello" followed by an empty string, which means that the cursor stays on the same line. 
+The second print statement then prints "World" on a new line. 
+To print multiple newlines, you can use a loop to repeatedly call the print function with the end parameter set to an empty string:
+
+for i in range(5):
+    print("", end="")
+
+This will print five newlines without using the 'n' character.
+
+---------------------------------------------------------------------------------------------6-----------------------------------------------------------------------------------------------
+
+
+6. What are the values of the given expressions?
+Hello, world!'[1]
+Hello, world!'[0:5]
+Hello, world!'[:5]
+Hello, world!'[3:]
+
+'Hello, world!'[1] returns 'e'.
+'Hello,!'[-1] returns ''.
+'Hello, world!'[0:5] returns 'Hello'.
+', world!'[-5:-1] returns 'l'. 5.Hello, world!'5] returns ''.
+', world!'[-5:] returns 'world!'.
+'Hello, world!'[:] returns 'Hello, world!'.
+'Hello, world!'[7] is a syntax error because the index is out of range. The string 'Hello, world!' only has 13 characters, and the valid indexes are 0 through 12.
+'Hello, world!'[12] returns '\n'.
+'Hello, world!'[13] is a syntax error because the index is out of range.
+'Hello, world!'[14] is a syntax error because the index is out of range.
+'Hello, world!'[-14] returns 'H'.
+'Hello, world!'[-13] returns 'e'.
+'Hello, world!'[-12] returns 'l'.
+'Hello, world!'[-11] returns 'l'.
+'Hello, world!'[-10] returns 'o'.
+'Hello, world!'[-9] returns ','.
+'Hello, world!'[-8] returns ' '.
+'Hello, world!'[-7] returns 'w'.
+'Hello, world!'[-6] returns 'o'.
+'Hello, world!'[-5] returns 'r'.
+'Hello, world!'[-4] returns 'l'.
+'Hello, world!'[-3] returns 'd'.
+'Hello, world!'[-2] returns '!'.
+'Hello, world!'[-1] returns '\n'.
+'Hello, world!'[12:13] returns '\n'.
+'Hello, world!'[13:] is a syntax error because the index is out of range.
+'Hello, world!'[:14] returns 'Hello, world!'.
+'Hello, world!'[14:15] is a syntax error because the index is out of range.
+'Hello, world!'[12:15] is a syntax error because the index is out of range.
+'Hello, world!'[:] returns 'Hello, world!'.
+'Hello, world!'[::1] returns 'Hello, world!'.
+'Hello, world!'[::2] returns 'Heol d!'.
+'Hello, world!'[::3] returns 'Hlo !d'.
+'Hello, world!'[::4] returns 'H o!'.
+'Hello, world!'[::5] returns 'Hd'.
+'Hello, world!'[::6] returns 'H!'.
+'Hello, world!'[::-1] returns '!dlrow ,olleH'.
+'Hello, world!'[::-2] returns '!ol ,H'.
+'Hello, world!'[::-3] returns '!d H'.
+'Hello, world!'[::-4] returns '! oH'.
+'Hello, world!'[::-5] returns ' Hd'.
+'Hello, world!'[::-6] returns ' !H'.
+'Hello, world!'[::-7] returns ' world,Hello'.
+'Hello, world!'[::-8] returns ' worldHello'.
+'Hello, world!'[::-9] returns 'olleH'.
+'Hello, world!'[::-10] returns 'dlo'.
+'Hello, world!'[::-11] returns 'ol'.
+'Hello, world!'[::-12] returns 'olle'.
+'Hello, world!'[::-13] returns 'olleH'.
+'Hello, world!'[::-14] returns ' world,Hello'.
+'Hello, world!'[::-15] returns ' worldHello'.
+'Hello,
+
+------------------------------------------------------------------------------------------7----------------------------------------------------------------------------------------------------------------------
+
+7. What are the values of the following expressions? 
+'Hello'.upper() 
+'Hello'.upper()
+.isupper() 
+'Hello'
+.upper()
+.lower()
+
+Escape characters are special characters that represent certain types of formatting within a string, such as newlines (n), tabs (t), or backslashes (\).
+They are used to include these characters in a string without having them interpreted as commands or input.
+In regular expressions, the \n escape character represents a newline, and the \t escape character represents a tab.
+To include a backslash character in a string, you can use the escape sequence \.
+In the string "Howl's Moving Castle", the single quote character in the word Howl's is not escaped because it is enclosed in double quotes,
+which allows the single quote to be used as a regular character.
+To write a string of newlines without using the \n escape character, you can use a multiline string, which allows you to include newlines directly in the string.
+The given expressions evaluate to the following:
+'Hello, world!'[1] evaluates to 'e'
+'Hello, world!'[0:5] evaluates to 'Hello'
+'Hello, world!'[:5] evaluates to 'Hello'
+'Hello, world!'[3:] evaluates to 'lo world!'
+The given expressions evaluate to the following:
+'Hello'.upper() evaluates to 'HELLO'
+'Hello'.upper().isupper() evaluates to True
+'Hello'.upper().lower() evaluates to 'hello'
+The given expressions evaluate to the following:
+'Remember, remember, the fifth of July.'.split() evaluates to ['Remember,', 'remember,', 'the', 'fifth', 'of', 'July.']
+'-'.join('There can only one.'.split()) evaluates to 'There-can-only-one.'
+The methods for right-justifying, left-justifying, and centering a string are rjust(), ljust(), and center(), respectively.
+The best way to remove whitespace characters from the start or end of a string is to use the lstrip() and rstrip() methods, respectively.
+The re.compile() function is used to create a regular expression object, which can then be used to search for patterns in strings.
+Raw strings are often used in regular expressions to avoid having to escape backslashes.
+The search() method returns a Match object, which can be used to extract the actual strings that match the pattern.
+In the regex r'(\d\d\d)-(\d\d\d-\d\d\d\d)', group zero covers the entire match, 
+group 1 covers the first set of parentheses (the first three digits), and group 2 covers the second set of parentheses (the second set of digits).
+In regular expressions, the | character is used to specify that either the pattern before or after the | should be matched.
+The \d, \w, and \s shorthand character classes match a single digit, word, or space character, respectively. 
+The \D, \W, and \S shorthand character classes match a single character that is not a digit, word, or space character, respectively.
+The .* and .*? expressions perform a greedy and nongreedy match, respectively.
+A greedy match tries to match as many characters as possible, while a nongreedy match tries to match as few characters as possible.
+To match a number with commas for every three digits, you can use the regex r'\d{1,3}(,\d{3})*'.
+To match a full name of someone whose last name is Watanabe, you can use the regex r'[A-Z][a-z]*\sWatanabe'.
+To match a sentence where the first word is either Alice, Bob, or Carol; the second word is either eats, pets, or throws; the third word is apples,
+cats, or baseballs; and the sentence ends with a period, you can use the regex r'^(Alice|Bob|Carol)\s(eats|pets|throws)\s(apples|cats|baseballs).$'.
+I hope this helps! Let me know if you have any other questions.
+
+--------------------------------------------------------------------------------8--------------------------------------------------------------------------------------------------------------
+8.What are the values of the following expressions? 'Remember, remember, 
+the fifth of July.'.split()
+'-'.join('There can only
+one.'.split())
+
+An empty dictionary looks like this: {}
+A dictionary value with a key 'foo' and a value 42 looks like this: {'foo': 42}
+The main difference between a dictionary and a list that the items in a dictionary are unordered and can be accessed using keys,
+while the items in a list are and can be accessed using their position in the list.
+If you try to access spam['foo'] if spam is {'bar': 100}, you will get a KeyError because 'foo' is not a key in the dictionary.
+If a dictionary is stored in spam, there is no difference between the expressions 'cat' in spam and 'cat' in spam.keys().
+Both will return True if 'cat' is a key in the dictionary.
+If a dictionary is stored in spam, the expression 'cat' in spam will return True if 'cat' is a key in the dictionary,
+while 'cat' in spam.values() will return True if 'cat' is a value for one of the keys in the dictionary.
+A shortcut for the following code: if 'color' not in spam: spam['color'] = 'black' is: spam.setdefault('color', 'black')
+To pretty print dictionary values, you can use the pprint module and the pprint.pprint() function.
+Escape characters are used in strings to represent characters that would otherwise be difficult or impossible to type into code.
+For example, the \n escape character represents a newline, and the \t escape character represents a tab.
+The \n escape character represents a newline, and the \t escape character represents a tab.
+To include a backslash character in a string, you can use the \ escape character.
+The string "Howl's Moving Castle" is a valid string because the single quote in Howl's is not part of the string itself, but rather part of the word.
+To write a string of newlines without using the \n escape character, you can use multiline strings.
+The expressions evaluate to the following: 'Hello, world!'[1] evaluates to 'e' 'Hello, world!'[0:5] evaluates to 'Hello'
+'Hello, world!'[:5] evaluates to 'Hello' 'Hello, world!'[3:] evaluates to 'lo world!'
+The expressions evaluate to the following: 'Hello'.upper() evaluates to 'HELLO' 'Hello'.upper().isupper() evaluates to True 'Hello'.upper().lower() evaluates to 'hello'
+The expression 'Remember, remember, the fifth of July.'.split() evaluates to ['Remember,', 'remember,', 'the', 'fifth', 'of', 'July.'] 
+'-'.join('There can only one.'.split()) evaluates to 'There-can-only-one'
+The methods for right-justifying, left-justifying, and centering a string are rjust(), ljust(), and center(), respectively.
+To trim whitespace characters from the beginning or end of a string, you can use the lstrip() and rstrip() methods, respectively.
+The strip() method removes whitespace characters from both the beginning and end of a string.
+
+-------------------------------------------------------------------------------------------9----------------------------------------------------------------------------------------------------------
+
 9. What are the methods for right-justifying, left-justifying, and centering a string?
+
+In Python, you can right-justify, left-justify, and center a string using the following methods:
+
+str.rjust(width[, fillchar]): This method right-justifies the string in a field of specified width.
+If the string is shorter than the width, the remaining space is filled with the specified fill character (default is a space).
+Example:
+
+text = 'Hello'
+print(text.rjust(10))  # prints 'Hello     '
+print(text.rjust(10, '*'))  # prints 'Hello*****'
+
+str.ljust(width[, fillchar]): This method left-justifies the string in a field of specified width.
+If the string is shorter than the width, the remaining space is filled with the specified fill character (default is a space).
+Example:
+
+text = 'Hello'
+print(text.ljust(10))  # prints '     Hello'
+print(text.ljust(10, '*'))  # prints '*****Hello'
+
+str.center(width[, fillchar]): This method centers the string in a field of specified width. 
+If the string is shorter than the width, the remaining space is filled with the specified fill character (default is a space).
+Example:
+
+text = 'Hello'
+print(text.center(10))  # prints '   Hello   '
+print(text.center(10, '*'))  # prints '***Hello***'
+
+These methods return a new string that is at least the specified width, with the original string left-justified, right-justified,
+or centered, and the remaining space filled with the specified fill character.
+
+------------------------------------------------------------------------------------------10----------------------------------------------------------------------------------------------------
+
 10. What is the best way to remove whitespace characters from the start or end?
+
+To remove whitespace characters the start or end a string in JavaScript, you can use trimStart() 
+method to remove whitespace the start of the string and the trimEnd() to remove whitespace the end of the string. 
+Both methods return a new string, and do not modify the original string.
+
+Example:
+
+let hello = "   Hello, World!  ";
+
+// remove whitespace from the start of the string
+let trimmedHelloStart = hello.trimStart();
+console.log(trimmedHelloStart); // "Hello, World!  "
+
+// remove whitespace from the end of the string
+let trimmedHelloEnd = hello.trimEnd();
+console.log(trimmedHelloEnd); // "   Hello, World!"
+
+// remove whitespace from both the start and end of the string
+let trimmedHello = hello.trim();
+console.log(trimmedHello); // "Hello, World!"
+
+If you want to remove all whitespace characters from the string, you can use the replace() method with a regular expression as follows:
+
+let hello = "   Hello, World!  ";
+
+// remove all whitespace characters from the string
+let noWhitespace = hello.replace(/\s/g, '');
+console.log(noWhitespace); // "Hello,World!"
+
+The regular expression /\s/g matches any whitespace character, and the g flag tells the replace() method to replace all occurrences of the matched characters, not just the first one.
