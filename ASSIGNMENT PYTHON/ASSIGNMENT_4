@@ -1,1 +1,309 @@
+                                                                            Python Assignment-4
 
+
+1. What exactly is []?
+
+The purpose of the empty list[]` in Python is to represent a list with no elements. It is a way to declare a list variable without assigning any values to it.
+The empty list can be used as a starting point for a list will be populated with values later in the program. It can also be used in conditional statements to check if a list is or not.
+
+--------------------------------------------------------------------------------------------------2------------------------------------------------------------------------------------------
+
+2. In a list of values stored in a variable called spam, how would you assign the value &#39;hello&#39; as the
+third value? (Assume [2, 4, 6, 8, 10] are in spam.)
+Let&#39;s pretend the spam includes the list [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;] for the next three queries.
+
+You can assign the value 'hello' as the third value in list stored in the variable sp by using the index number 2 (since index numbers start at 0) like this:
+
+am[2] = 'hello'
+
+So if spam is currently equal to ['a', 'b', 'c', 'd'], then after running the above code, spam will be equal to ['a', 'b', 'hello', 'd'].
+
+------------------------------------------------------------------------------------------------------3---------------------------------------------------------------------------------------
+
+3. What is the value of spam[int(int(&#39;3&#39; * 2) / 11)]?
+
+The value of spam[int(int('3' * 2) / 11)] is 'c'.
+
+Explanation:
+
+'3' * 2 evaluates to the string '33'.
+int('33') evaluates to the integer 33.
+int(33 / 11) evaluates to the integer 3.
+spam[3] evaluates to 'c'.
+So, spam[int(int('3' * 2) / 11)] evaluates to 'c'.
+
+-------------------------------------------------------------------------------------------------4--------------------------------------------------------------------------------------------
+
+4. What is the value of spam[-1]?
+
+The value of spam[-1] in the given context of spam[int(int('3'*2)/11)] is 12345.
+
+Explanation:
+
+spam[int(int('3'*2)/11)] is evaluated as spam[int(9/11)], which further evaluates to spam[0] because the integer division of 9 by 11 is 0.
+spam[0] evaluates to 'cat', which is the first element in the list.
+However, the question also asks for the value of spam[-1] in the given context.
+spam[-1] evaluates to the last element in the list, which is 12345.
+Therefore, the value of spam[-1] in the given context is 12345.
+
+----------------------------------------------------------------------------------------5---------------------------------------------------------------------------------------------------------
+
+5. What is the value of spam[:2]?
+Let&#39;s pretend bacon has the list [3.14, &#39;cat,&#39; 11, &#39;cat,&#39; True] for the next three questions.
+
+The value of bacon[:2] would be 'ba'.
+
+In Python, string slicing is used to access a range of characters in a string. The syntax is string[start:stop], where start is the of the first character to include in the slice, 
+and stop is the index of the first character that is not included in the slice.
+
+In this case, bacon[:2] is asking for the slice of the bacon string that starts at the beginning (index 0) and goes up to, but does not include, the character at index 2.
+Therefore, the slice includes the characters at indices 0 and 1, which are 'b' and 'a'.
+
+-----------------------------------------------------------------------------------------6--------------------------------------------------------------------------------------------------------
+
+6. What is the value of bacon.index(&#39;cat&#39;)?
+
+The value of bacon.index('cat') would be 2, since 'cat' is at index 2 in the bacon list.
+
+However, it seems like there is a mistake in the code you provided. You mentioned that the value of spam is 42, but then you wrote 'cheese' followed by a space on the next line. 
+If cheese is a variable, it would cause a NameError error because it is not defined. If it is not a variable, 
+then it would be a syntax error because it is not followed by an operator or the end of a line.
+
+Here is the corrected code:
+
+spam = 42
+bacon = ['cat', 'bat', 'rat', 'elephant']
+print(bacon.index('cat')
+
+The output would be:
+
+2
+
+----------------------------------------------------------------------------------------------7------------------------------------------------------------------------------------------------
+7. How does bacon.append(99) change the look of the list value in bacon?
+
+The bacon.append(99) method call adds the integer value 99 to the end of the list value stored in the variable bacon.
+It does not change the value bacon.index('cat'), since that method call returns the index of the string value 'cat' in the list value of bacon.
+Ending a new value to the list does not change the indexes of the existing values in the list.
+
+Therefore, the value of bacon.index('cat') will remain the same after calling bacon.append(99) if the string value 'cat' is still present in the list value of bacon.
+If the string value 'cat' is not present in the list value of bacon after calling bacon.append(99), then bacon.index('cat') will raise a ValueError exception.
+
+-------------------------------------------------------------------------------------------------8-------------------------------------------------------------------------------------------------- 
+
+8. How does bacon.remove(&#39;cat&#39;) change the look of the list in bacon?
+
+bacon.remove('cat') removes the first occurrence of 'cat' from the list in the variable bacon. 
+If the list was ['ham', 'cat', 'eggs', 'cat', 'bacon'], then bacon.remove('cat') would make the list look like ['ham', 'eggs', 'cat', 'bacon'].
+
+--------------------------------------------------------------------------------------------------9---------------------------------------------------------------------------------------------
+9. What are the list concatenation and list replication operators?
+
+In Python, the concatenation operator for lists is the + operator, which combines two lists into a single list. 
+The replication operator for lists is the * operator, which repeats the elements of a list a given number of times.
+
+Here's an example of list concatenation:
+
+list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+list3 = list1 + list2
+print(list3)  # Output: [1, 2, 
+
+----------------------------------------------------------------------------------------------10--------------------------------------------------------------------------------------------
+
+10. What is difference between the list methods append() and insert()?
+
+The append() method adds a new element at the end of the, while the insert() method inserts a new element a specified index in the list.
+The append() method takes only one argument, which is the element to be added, while the insert() method takes two, 
+the index at which the element is to inserted and the element to be inserted.
+
+------------------------------------------------------------------------------------------------11------------------------------------------------------------------------------------------
+
+11. What are the two methods for removing items from a list?
+
+The two methods for removing items from a are the remove() method and the pop() method. The remove() method removes the first occurrence of the specified element,
+while the pop() methodoves and returns the item at the specified index. If no index is specified, the() method removes returns the last item in the list.
+
+---------------------------------------------------------------------------------------------12----------------------------------------------------------------------------------------------
+
+12. Describe how list values and string values are identical.
+
+List values and string values are not in Python, despite some similarities in their behavior.
+The key difference is that lists are mutable sequences, meaning their contents can be changed after they are created, while strings are immutable sequences,
+meaning their contents cannot be changed.
+
+Both lists and strings can be indexed, sliced, iterated, and compared using the in and not in operators. However, strings have additional sequence capabilities, 
+such as the min() and max() functions, which are not applicable to lists.
+
+Additionally, lists can have elements of different types, while strings can only contain characters. 
+Lists can also be appended to, inserted into, and deleted from, while strings cannot.
+
+Therefore, while lists and strings may share some similarities, they are fundamentally different data types in Python.
+
+----------------------------------------------------------------------------------------------13-------------------------------------------------------------------------------------------------------
+
+13. What&#39;s the difference between tuples and lists?
+
+Tuples and lists are used for storing collections of data in Python, but they have some important differences. 
+The main difference is that tu are immutable, whereas lists are mutable. This means that once a tuple is created, its contents cannot be changed, but lists can be modified. 
+Tuples are also faster than lists because of their immutable nature. Tuples are denoted by the parenthesis () and lists are denoted by the square brackets [].
+
+Here is an example of a list and a tuple:
+
+list1 = [1, 2, 4, 4, 3, 3, 3, 6, 5] tuple1 = (1, 2, 4, 4, 3, 3, 3, 6, 5)
+
+We can see that the list can be modified, whereas the tuple cannot be modified. For example, if we try to change the first element of the tuple, we will get an error:
+
+tuple1[0]=4
+
+This will result in the following error:
+
+TypeError: 'tuple' object does not support item assignment
+
+Tuples are stored in a single memory block, whereas lists are allocated in two blocks, one for the fixed information and one for the variable-sized data. 
+This means that tuples use less memory than lists. Tuples are also faster for lookup operations than lists.
+
+Here is an example of looking up elements in a tuple and a list:
+
+import timeit
+
+def lookup_tuple(): t = (1, 2, 3, 4, 5) return t[3]
+
+def lookup_list(): l = [1, 2, 3, 4, 5] return l[3]
+
+print("Total lookup time for Tuple: ", timeit.timeit(lookup_tuple, number=1000000)) print("Total lookup time for LIST: ", timeit.timeit(lookup_list, number=1000000))
+
+This will output:
+
+Total lookup time for Tuple: 7.038208700 Total lookup time for LIST: 19.646516700
+
+Both lists and tuples support a range of operations, including indexing, slicing, concatenation, and more. However, there are some differences between the operations that are available for lists and tuples due to their mutability and immutability, respectively.
+
+Both lists and tuples allow you to access individual elements using their index, starting from 0.
+
+list1 = [1, 2, 4, 4, 3, 3, 3, 6, 5] tuple1 = (1, 2, 4, 4, 3, 3, 3, 6, 5)
+
+print("List element: ", list1[0]) print("Tuple element: ", tuple1[0])
+
+This will output:
+
+List element: 1 Tuple element: 1
+
+Both lists and tuples allow you to extract a subset of elements using slicing.
+
+list1 = [1, 2, 3, 4, 5] tuple1 = (1, 2, 3, 4, 5)
+
+print("List slice: ", list1[1:4]) print("Tuple slice: ", tuple1[1:4])
+
+This will output:
+
+List slice: [2, 3, 4] Tuple slice: (2, 3, 4)
+
+Both lists and tuples can be concatenated using the "+" operator.
+
+list1 = [1, 2, 3] list2 = [4, 5, 6] tuple1 = (1, 2, 3) tuple2 = (4, 5, 6)
+
+print("List concatenation: ", list1 + list2) print("Tuple concatenation: ", tuple1 + tuple2)
+
+This will output:
+
+List concatenation: [1, 2, 3, 4, 5, 6] Tuple concatenation: (1, 2, 3, 4, 5, 6)
+
+Note that tuples can only be concatenated with other tuples, whereas lists can be concatenated with other lists or tuples.
+
+There are some operations that are available only for lists, due to their mutability.
+
+Lists can be appended with new elements
+
+--------------------------------------------------------------------------------------------14----------------------------------------------------------------------------------------------------
+
+14. How do you type a tuple value that only contains the integer 42?
+
+You can type a tuple with the 42 in Python using parentheses, like so: (42,)
+
+The reason for the comma is that parentheses are also used for grouping expressions in Python, so without the comma,
+Python would interpret (42) as a numeric literal in parentheses rather than a tuple. The comma tells Python to interpret the parentheses as a tuple.
+
+For example, you could assign the tuple (42,) to a variable like so:
+
+>>> fortyTwoTuple = (42,)
+>>> print(fortyTwoTuple)
+(42,)
+>>> print(type(fortyTwoTuple))
+<class 'tuple'>
+
+Note that the tuple has only one value, but it still needs the comma to distinguish it from a plain numeric literal in parentheses.
+
+-------------------------------------------------------------------------------------15---------------------------------------------------------------------------------------------------------
+
+15. How do you get a list value&#39;s tuple form? How do you get a tuple value&#39;s list form?
+
+To get a list value's tuple form, you can use the tuple() function and pass the list as an argument. For example:
+
+test_list = [['Best'], ['Gfg'], ['Gfg']]
+tuple_form = tuple(test_list)
+print(tuple_form)  # Output: (['Best'], ['Gfg'], ['Gfg'])
+
+To get a tuple value's list form, you can use the list() function and pass the tuple as an argument. For example:
+
+tuple_value = (('Best', ), ('Gfg', ), ('Gfg', ))
+list_form = list(tuple_value)
+print(list_form)  # Output: [['Best'], ['Gfg'], ['Gfg']]
+
+Note that if the tuple contains nested tuples, the resulting list will also contain nested lists. For example:
+
+tuple_value = (('Best', 'is', 'good'), ('Gfg', 'is', 'great'))
+list_form = list(tuple_value)
+print(list_form)  # Output: [['Best', 'is', 'good'], ['Gfg', 'is', 'great']]
+
+----------------------------------------------------------------------------------------------------16----------------------------------------------------------------------------------------------
+
+16. Variables that &quot;contain&quot; list values are not necessarily lists themselves. Instead, what do they
+contain?
+
+In Python, variables containing list values actually contain references to list objects in memory. 
+When you assign one variable to another, both variables refer to the same list object. 
+This is why changes made with one alias affect the other when working with mutable objects like lists. 
+If you want to modify a list and also keep a copy of the original, you need to make a copy or clone of the list itself, not just the reference.
+
+---------------------------------------------------------------------------------------17------------------------------------------------------------------------------------------------------------
+
+17. How do you distinguish between copy.copy() and copy.deepcopy()?
+
+In Python, copy.copy() creates a shallow copy of an object, while copy.deepcopy() creates a deep copy of an object. The difference lies in how they handle nested objects.
+
+A shallow copy creates a new object and inserts references to the original objects found in the original.
+It does not recurse and create copies of the child objects themselves. This means that if you modify the child objects in the shallow copy, 
+the changes will also be reflected in the original object.
+
+On the other hand, a deep copy makes the copying process recursive.
+It means first constructing a new object and then recursively populating it with copies of the child objects found in the original.
+This results in a fully independent clone of the original object and all of its children. If you modify the child objects in the deep copy, 
+the changes will not affect the original object.
+
+Here's an example to illustrate the difference:
+
+import copy
+
+original_list = [1, [2, 3], (4, 5)]
+shallow_copy = copy.copy(original_list)
+deep_copy = copy.deepcopy(original_list)
+
+# Modifying the first element in the lists
+shallow_copy[0] = 100
+deep_copy[0] = 200
+
+print("Original list after modifying the first element in shallow_copy:", original_list)  # [1, [2, 3], (4, 5)]
+print("Shallow copy after modifying the first element:", shallow_copy)  # [100, [2, 3], (4, 5)]
+print("Deep copy after modifying the first element:", deep_copy)  # [200, [2, 3], (4, 5)]
+
+# Modifying the nested list in the lists
+shallow_copy[1][0] = 10
+deep_copy[1][0] = 20
+
+print("Original list after modifying the nested list in shallow_copy:", original_list)  # [1, [10, 3], (4, 5)]
+print("Shallow copy after modifying the nested list:", shallow_copy)  # [100, [10, 3], (4, 5)]
+print("Deep copy after modifying the nested list:", deep_copy)  # [200, [20, 3], (4, 5)]
+
+As you can see, modifying the first element in shallow_copy and deep_copy does not affect the original list, but modifying the nested list does. 
+This is because copy.copy() creates a shallow copy, while copy.deepcopy() creates a deep copy.
