@@ -1,0 +1,67 @@
+                                                                           Python Assignment-9
+
+1. To what does a relative path refer?
+
+A relative path refers to a location that is relative to a current directory. It makes use of special symbols such as a dot (.) and a double dot (..),
+which translate into the current directory and the parent directory, respectively. Double dots are used for moving up in the hierarchy, while a single dot represents the current directory. 
+A relative path cannot span disk drives,meaning that if the root directory is on one drive, you cannot use relative paths to navigate to a directory on another drive.
+
+-----------------------------------------------------------------------------------2----------------------------------------------------------------------------------------------------------------
+
+2. What does an absolute path start with your operating system?
+
+In a given operating system, an absolute path starts with the root directory which is represented by a forward slash (/). 
+The root directory is the-level directory of file system, and absolute paths always start with the root and provide the full path to file or directory.
+Example, the absolute path to the home directory of a user named "waas" would be "/home/waqas".
+
+--------------------------------------------------------------------------------------3--------------------------------------------------------------------------------------------------------------
+
+3. What do the functions os.getcwd() and os.chdir() do?
+
+The function os.getcwd() returns the current working directory the Python interpreter in your operating system, 
+while the function os.chdir()changes the current working directory the path specified as its argument. 
+These functions are part of the os module in Python, which provides a portable way of using operating system dependent functionality.
+
+-----------------------------------------------------------------------------------------4-----------------------------------------------------------------------------------------------------------
+
+4. What are the . and .. folders?
+
+The '.' folder represents the current directory, while the '..' folder represents the parent directory in a file system.
+They are useful shortcuts for navigating the file hierarchy and are often used in relative path specifications.
+
+------------------------------------------------------------------------------------------5------------------------------------------------------------------------------------------------------------
+
+5. In C:\bacon\eggs\spam.txt, which part is the dir name, and which part is the base name?
+
+C:\bacon\eggs is the directory name, and spam.txt is the base name.
+
+-----------------------------------------------------------------------------------------------6---------------------------------------------------------------------------------------------------
+
+6. What are the three “mode” arguments that can be passed to the open() function?
+
+The three "mode" arguments that can be passed to the open() function arer" for reading, "w" for writing, and "a" for appending.
+
+----------------------------------------------------------------------------------------------7----------------------------------------------------------------------------------------------------
+
+7. What happens if an existing file is opened in write mode?
+
+If an existing file is opened write mode ("w"), any existing content in the file will be truncated (cleared), and new data can be written to the.
+This behavior can be a problem if you want to preserve the existing content of the file, as it will be deleted immediately upon opening the file in write mode. 
+To avoid overwriting existing files, you can use the "a" (append) mode instead, which adds new data to the end of the file without deleting any existing content. 
+Alternatively, you can use the "x" (exclusive create) mode, which creates a new file only if it doesn't already exist, and returns an error if the file does exist.
+
+-------------------------------------------------------------------------------------8------------------------------------------------------------------------------------------------------------
+
+8. How do you tell the difference between read() and readlines()?
+
+When opening an existing file in write ("w") using the open() function both the read() and readlines() methods will not be available, as they are used for reading from a file, 
+not writing. Instead, you can use the write() or writelines() methods to write data to the file. you attempt to use read() or readlines() on a file opened in write mode, 
+you will get an "io.UnsupportedOperation: not readable" error. It's important to note that opening a file in write mode will truncate (empty) the file, 
+so use caution when opening existing files in this mode.
+
+-------------------------------------------------------------------------------------9--------------------------------------------------------------------------------------------------------------
+
+
+9. What data structure does a shelf value resemble?
+
+A shelf value resembles a dictionary; it has keys and values, along with keys() and values() methods work similarly to the dictionary methods of the same.
