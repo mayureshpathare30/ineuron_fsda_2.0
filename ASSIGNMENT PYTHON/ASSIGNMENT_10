@@ -1,0 +1,59 @@
+                                                                               Python Assignment-10
+
+
+1. How do you distinguish between shutil.copy() and shutil.copytree()?
+
+shutil.copy() is used to copy a single file to a new location, while shutil.copytree() is used to copy an entire directory tree 
+(with all its contents, including subdirectories and files) to a new location In other words, shutil.copy() used for copying files, and shutil.copytree() is used for copying directories.
+
+----------------------------------------------------------------------------------------2----------------------------------------------------------------------------------------------------------
+
+2. What function is used to rename files??
+
+The os.rename() function is used toname files in Python It takes two arguments: the current name of the file or directory and the new name. 
+The syntax is os.rename(current_file_name, new_file_). It should be noted that theos.rename()` function only works with files and folders in the same directory.
+If you want to rename a file or directory in another directory, include the entire path to the file or directory in both the current and new file name parameters.
+
+-------------------------------------------------------------------------------------------3----------------------------------------------------------------------------------------------------------
+
+3. What is the difference between the delete functions in the send2trash and shutil modules?
+
+The send2trash module's send2trash() function is used to delete files and folders by sending them to the trash
+or recycle bin, while the shutil module's rmtree() function is used to delete folders and their contents irreversibly. 
+The main difference is that send2trash allows for the deleted files and folders to be from the trash, while shutil's rmtree() permanently deletes them.
+
+-------------------------------------------------------------------------------------------4-------------------------------------------------------------------------------------------------------
+4.ZipFile objects have a close() method just like File objects’ close() method. What ZipFile method is
+equivalent to File objects’ open() method?
+
+The close() method for ZipFile objects equivalent to the close() method for File objects' open() method. 
+Both are used to close the file or archive after opening it to ensure that all changes are saved and that the file or archive is properly closed.
+
+---------------------------------------------------------------------------------------------5-------------------------------------------------------------------------------------------------------
+
+5. Create a programme that searches a folder tree for files with a certain file extension (such as .pdf
+or .jpg). Copy these files from whatever location they are in to a new folder.
+
+import os
+import shutil
+
+def copy_files(folder_path, file_extension, new_folder_path):
+    if not os.path.exists(new_folder_path):
+        os.makedirs(new_folder_path)
+
+    for root, dirs, files in os.walk(folder_path):
+        for file in files:
+            if file.endswith(file_extension):
+                file_path = os.path.join(root, file)
+                shutil.copy(file_path, new_folder_path)
+
+# Usage:
+copy_files("path/to/your/folder", ".pdf", "path/to/your/new/folder")
+
+In this program, we define a function copy_files that takes three parameters: folder_path, file_extension, and new_folder_path. 
+This function will walk through the folder_path directory tree, and for each file that ends with the specified file_extension, it will copy the file to the new_folder_path.
+
+If the new_folder_path does not exist, the program will create it.
+
+You can call this function with the path to your folder, the file extension you want to search for, and the path to the new folder where you want to copy the files. 
+For example, copy_files("path/to/your/folder", ".pdf", "path/to/your/new/folder") will copy all .pdf files from "path/to/your/folder" and its subfolders to "path/to/your/new/folder".
