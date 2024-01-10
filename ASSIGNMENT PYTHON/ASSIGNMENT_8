@@ -1,0 +1,70 @@
+                                                                            Python Assignment-8
+
+1. Is the Python Standard Library included with PyInputPlus?
+
+No, PyInputPlus is not part of the Python Standard Library and must be installed separately using pip.
+
+----------------------------------------------------------------------------------2--------------------------------------------------------------------------------------------------------------
+2. Why is PyInputPlus commonly imported with import pyinputplus as pypi?
+
+You can import the module with import pyinputplus as pyip so that you can enter a shorter name when calling the module’s functions.
+This is a common practice in Python to make the code more concise and easier to.
+
+------------------------------------------------------------------------------------3--------------------------------------------------------------------------------------------------------------
+
+3. How do you distinguish between inputInt() and inputFloat()?
+
+In PyInputPlus, inputInt() only accepts integer values, while inputFloat() accepts floating-point numbers. 
+Both functions reject strings and floating-point numbers in the case of inputInt().
+
+------------------------------------------------------------------------------------4--------------------------------------------------------------------------------------------------------------
+
+4. Using PyInputPlus, how do you ensure that the user enters a whole number between 0 and 99?
+
+You can ensure that the user enters a whole number between 0 and 99 using PyInputPlus by using the inputInt() function with the min and max keyword arguments set to 0 and 99, respectively. 
+Here's an example:
+
+import pyinputplus as pyip
+
+number = pyip.inputInt(min=0, max=99)
+
+This will prompt the user to enter a number, and if they enter something that is not a whole number between 0 and 99, 
+it will display an error message and prompt them again until they enter a valid number.
+
+-------------------------------------------------------------------------------------5---------------------------------------------------------------------------------------------------------------
+
+5. What is transferred to the keyword arguments allowRegexes and blockRegexes?
+
+When using PyInputPlus to ensure a user enters a whole number between 0 and 99, you can pass the 'allowRegexes' keyword argument with a regex string that only allows whole numbers between 0 99.
+Here's an example:
+
+import pyinputplus asip
+
+number = pyip.inputInt(allowRegexes=[r'[0-9]{1,2}'])
+
+In this example, the regex string [0-9]{1,2} only allows one or two digits, which limits the input to whole numbers between 0 and 99.
+
+If you also want to block certain inputs, you can use the 'blockRegexes' keyword argument. For example, to block negative numbers, you can do:
+
+import pyinputplus as pyip
+
+number = pyip.inputInt(allowRegexes=[r'[0-9]{1,2}'], blockRegexes=[r'-'])
+
+In this example, the regex string - blocks any input that contains a negative sign.
+
+------------------------------------------------------------------------------------6--------------------------------------------------------------------------------------------------------------
+
+6. If a blank input is entered three times, what does inputStr(limit=3) do?
+
+If a blank input is entered times, the inputStr(limit=3) function will raise a RetryLimitException, as the limit for the number of attempts to receive valid input has been exceeded.
+By default, the PyInputPlus functions will continue to ask the user for valid input forever, or for as long as the program runs,
+but the limit keyword argument can be used to determine how many attempts a PyInputPlus function will make to receive valid input before giving up. 
+If the user fails to enter valid input, this keyword argument will cause the function to raise a RetryLimitException.
+
+-------------------------------------------------------------------------------------7----------------------------------------------------------------------------------------------------------
+
+7. If blank input is entered three times, what does inputStr(limit=3, default='hello') do?
+
+If blank input is entered three times for inputStr(limit=3, default='hello'), it will return the default value 'hello'.
+The limit keyword argument determines the maximum number of times the function will prompt the user for input, and in this case, it is set to 3. 
+If the user does not enter any input within the limit, the function will return the default value.
