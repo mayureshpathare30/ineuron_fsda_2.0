@@ -1,1 +1,207 @@
+                                                                          Python Assignmenet-3
+
+
+1. Why are functions advantageous to have in your programs?
+
+Sources: quizlet.com (1) coursehero.com (2) analyticsvidhya.com (3) studocu.com (4)
+
+Functions are advantageous to have in your programs for several reasons:
+
+Modularity: Functions allow you to break down your program into smaller, more manageable pieces making it easier to understand and maintain.
+Reusability: By defining a function, you reuse the same code multiple times in your program, reducing redundancy and increasing efficiency.
+Abstraction: Functions allow you to hide the implementation details of a particular task and expose only the necessary inputs and outputs.
+This makes your code easier to read and reason about.
+Separation of Concerns: Functions help you to focus on one task at a time, making your code more organized and easier to debug.
+Code Readability: Functions make your code more readable by giving names to specific tasks, making it easier for others (and yourself) to understand what the code is doing.
+Easier Testing and Debugging: Functions make it easier to test and debug your code since you can test each function independently and isolate any issues that arise.
+In summary, functions are essential for writing clean, efficient, and maintainable code. They help you to break down complex tasks into smaller, more manageable pieces, 
+making your code easier to understand, test, and debug.
+
+------------------------------------------------------------------------------------------2----------------------------------------------------------------------------------------------------------
+
+2. When does the code in a function run: when it&#39;s specified or when it&#39;s called?
+
+In Python, when a function is defined, the code within the function is not executed. The code is executed only when the function is called.
+
+For example, in the code below:
+
+def my_function():
+    print("Function is running.")
+
+When my_function is defined, nothing is printed because the code inside the function is not executed. 
+The code inside the function will be executed only when my_function is called, like this:
+
+my_function()
+
+Now, when my_function is called, "Function is running." is printed because the code inside the function is executed.
+
+------------------------------------------------------------------------------------------------3-------------------------------------------------------------------------------------------------------
+
+3. What statement creates a function?
+
+In Processing, a function is created using the function keyword followed by the return type, function name, and parameters (if any) in parentheses,
+and the code that should run when the function is called curly brackets. For example:
+
+void drawRedCircle(float circleX, float circleY, float circleDiameter) {
+  fill(255, 0, 0);
+  ellipse(circleX, circleY, circleDiameter, circleDiameter);
+}
+
+This creates a function called drawRedCircle that takes three parameters and changes the fill color to red and draws a circle using those parameters.
+To call this function, you would use its name and give it parameters, exactly like you've been calling other functions:
+
+drawRedCircle(100, 200, 50);
+
+This allows you to treat a task that takes multiple steps (like changing the fill color to red and drawing a circle) as a single step. 
+This will become very useful as your code gets more complicated!
+
+------------------------------------------------------------------------------------------4-------------------------------------------------------------------------------------------------
+
+4. What is the difference between a function and a function call?
+
+In programming, a function is a sequence of instructions that performs a specific task, a function call is the action of invoking or executing that function from within a program.
+A function is a named unit of code that can be reused throughout a program, while a function call is the actual use of that function,
+typically passing in some arguments or parameters and receiving a return value.
+In other words, a function defines what a piece of code should do, while a function call is the action of executing that code with specific inputs.
+
+-------------------------------------------------------------------------------------------5------------------------------------------------------------------------------------------------------
+
+5. How many global scopes are there in a Python program? How many local scopes?
+
+In a Python program, there is only one global scope, which is the names defined in the main body of the program.
+scopes, on the other hand, are created for each function definition, so the number of local scopes depends on the number of functions defined in the program.
+
+----------------------------------------------------------------------------------------------6--------------------------------------------------------------------------------------------------
+
+6. What happens to variables in a local scope when the function call returns?
+
+When a function call returns, local scope associated with that function call is destroyed and the names (variables) in that local scope are forgotten.
+This means that you cannot access the local variables of a function from outside the function, as they only exist during the execution of the.
+
+-----------------------------------------------------------------------------------------7------------------------------------------------------------------------------------------------------
+
+7. What is the concept of a return value? Is it possible to have a return value in an expression?
+
+A return value is the result that a function sends back to the caller code when it finishes its execution. 
+A return value can be any Python object, including numbers, strings, lists, dictionaries, functions, classes, and even modules or packages.
+
+In Python, a return value is not an expression. A return value is the result of evaluating an expression or a series of expressions.
+For example, in the following function, the return value is the result of evaluating the expression x + y:
+
+def add(x, y):
+    return x + y
+
+In this case, the function returns the sum of x and y. The return value is not an expression itself, but the result of evaluating an expression.
+
+In Python, you can’t have a return value in an expression. You can only have expressions in return statements. 
+A return statement is a special kind of statement that you can use inside a function or method definition to send the function’s result back to the caller code. 
+A return statement consists of the return keyword followed by an optional return value.
+
+For example, in the following function, the return value is the result of evaluating the list comprehension expression [num for num in numbers if not num % 2]:
+
+def get_even(numbers):
+    return [num for num in numbers if not num % 2]
+
+In this case, the function returns a list containing only the even numbers in the original list. The return value is the result of evaluating the list comprehension expression,
+which is not an expression itself.
+
+----------------------------------------------------------------------------------------------8-----------------------------------------------------------------------------------------------
+
+8. If a function does not have a return statement, what is the return value of a call to that function?
+
+If a function does not a return statement, return value of a call to that function is or implementation-defined, depending on the programming language.
+
+In some languages like C and C++, if a function with a non-void return type does not have a return, the behavior is undefined.
+This means that the program may crash, produce incorrect results, or appear to work correctly, depending on various factors such as the compiler, the platform, and the input data.
+
+In other languages like Python, if a function with a non-void return type does not have a return statement,
+the function returns a special value called "None" (or "nil" in some other languages). 
+This value can be explicitly returned using a return statement with no expression, or it can be implicitly returned if the function ends without encountering a return statement.
+
+In any case, it is generally considered good practice to include a return statement in a function with a non-void return type,
+to make the function's behavior more predictable and easier to understand.
+
+----------------------------------------------------------------------------------------------9------------------------------------------------------------------------------------------------
+
+9. How do you make a function variable refer to the global variable?
+
+To make a function variable refer to the variable when the function does not have a return, you can use the global keyword to declare you want to refer the global variable inside the function. Here's an example:
+
+`python a = 10
+
+def modify_global(): global a a = 20
+
+modify_global() print(a) # Output: 20
+
+In this example, the function `modify_global` modifies the global variable `a` by using the `global` keyword to declare that it wants to refer to the global variable. 
+After calling the function, the global variable `a` is updated to 20.
+
+--------------------------------------------------------------------------------------------------10---------------------------------------------------------------------------------------------
+
+10. What is the data type of None?
+
+When a function does not have a return statement, its return value is undefined. However, if the function has a return type other than void, 
+the compiler will typically issue a warning. If the function has a void return type, then there is no return value and the behavior is well-defined.
+
+----------------------------------------------------------------------------------------------------11--------------------------------------------------------------------------------------
+
+11. What does the sentence import areallyourpetsnamederic do?
+
+The data type of the return value of a function without a return statement in Python is None.
+
+---------------------------------------------------------------------------------------------------12-------------------------------------------------------------------------------------------
+
+12. If you had a bacon() feature in a spam module, what would you call it after importing spam?
+
+To call the bacon() function from the spam module after importing it, you would use the following syntax:
+
+import spam
+spam.bacon()
+
+This will import the spam module and the bacon() function inside it.
+
+Extra credit: The round() function is to round a number a specified number of places. The syntax for the round() function is:
+
+round(number, ndigits)
+
+where number is the number to be rounded and ndigits is the number of decimal places to round to.
+
+The abs() function is used to return the absolute value of a number. The syntax for the abs() function is:
+
+abs(number)
+
+where number is the number to find the absolute value of.
+
+You can experiment with these functions in the Python interactive shell by entering the function name followed by the required parameters. For example:
+
+>>> round(3.14159, 2)
+3.14
+>>> abs(-5)
+5
+In this example, the round() function rounds the number 3.14159 to 2 decimal places and returns 3.14. The abs() function finds the absolute value of -5 and returns 5.
+
+-------------------------------------------------------------------------------------------13-----------------------------------------------------------------------------------------------
+
+13. What can you do to save a programme from crashing if it encounters an error?
+
+To prevent a program from crashing the event of an error in Python, you can try-except blocks to handle exceptions. 
+Here's an example of how you can use a try-except block handle a potential error when using the 'bacon' feature from the 'spam' module:
+
+try:
+    import spam
+    result = spam.bacon()
+except ModuleNotFoundError:
+    print("The 'spam' module is not installed.")
+except Exception as e:
+
+---------------------------------------------------------------------------------------------14---------------------------------------------------------------------------------------------------
+
+14. What is the purpose of the try clause? What is the purpose of the except clause?
+
+The purpose of the try clause is to contain code that may raise an exception.
+If an exception occurs during the execution of the try clause, the except clause is executed to handle the exception. 
+The except clause specifies the type of exception to catch and the code to execute in response to the exception.
+If an exception is raised that is not caught by an except clause, the program will terminate with an error message.
+
+
 
