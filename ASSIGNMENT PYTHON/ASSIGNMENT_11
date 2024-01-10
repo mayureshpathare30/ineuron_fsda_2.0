@@ -1,1 +1,167 @@
+                                                                           Python Assignment-11
 
+
+1. Create an assert statement that throws an AssertionError if the variable spam is a negative
+integer.
+
+To create an assert statement that throws an AssertionError if the variable spam is a negative integer, you can use the following code:
+
+spam = -10
+assert spam >= 0, "spam is a negative integer"
+
+In this code, spam is a variable that we want to check. The assert statement is used to check if a condition is true. 
+If the condition is true, the program continues running normally. However, if the condition is false, an AssertionError is raised with the specified error message.
+
+In this case, the condition is spam >= 0, which checks if the variable spam is a non-negative integer. 
+If spam is a negative integer, the AssertionError is raised with the error message "spam is a negative integer".
+
+---------------------------------------------------------------------------------------------2---------------------------------------------------------------------------------------------------
+
+2. Write an assert statement that triggers an AssertionError if the variables eggs and bacon contain strings that are the same as each other,
+even if their cases are different (that is, 'hello' and 'hello' are considered the same, and 'goodbye' and 'GOODbye' are also considered the same).
+
+ This by using the following code:
+
+eggs = 'hello'
+bacon = 'hello'
+
+assert eggs.lower() != bacon.lower(), "eggs and bacon contain the same string even if their cases are different"
+
+In this code, we first convert the strings eggs and bacon to lowercase using the lower() method. Then, we use the assert statement to check if eggs and bacon are not the same.
+If they are the same, an AssertionError is raised with the specified error message.
+
+------------------------------------------------------------------------------------------------3---------------------------------------------------------------------------------------------------
+
+3. Create an assert statement that throws an AssertionError every time.
+
+To create an assert statement that throws an AssertionError every time, you can use the following code:
+
+assert False, "This is the message displayed when the assertion fails."
+
+In this code, False is the condition that the assert statement checks. If the condition is False, an AssertionError is raised.
+The string "This is the message displayed when the assertion fails." is the error message that will be displayed when the assertion fails.
+
+-------------------------------------------------------------------------------------------------4---------------------------------------------------------------------------------------------
+
+4. What are the two lines that must be present in your software in order to call logging.debug()?
+
+import logging
+
+import logging
+
+This line imports the logging module. This module is part of the Python standard library and provides functions for emitting log messages from your code.
+
+logging.basicConfig(level=logging.DEBUG)
+
+This line sets up the basic configuration for the logging module. The basicConfig() function is a convenience function for simple logging configurations. 
+It creates a StreamHandler that writes messages to stdout, sets the handler level to DEBUG, and adds the handler to the root logger.
+
+In addition to these two lines, you can add log messages to your code using the logging.debug() function. 
+This function writes a message to the logging system at the DEBUG level. The message will only be shown if the logging level of the logger is set to DEBUG or a lower level.
+
+For example:
+
+logging.debug("This is a debug message.")
+
+This code will write the message "This is a debug message." to the logging system at the DEBUG level.
+
+-------------------------------------------------------------------------------------------5-------------------------------------------------------------------------------------------------------
+
+5. What are the two lines that your program must have in order to have logging.debug() send a
+logging message to a file named programLog.txt?
+
+In order to have logging.debug() send a message to a file programLog.txt, the following two lines must be included in the program:
+
+import logging
+logging.basicConfig(='programLog.txt level=logging.DEBUG, format='(asctime)s - %(levelname)s - %(message)s')
+
+The first line imports the logging module, while the second line configures the logging to write messages with a level of DEBUG or higher to a file named programLog.txt. 
+The format parameter specifies the format of each log message.
+
+------------------------------------------------------------------------------------------------6----------------------------------------------------------------------------------------------
+
+6. What are the five levels of logging?
+
+The five common levels of logging are FATAL, ERROR, WARN, INFO, and DEBUG. These levels indicate the severity or urgency of events in an application, 
+with FATAL being the most severe and DEBUG being the least severe. 
+These levels provide a way to regulate the amount of log data generated by an application and help in efficient log management.
+
+------------------------------------------------------------------------------------------7----------------------------------------------------------------------------------------------------
+
+7. What line of code would you add to your software to disable all logging messages?
+
+To disable all logging messages in your software, you can set the logging level to a level that is higher than the highest logging level, which is CRITICAL. 
+The numeric value of CRITICAL is 50, so you can set the logging level to 60 or higher to disable all logging messages. Here is an example of how to do this in Python:
+
+import logging
+logging.getLogger().setLevel(logging.CRITICAL + 10)
+
+This sets the logging level for the root logger to 60, which will disable all logging messages. If you have other loggers in your software,
+you may need to set the logging level for those loggers as well. 
+You can do this using the getLogger() function to get a reference to the logger and then calling the setLevel() method on that logger.
+For example:
+
+import logging
+logger = logging.getLogger('my_logger')
+logger.setLevel(logging.CRITICAL + 10)
+
+This sets the logging level for the logger named my_logger to 60, which will disable all logging messages for that logger.
+
+Note that setting the logging level to a high value like this will not only disable logging messages, 
+but it will also prevent your software from handling any logging events at lower levels. 
+This may not be what you want, so you should use this approach with caution.
+If you only want to disable logging messages, but still want your software to handle logging events at lower levels, you can use a different approach,
+such as filtering the logging messages or using a custom formatter to exclude certain messages from the log.
+
+--------------------------------------------------------------------------------------------------8--------------------------------------------------------------------------------------------------
+
+8.Why is using logging messages better than using print() to display the same message?
+
+Using logging messages is better than using print() to display the same message for several reasons:
+
+Flexibility in output destinations: Logging can output messages to various destinations, such as the console, files, and networks, while print() only outputs to the console.
+Log levels and filtering: Logging provides features like log levels (e.g., debug, info, warning, error, critical) and filtering, which allow you to control the importance 
+and visibility of messages. Print() does not offer these features.
+Configurability: The logging module is highly configurable, allowing you to set up formats, handlers, and destinations for specific types of logs.
+This makes it easier to manage logging behavior in different deployment environments.
+Contextual information: Logging can automatically include contextual information, such as timestamps, module names, function names, line numbers, 
+and thread information, which can be helpful for debugging and understanding issues. Print() does not provide this context by default.
+Best practice for production code: Logging is a best practice for production code, as it offers more control, structure, and flexibility than print() statements.
+In summary, logging provides more advanced features and better organization compared to print(), making it a preferred choice for displaying messages in Python,
+especially in production code.
+
+---------------------------------------------------------------------------------------------9---------------------------------------------------------------------------------------------------
+
+9. What are the differences between the Step Over, Step In, and Step Out buttons in the debugger?
+
+In a debugger, theStep Over," "Step In," and "Step Out" are used to control the execution of your code during the debugging process. Here's a simple explanation of each:
+
+Step Over: When you choose to "Step Over," the debugger will execute the current line of code and pause on the next line, 
+without entering any function calls that might be present on the current line.
+It's useful when you don't want to go into the details of a function call and just want to execute it as a single step.
+
+Step In: When you choose to "Step In," the debugger will enter the code of the current line if it is a function call.
+The debugger will pause the program’s execution at the first line of the called function, allowing you to examine the code inside that function. 
+It's useful when you want to go into the details of a function call and debug it line by line.
+
+Step Out: When you choose to "Step Out," the debugger will continue the program’s execution until it exits the current function. 
+It allows you to skip the remaining lines of the current function and return to the caller’s context.
+It's useful when you've stepped into a function call and want to return to the previous context after examining the necessary details.
+
+By understanding these fundamental actions, you can effectively use a debugger to find and fix issues in your code.
+
+------------------------------------------------------------------------------------------------------10-------------------------------------------------------------------------------------
+10.After you click Continue, when will the debugger stop ?
+
+The debugger will stop after Continue is if there is another breakpoint or a signal that is set to stop the program.
+Additionally, the Continue command may stop the program if there is an asynchronous function call that is being waited for, depending on the behavior of the "Step into" command.
+
+-----------------------------------------------------------------------------------------------------11----------------------------------------------------------------------------------------
+
+11. What is the concept of a breakpoint?
+
+A breakpoint is a point in the processing of a program where the programmer wants to observe more closely by stopping the program and examining the contents of variables, 
+buffers, and memory. It is a conceptual "point" in a program at which the debugger is instructed to stop the program and return control to the programmer.
+Breakpoints can be set at specific lines of code, exact memory addresses, or using explicit key/value pairs.
+In multi-threaded programs, breakpoints can also be limited to specific threads. Breakpoints can be set to stop only when certain conditions are met, 
+such as when a variable evaluates to a specific value.
