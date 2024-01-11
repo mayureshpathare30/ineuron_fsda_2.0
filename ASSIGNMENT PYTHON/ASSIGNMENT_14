@@ -1,0 +1,192 @@
+                                                                                 Python Assignment-14
+
+
+1. What does RGBA stand for?
+
+RGBA stands for Red, Green, Blue, Alpha. It is a color model used in CSS to define a color along with its opacity. 
+The "alpha" channel specifies the opacity of the color, with a value of 0 fully transparent and a value of 1 being fully opaque.
+RGB values specify the intensity of the red, green, and blue colors, with each value ranging from 0 to 255 or from 0% to 100%. 
+The RGBA color model is an extension of the RGB color model, which only specifies the color without any transparency.
+
+---------------------------------------------------------------------------------------------2-------------------------------------------------------------------------------------------------
+
+2. From the Pillow module, how do you get the RGBA value of any images?
+
+To get the RGBA values of an image using the Pillow library in Python, you can use the getdata() method on an image object that has been converted to the "RGBA" mode.
+Here's an example:
+
+from PIL import Image
+
+# Open an image file
+img = Image.open('image.png')
+
+# Convert the image to RGBA mode
+rgba_img = img.convert('RGBA')
+
+# Get the RGBA values as a list of tuples
+rgba_values = rgba_img.getdata()
+
+# Print the first 10 RGBA values
+for i in range(10):
+    print(rgba_values[i])
+
+This will print the first 10 RGBA values of the image as tuples in the format (R, G, B, A). Note that `
+
+------------------------------------------------------------------------------------------------3--------------------------------------------------------------------------------------------
+
+3. What is a box tuple, and how does it work?
+
+A box tuple is a4-element tuple used in the Pillow to define a rectangular region within an image.
+The elements of the tuple represent the left, upper, right, and lower pixel coordinates of the rectangle, 
+in that order. The rectangle includes the left column and upper row of pixels and goes up to (but doesn't include) the right column and bottom row of pixels.
+The box tuple is used in the crop() method to extract a rectangular region from an image and return a new Image object containing only the selected region.
+
+--------------------------------------------------------------------------------------------------4----------------------------------------------------------------------------------------------
+
+4. Use your image and load in notebook then, How can you find out the width and height of an
+Image object?
+
+In a Jupyter notebook, you can display the width and height of a Pillow Image object by converting the Image object to a Pillow Image object with the "RGB" mode 
+and then using the shape attribute of the resulting numpy array.
+Here's an example:
+
+from PIL import Image
+import numpy as np
+
+# Open an image file
+img = Image.open('image_file.jpg')
+
+# Convert the Image object to an RGB Image object
+rgb_img = img.convert('RGB')
+
+# Get the width and height from the shape attribute of the numpy array
+width, height = rgb_img.size
+print(f'Width: {width}, Height: {height}')
+
+This will print out the width and height of the image in pixels.
+
+------------------------------------------------------------------------------------------5-----------------------------------------------------------------------------------------------------------
+
+5. What method would you call to get Image object for a 100×100 image, excluding the lower-left
+quarter of it?
+
+To get an Image object for a 100×100 image, excluding the lower-left quarter of it, you can use the crop() method to remove the lower-left quarter of the image.
+Here's how you can do it:
+
+from PIL import Image
+# Open the image
+im = Image.open('image.png')
+
+# Calculate the coordinates for the crop
+width, height = im.size
+left = 0
+top = height // 2
+right = width
+bottom = height // 2
+
+# Crop the image
+im_cropped = im.crop((left, top, right, bottom))
+
+# Resize the cropped image to 100x100
+im_cropped = im_cropped.resize((100, 100))
+
+# Save the cropped image
+im_cropped.save('cropped_image.png')
+
+In this example, the crop() method takes a tuple of four integers representing the left, upper, right, and lower pixel coordinates of the crop box. 
+The crop box is defined by the top-left corner (left, top) and the bottom-right corner (right, bottom). 
+Here, we calculate the coordinates to exclude the lower-left quarter of the image, then crop and resize the image to 100x100 pixels.
+
+----------------------------------------------------------------------------------------6--------------------------------------------------------------------------------------------------
+
+6. After making changes to an Image object, how could you save it as an image file?
+
+Sources: automatetheboringstuff.com (1) realpython.com (2) oreilly.com (3) geeksforgeeks.org (4)
+
+To save an Image object as an image file,uding the lower-left quarter of it, you would first need to create a new Image object that is a copy of the original,
+but with the lower-left quarter removed. You can do this by slicing to extract the desired region from the original Image 
+object and then using the save() method to save new Image object to a file.
+
+Here is an example of how you could do this:
+
+# Create a new Image object that is a copy of the original, but with the lower-left quarter removed
+new_im = im.crop((0, 0, width, height/2))
+new_im.save('new_image.png')
+
+In this example, im is the original Image object, width and height are the dimensions of the original image, and new_im is the new Image object with the lower-left quarter removed. 
+The crop() method is used to extract the desired region from the original Image object, and the save() method is used to save the new Image object to a file named 'new_image.png'.
+
+Note that the crop() method uses the coordinates of the top-left corner and the width and height of the region to be extracted. 
+In this case, the region is the upper-right quarter of the original image, so the top-left corner is at (0, 0) and the width is the same as the width of the original image, 
+and the height is half the height of the original image.
+
+You can adjust the coordinates and size of the region as needed to remove a different part of the image. For example, to remove the upper-right quarter of the image,
+you would use the following code:
+
+new_im = im.crop((0, height/2, width, height))
+new_im.save('new_image.png')
+
+In this case, the top-left corner of the region is at (0, height/2), the width is the same as the width of the original image, 
+and the height is the same as the height of the original image. 
+This will extract the lower-left quarter of the original image and save it to a new file.
+
+-----------------------------------------------------------------------------------------------7-----------------------------------------------------------------------------------------
+
+7. What module contains Pillow’s shape-drawing code?
+
+The ImageDraw module of the Pillow library contains functions for drawing shapes and text on an Image object. To save the modified Image object as an image file,
+can use the save() method of the Image class.
+Here's an example that demonstrates how to use the ImageDraw module to draw a rectangle on an image and then save the modified image as a file:
+
+from PIL import Image, ImageDraw
+
+# Load an image
+image = Image.open('input.jpg')
+
+# Create a Draw object
+draw = ImageDraw.Draw(image)
+
+# Draw a rectangle
+draw.rectangle((10, 10, 100, 100), fill='red')
+
+# Save the modified image as a file
+image.save('output.jpg')
+
+In this example, we first load an image using the Image.open() function. We then create a Draw object using the ImageDraw.Draw() function, passing in the image object as an argument. 
+We can then use the Draw object to draw shapes and text on the image. In this case, we use the rectangle() function to draw a rectangle with a red fill color.
+
+Finally, we save the modified image as a file using the save() method of the Image class. The argument to the save() method is the filename of the output file. 
+In this example, we save the modified image as 'output.jpg'.
+
+----------------------------------------------------------------------------------------8-----------------------------------------------------------------------------------------------------
+
+8. Image objects do not have drawing methods. What kind of object does? How do you get this kind
+of object?
+
+You can get a drawable object from a Pillow Image object calling the ImageDraw.Draw() function and passing in the Image object as an argument.
+This will return a new Draw object that you can use to draw and text on the Image.
+
+For example:
+
+from PIL import Image, ImageDraw
+
+# Create a new Image object
+img = Image.new('RGB', (100, 100))
+
+# Get a Draw object for the Image
+draw = ImageDraw.Draw(img)
+
+# Use the Draw object to draw a line on the Image
+draw.line((0, 0) + img.size, fill=(255, 0, 0))
+
+In this example, we create a new Image object with a red line drawn on it using the Draw object.
+
+You can also use the Draw object to draw other shapes, such as circles, rectangles, and polygons, as well as text.
+The ImageDraw module provides a number of methods for drawing these shapes, such as ellipse(), rectangle(), polygon(), and text().
+
+For example, here's how you could draw a red circle on the Image:
+
+draw.ellipse((10, 10, 50, 50), fill=(255, 0, 0))
+
+This will draw a circle with its top-left corner at (10, 10) and its bottom-right corner at (50, 50). The circle will be filled with red.
+
