@@ -45,3 +45,135 @@ This code defines the number of seconds in an hour, calculates the number of sec
 Finally, it prints out the results.
 
 --------------------------------------------------------------------------2----------------------------------------------------------------------------------------------------------------
+
+2.Assign the result from the previous task (seconds in an hour) to a variable called seconds_per_hour.
+
+Sure, to assign the result from the previous task to a variable called seconds_per_hour, you can use the following code:
+
+seconds_per_hour = 3600
+
+This assigns the value of 3600 (which is the number of seconds in an hour) to the variable seconds_per_hour. You can then use this variable in your calculations.
+
+For example, to calculate the number of seconds in a day, you can multiply seconds_per_hour by the number of hours in a day (24) like this:
+
+seconds_per_day = seconds_per_hour * 24
+
+This will give you the number of seconds in a day, which is 86,400.
+
+--------------------------------------------------------------------3-----------------------------------------------------------------------------------------------------------------------
+
+3. How many seconds do you think there are in a day? Make use of the variables seconds per hour and minutes per hour.
+
+To calculate the number of seconds in a day, we can use the following code:
+
+seconds_per_hour = 3600
+seconds_per_day = seconds_per_hour * 24
+print(seconds_per_day)
+
+This code defines the number of seconds in an hour and then calculates the number of seconds in a day by multiplying the number of seconds in an hour by the number of hours in a day (24). 
+The result is then printed to the console.
+
+-------------------------------------------------------------------------4------------------------------------------------------------------------------------------------------------------------
+
+4. Calculate seconds per day again, but this time save the result in a variable called seconds_per_day.
+
+To calculate the number of seconds in a day and save the result in a variable called seconds_per_day, we can use the following code:
+
+seconds_per_hour = 3600
+seconds_per_day = seconds_per_hour * 24
+print(seconds_per_day)
+
+This code first calculates the number of hours in a day, which is 24. Then, it calculates the number of minutes in an hour, 
+which is 60, and multiplies it by the number of hours in a day. Finally, it calculates the number of seconds in a minute, 
+which is also 60, and multiplies it by the number of minutes in an hour. 
+The result is the number of seconds in a day, which is stored in the variable seconds_per_day.
+
+----------------------------------------------------------------------------------5----------------------------------------------------------------------------------------------------------
+
+5. Divide seconds_per_day by seconds_per_hour. Use floating-point (/) division.
+
+To divide seconds_per_day by seconds_per_hour using floating-point division in Python, we can use the following code:
+
+seconds_per_day_float = seconds_per_day / seconds_per_hour
+
+This code performs floating-point division on the two variables seconds_per_day and seconds_per_hour, and saves the result in a new variable called seconds_per_day_float.
+
+-----------------------------------------------------------------------------------6-------------------------------------------------------------------------------------------------------------
+
+6. Divide seconds_per_day by seconds_per_hour, using integer (//) division. Did this number agree with the floating-point value from the previous question, aside from the final .0?
+
+When we divide seconds_per_day by seconds_per_hour using integer (//) division, you get:
+
+86400 // 3600
+
+This evaluates to 24.
+
+Yes, this number agrees with the floating-point value from the previous question, 24.0, aside from the final .0.
+This is because integer division always rounds down to the nearest integer, while floating-point division can produce a decimal value. 
+In this case, both values represent the same number of hours (24) but the floating-point value has a decimal component.
+
+-----------------------------------------------------------------------------------7------------------------------------------------------------------------------------------------------------------
+
+7. Write a generator, genPrimes, that returns the sequence of prime numbers on successive calls to its next() method: 2, 3, 5, 7, 11, ...
+
+Here's an example of a Python generator function that returns the sequence of prime numbers on successive calls to its next() method:
+
+def genPrimes():
+    primes = []   # primes generated so far
+    last = 1      # last number tried
+    while True:
+        last += 1
+        for p in primes:
+            if last % p == 0:
+                break
+        else:
+            primes.append(last)
+            yield last
+
+We can use this generator to generate prime numbers as follows:
+
+p = genPrimes()
+print(next(p)) # 2
+print(next(p)) # 3
+print(next(p)) # 5
+print(next(p)) # 7
+print(next(p)) # 11
+# and so on...
+
+The genPrimes() function generates prime numbers by checking each integer greater than 1 to see if it is prime.
+It starts by initializing an empty list of primes and a variable last to 1. It then enters an infinite loop, where it increments last by 1 on each iteration. 
+For each last value,it checks if it is divisible by any of the primes in the primes list. If it is, it breaks out of the inner loop and moves on to the next last value. 
+If it is not divisible by any of the primes in the primes list, it is a prime number, so it appends it to the primes list and yields it.
+
+Note that this implementation uses the for-else construct in Python, which is a way to execute code when a for loop completes normally (i.e., without encountering a break statement).
+In this case, the else clause is executed if the inner for loop completes without encountering a break statement, which means that last is not divisible 
+by any of the primes in the primes list, and therefore it is a prime number.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
