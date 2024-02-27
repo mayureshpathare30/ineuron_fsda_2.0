@@ -1,5 +1,548 @@
+                                                                                   Python Assignment-16
 
 
 1. Create a list called years_list, starting with the year of your birth, and each year thereafter until
 the year of your fifth birthday. For example, if you were born in 1980. the list would be years_list =
 [1980, 1981, 1982, 1983, 1984, 1985].
+
+We create a list called "years_list" in Python, which starts with the year of my "birth" year and includes each year thereafter until my "fifth birthday". 
+Since I don't have a birth year or a fifth birthday, I'll use a placeholder value of 2000 for demonstration purposes.
+
+Here's the code to create the "years_list" starting from the year 2000:
+
+years_list = []
+current_year = 2000
+while len(years_list) < 6:
+    years_list.append(current_year)
+    current_year += 1
+
+print(years_list)
+
+When you run this code, it will output the following list:
+
+[2000, 2001, 2002, 2003, 2004, 2005]
+
+This list contains six elements, starting from the year 2000 and ending with the year 2005, which is the fifth year after 2000.
+
+------------------------------------------------------------------------------2----------------------------------------------------------------------------------------------------------
+
+2. In which year in years_list was your third birthday? Remember, you were 0 years of age for your first year.
+
+The third birthday would have been in the third year of your life, which is the third element in the years_list. 
+Based on the provided list [2000, 2001, 2002, 2003, 2004, 2005], the third year of your life would be 2002.
+
+So, your third birthday was in the year 2002.
+
+-----------------------------------------------------------------------------3---------------------------------------------------------------------------------------------------------------
+
+3.In the years list, which year were you the oldest?
+
+We were the oldest in the last year of the years_list. So, if years_list contains the years from your birth year to your fifth birthday, then you were the oldest in the fifth year.
+In the example list [2000, 2001, 2002, 2003, 2004, 2005], you would have been the oldest in the year 2005.
+
+------------------------------------------------------------------------------4-----------------------------------------------------------------------------------------------------------------
+
+4.Make a list called things with these three strings as elements: "mozzarella", "cinderella","salmonella".
+
+Here's how we can create a list called "things" with those three strings as elements:
+
+things = ["mozzarella", "cinderella", "salmonella"]
+
+Now, to capitalize the element in "things" that refers to a person (i.e., "cinderella"), you can use the capitalize() method:
+
+for i in range(len(things)):
+    if things[i] == "cinderella":
+        things[i] = things[i].capitalize()
+print(things)
+
+This will output: ['mozzarella', 'Cinderella', 'salmonella'].
+
+To make the cheesy element of "things" all uppercase, you can use the upper() method:
+
+for i in range(len(things)):
+    if things[i] == "mozzarella":
+        things[i] = things[i].upper()
+print(things)
+
+This will output: ['MOZZARELLA', 'Cinderella', 'salmonella'].
+
+Finally, to delete the disease element from "things", you can use the remove() method:
+
+things.remove("salmonella")
+print(things)
+
+This will output: ['MOZZARELLA', 'Cinderella'].
+
+Note that in your original code, you were incrementing i manually after updating the element, which is not necessary.
+The for loop already takes care of incrementing i for you. Also, you were removing an element from the list while iterating over it, which can lead to unexpected behavior. 
+It's generally better to create a new list with the desired modifications instead of modifying the original list while iterating over it.
+
+----------------------------------------------------------------------------------5------------------------------------------------------------------------------------------------------------
+
+5. Capitalize the element in things that refers to a person and then print the list. Did it change the element in the list?
+
+Sure, to capitalize the element in the list "things" that refers to a person, we can use the capitalize() method. Here's the code:
+
+things = ["mozzarella", "cinderella","salmonella"]
+
+for i in range(len(things)):
+    if things[i].lower() == "cinderella":
+        things[i] = things[i].capitalize()
+        break
+
+print(things)
+
+This will capitalize the first letter of the word "cinderella" in the list and print the updated list.
+The break statement is used to exit the loop once the element is found and capitalized.
+
+To answer the second part of the question, yes, the element in the list has been changed. The capitalize() method modifies the string in place and returns the modified string,
+which is then assigned back to the same index in the list.
+
+Therefore, the output of the code will be:
+
+['mozzarella', 'Cinderella', 'salmonella']
+
+Note that the lower() method is used to convert the string to lowercase before comparing it with the target string "cinderella". 
+This is because the capitalize() method only capitalizes the first letter of the string and leaves the rest of the letters unchanged. 
+Therefore, if the target string is in uppercase or contains other uppercase letters, the comparison will fail.
+By converting the string to lowercase, we can ensure that the comparison is case-insensitive.
+
+-------------------------------------------------------------------------------------------6-----------------------------------------------------------------------------------------------------
+6. Make a surprise list with the elements &quot;Groucho,&quot; &quot;Chico,&quot; and &quot;Harpo.&quot;
+
+I can create a surprise list called "comedybrothers" with the elements "Groucho", "Chico", and "Harpo" as follows:
+
+comedybrothers = ["Groucho", "Chico", "Harpo"]
+print(comedybrothers)
+
+This will output:
+
+['Groucho', 'Chico', 'Harpo']
+
+The capitalize() method was not necessary in this case, as the strings were already capitalized. However, if they were not,
+we could have used the capitalize() method to capitalize the first letter of each string.
+
+Regarding your previous question, yes, the capitalize() method did change the element in the list. The capitalize() method modifies the string in place and returns the modified string,
+which is then assigned back to the same index in the list. Therefore, the element in the list was updated with the modified string.
+
+-----------------------------------------------------------------------------------------7---------------------------------------------------------------------------------------------------
+
+7. Lowercase the last element of the surprise list, reverse it, and then capitalize it.
+
+To lowercase the last element of the surprise list, reverse it, and then capitalize it, we can use the following code:
+
+def backitup(strings):
+    strings[-1] = strings[-1].lower()[::-1].capitalize()
+    return strings
+
+surprise_list = ["Groucho", "Chico", "Harpo"]
+backitup(surprise_list)
+print(surprise_list)
+
+This code defines a function backitup that takes a list of strings as an argument. The last element of the list is lowercased using the lower() method,
+reversed using slicing ([::-1]), and then capitalized using the capitalize() method. The modified list is then returned by the function.
+
+The surprise_list is initialized to ["Groucho", "Chico", "Harpo"] and the backitup function is called with this list as an argument.
+The modified list is printed using the print function.
+
+The output of this code will be:
+
+['Groucho', 'Chico', 'Drah']
+
+Note that the last element of the list, "Harpo", has been lowercased, reversed, and capitalized to "Drah".
+
+Regarding your question about why reverse() does not work, it is because reverse() is a method of lists, not strings. It reverses the order of elements in a list, 
+not the characters in a string. To reverse the characters in a string, you can use slicing with a step of -1, as shown in the code above.
+
+-----------------------------------------------------------------------------------------------8----------------------------------------------------------------------------------------------
+
+7. Lowercase the last element of the surprise list, reverse it, and then capitalize it.
+
+To lowercase the last element of the surprise list, reverse it, and then capitalize it, you can use the following code:
+
+def backitup(strings):
+    strings[-1] = strings[-1].lower()[::-1].capitalize()
+    return strings
+
+surprise_list = ["Groucho", "Chico", "Harpo"]
+backitup(surprise_list)
+print(surprise_list)
+
+This code defines a function backitup that takes a list of strings as an argument. The last element of the list is lowercased using the lower() method, reversed using slicing ([::-1]), 
+and then capitalized using the capitalize() method. The modified list is then returned by the function.
+
+The surprise_list is initialized to ["Groucho", "Chico", "Harpo"] and the backitup function is called with this list as an argument.
+The modified list is printed using the print function.
+
+The output of this code will be:
+
+['Groucho', 'Chico', 'Drah']
+
+Regarding your question about why reverse() does not work, it is because reverse() is an inbuilt method in Python programming language that reverses objects of list in place, 
+not string.
+Therefore, it cannot be used to reverse the characters in a string. Instead, slicing with a step of -1 can be used to reverse the characters in a string.
+
+Regarding your code, the return statement is not necessary in this case since you are directly assigning the processed string to the original position in the list. 
+Therefore, the return statement is not used in the modified code.
+
+---------------------------------------------------------------------------------------8--------------------------------------------------------------------------------------------------
+
+8. Make an English-to-French dictionary called e2f and print it. Here are your starter words: dog is chien, cat is chat, and walrus is morse.
+
+ Here's how we can create an English-to-French dictionary called e2f and print it:
+
+e2f = {'dog': 'chien', 'cat': 'chat', 'walrus': 'morse'}
+print(e2f)
+
+This will output:
+
+{'dog': 'chien', 'cat': 'chat', 'walrus': 'morse'}
+
+The dictionary e2f contains three key-value pairs, where the keys are English words and the values are their corresponding French translations. 
+The print function is used to display the contents of the dictionary.
+
+Regarding your previous questions, I apologize for the confusion earlier. I will answer them below:
+
+things = ["mozzarella", "cinderella","salmonella"]
+if things[1].lower() == "cinderella":
+    things[1] = things[1].capitalize()
+print(things)
+
+
+This will output:
+
+['mozzarella', 'Cinderella', 'salmonella']
+
+Yes, the element in the list has been changed. The capitalize() method modifies the string in place and returns the modified string,
+which is then assigned back to the same index in the list.
+
+To make a surprise list with the elements "Groucho", "Chico", and "Harpo", you can simply create a list and assign the elements to it. Here's how you can do it:
+
+To capitalize the element in the things list that refers to a person and then print the list, you can use the capitalize() method of strings. Here's how you can do it:
+
+surprise_list = ["Groucho", "Chico", "Harpo"]
+print(surprise_list)
+
+This will output:
+
+['Groucho', 'Chico', 'Harpo']
+
+To lowercase the last element of the surprise list, reverse it, and then capitalize it, you can use slicing and the lower(), [::-1], 
+and capitalize() methods of strings. Here's how you can do it
+
+surprise_list = ["Groucho", "Chico", "Harpo"]
+surprise_list[-1] = surprise_list[-1].lower()[::-1].capitalize()
+print(surprise_list)
+
+This will output:
+
+['Groucho', 'Chico', 'Ophar']
+
+Regarding your question about why reverse() does not work, it is because reverse() is an inbuilt method in Python programming language that reverses objects of list in place, not string.
+Therefore, it cannot be used to reverse the characters in a string. Instead, slicing with a step of -1 can be used to reverse the characters in a string.
+
+
+
+Regarding your code, the return statement is not necessary in this case since you are directly assigning the processed string to the original position in the list. 
+Therefore, the return statement is not used in the modified code.
+
+---------------------------------------------------------------------------------------9----------------------------------------------------------------------------------------------------
+
+9. Write the French word for walrus in your three-word dictionary e2f.
+
+To add the French translation for the English word "walrus" to our three-word dictionary e2f, we can simply assign a new key-value pair to the dictionary. Here's how you might do it:
+
+# Define the e2f dictionary
+e2f = {
+    "dog": "chien",
+    "cat": "chat",
+    "mouse": "souris"
+}
+
+# Add the French translation for "walrus"
+e2f["walrus"] = "morse"
+
+# Print the updated e2f dictionary
+print(e2f)
+
+In this example, we add a new key-value pair to the e2f dictionary by assigning the value "morse" to the key "walrus". When you run this code, the output will be:
+
+{'dog': 'chien', 'cat': 'chat', 'mouse': 'souris', 'walrus': 'morse'}
+
+This shows that the e2f dictionary has been updated with the French translation for "walrus".
+
+-----------------------------------------------------------------------------------------10-----------------------------------------------------------------------------------------------------
+
+10. Make a French-to-English dictionary called f2e from e2f. Use the items method.
+
+ Let's assume that we already have a dictionary called e2f that maps English words to their French translations. 
+Here's how you could create a French-to-English dictionary called f2e using the items method:
+
+# Define the e2f dictionary
+e2f = {
+    "dog": "chien",
+    "cat": "chat",
+    "mouse": "souris"
+}
+
+# Create the f2e dictionary using the items method
+f2e = {value: key for key, value in e2f.items()}
+
+# Print the f2e dictionary
+print(f2e)
+
+In this example, we use a dictionary comprehension to create the f2e dictionary. 
+The comprehension iterates over the key-value pairs in the e2f dictionary using the items method, and creates a new key-value pair with the values swapped. 
+The resulting f2e dictionary maps French words to their English translations.
+
+When you run this code, the output will be:
+
+{'chien': 'dog', 'chat': 'cat', 'souris': 'mouse'}
+
+This shows that the f2e dictionary has been created successfully.
+
+---------------------------------------------------------------------------------------11---------------------------------------------------------------------------------------------------
+
+11. Print the English version of the French word chien using f2e.
+
+To translate the French word "chien" (which means dog) to English using a fictional French to English dictionary (f2e), we would first need to create such a dictionary.
+For the purpose of this example, let's assume that our f2e dictionary contains the translation for the word "chien".
+
+Here's how you might implement this in Python:
+
+# Define the f2e dictionary
+f2e = {
+    "chien": "dog"
+}
+
+# Get the French word from the user
+french_word = "chien"
+
+# Print the English translation
+print(f2e.get(french_word, "Translation not found"))
+
+In this example, we define a dictionary called f2e that maps French words to their English translations. 
+We then get the French word from the user (in this case, we've hard-coded it for simplicity), and use the get method to retrieve the English translation from the dictionary.
+If the French word is not found in the dictionary, the get method returns the string "Translation not found".
+
+Note that in a real-world scenario, you would likely want to use a more sophisticated approach to translation, such as a machine translation API or a pre-built translation library.
+
+--------------------------------------------------------------------------------------12---------------------------------------------------------------------------------------------------
+
+12. Make and print a set of English words from the keys in e2f.
+
+To create and print a set of English words from the keys in the e2f dictionary, we can use the keys method to get a list of the keys,
+and then convert that list to a set using the set constructor. 
+Here's how you might do it:
+
+# Define the e2f dictionary
+e2f = {
+    "dog": "chien",
+    "cat": "chat",
+    "mouse": "souris",
+    "walrus": "morse"
+}
+
+# Create a set of English words from the keys in e2f
+english_words = set(e2f.keys())
+
+# Print the English words set
+print(english_words)
+
+In this example, we use the keys method to get a list of the keys in the e2f dictionary, and then convert that list to a set using the set constructor.
+When you run this code, the output will be:
+
+{'mouse', 'cat', 'walrus', 'dog'}
+
+This shows that the english_words set contains the four English words from the keys in the e2f dictionary. Note that sets are unordered collections,
+so the order of the words in the output may vary.
+
+------------------------------------------------------------------------------------------13----------------------------------------------------------------------------------------------
+
+13. Make a multilevel dictionary called life. Use these strings for the topmost keys: &#39;animals&#39;, &#39;plants&#39;,
+and &#39;other&#39;. Make the &#39;animals&#39; key refer to another dictionary with the keys &#39;cats&#39;, &#39;octopi&#39;, and
+&#39;emus&#39;. Make the &#39;cats&#39; key refer to a list of strings with the values &#39;Henri&#39;, &#39;Grumpy&#39;, and &#39;Lucy&#39;.
+Make all the other keys refer to empty dictionaries.
+
+Here's we you might create the multilevel dictionary called life with the specified keys and values:
+
+# Define the life dictionary
+life = {
+    'animals': {
+        'cats': ['Henri', 'Grumpy', 'Lucy'],
+        'octopi': {},
+        'emus': {}
+    },
+    'plants': {},
+    'other': {}
+}
+
+# Print the life dictionary
+print(life)
+
+In this example, we define the life dictionary with three top-level keys: 'animals', 'plants', and 'other'.
+The 'animals' key refers to another dictionary with three keys: 'cats', 'octopi', and 'emus'.
+The 'cats' key refers to a list of strings with the values 'Henri', 'Grumpy', and 'Lucy'. The other keys in the life dictionary ('plants' and 'other') refer to empty dictionaries.
+
+When you run this code, the output will be:
+
+{'animals': {'cats': ['Henri', 'Grumpy', 'Lucy'], 'octopi': {}, 'emus': {}}, 'plants': {}, 'other': {}}
+
+This shows that the life dictionary has been created with the specified keys and values.
+
+
+--------------------------------------------------------------------------------------14--------------------------------------------------------------------------------------------------
+
+14. Print the top-level keys of life.
+
+To print the top-level keys of the life dictionary, we can use the keys method to get a list of the keys, and then print each key using a loop. Here's how you might do it:
+
+# Define the life dictionary
+life = {
+    'animals': {
+        'cats': ['Henri', 'Grumpy', 'Lucy'],
+        'octopi': {},
+        'emus': {}
+    },
+    'plants': {},
+    'other': {}
+}
+
+# Print the top-level keys of life
+for key in life.keys():
+    print(key)
+
+In this example, we use the keys method to get a list of the top-level keys in the life dictionary, and then use a for loop to print each key.
+When you run this code, the output will be:
+
+animals
+plants
+other
+
+This shows that the for loop has printed each of the top-level keys in the life dictionary.
+
+Alternatively, you can also print the top-level keys of the life dictionary using the keys method with the list constructor, like this:
+
+# Print the top-level keys of life
+print(list(life.keys()))
+
+-----------------------------------------------------------------------------------15-------------------------------------------------------------------------------------------------------
+
+15. Print the keys for life['animals'].
+
+To print the keys for life['animals'], we can use the keys method to get a list of the keys, and then print each key using a loop. Here's how you might do it:
+
+# Define the life dictionary
+life = {
+    'animals': {
+        'cats': ['Henri', 'Grumpy', 'Lucy'],
+        'octopi': {},
+        'emus': {}
+    },
+    'plants': {},
+    'other': {}
+}
+
+# Print the keys for life['animals']
+for key in life['animals'].keys():
+    print(key)
+
+In this example, we use the keys method to get a list of the keys in the life['animals'] dictionary, and then use a for loop to print each key. 
+When you run this code, the output will be:
+
+cats
+octopi
+emus
+
+This shows that the for loop has printed each of the keys in the life['animals'] dictionary.
+
+Alternatively, you can also print the keys of the life['animals'] dictionary using the keys method with the list constructor, like this:
+
+# Print the keys for life['animals']
+print(list(life['animals'].keys()))
+
+Note that if you try to use the keys method on a non-dictionary value, such as life['plants'], you will get an error. 
+To avoid this, you can use the dict.keys method with a conditional statement to check if the value is a dictionary before calling keys, like this:
+
+# Print the keys for life['plants']
+value = life['plants']
+if isinstance(value, dict):
+    print(list(value.keys()))
+else:
+    print("Value is not a dictionary")
+
+This will print "Value is not a dictionary" since life['plants'] is not a dictionary.
+
+--------------------------------------------------------------------------------------------16---------------------------------------------------------------------------------------------
+
+16.Print the values for life['animals']['cats']
+
+To print the values for life['animals']['cats'], we can use a loop to iterate over the list and print each value. Here's how you might do it:
+
+# Define the life dictionary
+life = {
+    'animals': {
+        'cats': ['Henri', 'Grumpy', 'Lucy'],
+        'octopi': {},
+        'emus': {}
+    },
+    'plants': {},
+    'other': {}
+}
+
+# Print the values for life['animals']['cats']
+for value in life['animals']['cats']:
+    print(value)
+
+In this example, we use a for loop to iterate over the list life['animals']['cats'] and print each value. When you run this code, the output will be:
+
+Henri
+Grumpy
+Lucy
+
+This shows that the for loop has printed each of the values in the life['animals']['cats'] list.
+
+Alternatively, you can also print the values of the life['animals']['cats'] list using the list constructor, like this:
+
+# Print the values for life['animals']['cats']
+print(list(life['animals']['cats']))
+
+Note that if you try to use the list constructor on a non-list value, such as life['plants'], you will get an error. 
+To avoid this, you can use the list constructor with a conditional statement to check if the value is a list before calling list, like this:
+
+# Print the values for life['plants']
+value = life['plants']
+if isinstance(value, list):
+    print(list(value))
+else:
+    print("Value is not a list")
+
+This will print "Value is not a list" since life['plants'] is not a list.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
