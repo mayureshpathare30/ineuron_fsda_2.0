@@ -2,7 +2,7 @@
 
 
 1. Assign the value 7 to the variable guess_me. Then, write the conditional tests (if, else, and elif) to
-print the string &#39;too low&#39; if guess_me is less than 7, &#39;too high&#39; if greater than 7, and &#39;just right&#39; if equal
+print the string &#39;too low&#39; if guess_me is less than 7, &#39;too high&#39; if greater than 7, and &#39;just right&#39; if equal 
 to 7.
 
 Here's a solution that follows the instructions:
