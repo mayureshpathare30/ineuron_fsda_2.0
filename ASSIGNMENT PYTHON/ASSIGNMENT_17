@@ -1,1 +1,300 @@
-                                                                           ASSIGNMENT PYTHON-17
+                                                                           Python Assignment-17
+
+
+1. Assign the value 7 to the variable guess_me. Then, write the conditional tests (if, else, and elif) to
+print the string &#39;too low&#39; if guess_me is less than 7, &#39;too high&#39; if greater than 7, and &#39;just right&#39; if equal
+to 7.
+
+Here's a solution that follows the instructions:
+
+# Assign the value 7 to the variable guess_me
+guess_me = 7
+
+# Write conditional tests
+if guess_me < 7:
+    print("'too low'")
+elif guess_me > 7:
+    print("'too high'")
+else:
+    print("'just right'")
+
+When you run this code, it will print:
+
+'just right'
+
+If you change the value of guess_me to a number less than 7, it will print:
+
+'too low'
+
+And if you change it to a number greater than 7, it will print:
+
+'too high'
+
+--------------------------------------------------------------------------------2------------------------------------------------------------------------------------------------------------
+
+2. Assign the value 7 to the variable guess_me and the value 1 to the variable start. Write a while
+loop that compares start with guess_me. Print too low if start is less than guess me. If start equals
+guess_me, print &#39;found it!&#39; and exit the loop. If start is greater than guess_me, print &#39;oops&#39; and exit
+the loop. Increment start at the end of the loop.
+
+Here's a solution that follows the instructions:
+
+# Assign the value 7 to the variable guess_me
+guess_me = 7
+
+# Assign the value 1 to the variable start
+start = 1
+
+# Write a while loop
+while start != guess_me:
+    if start < guess_me:
+        print("too low")
+    else:
+        print("oops")
+    start += 1
+
+# Print found it! when the loop exits
+print("found it!")
+
+When you run this code, it will print:
+
+too low
+too low
+too low
+too low
+too low
+too low
+found it!
+
+The loop continues to run as long as start is not equal to guess_me. If start is less than guess_me, it prints "too low". 
+If start is greater than guess_me, it prints "oops". When start equals guess_me, the loop exits and the message "found it!" is printed
+
+------------------------------------------------------------------------------------3----------------------------------------------------------------------------------------------------
+
+3. Print the following values of the list [3, 2, 1, 0] using a for loop.
+
+Here's a solution that follows the instructions:
+
+# Create a list with the values [3, 2, 1, 0]
+my_list = [3, 2, 1, 0]
+
+# Write a for loop to print the values
+for i in my_list:
+    print(i)
+
+When you run this code, it will print:
+
+3
+2
+1
+0
+
+The for loop iterates over each element in my_list, assigning it to the variable i. The loop body then prints the value of i.
+This will print each element in my_list on a separate line.
+
+------------------------------------------------------------------------------------4------------------------------------------------------------------------------------------------------
+
+4. Use a list comprehension to make a list of the even numbers in range(10)
+
+Here's a solution that follows the instructions
+
+# Use a list comprehension to make a list of the even numbers in range(10)
+even_numbers = [x for x in range(10) if x % 2 == 0]
+
+# Print the resulting list
+print(even_numbers)
+
+When you run this code, it will print:
+
+[0, 2, 4, 6, 8]
+
+The list comprehension [x for x in range(10) if x % 2 == 0] generates a new list by iterating over the range of numbers from 0 to 9, 
+checking if each number is even (by testing if the remainder when divided by 2 is 0), and adding the even numbers to the new list.
+The resulting list contains the even numbers in the range from 0 to 9.
+
+-------------------------------------------------------------------------------5-----------------------------------------------------------------------------------------------------------
+
+5. Use a dictionary comprehension to create the dictionary squares. Use range(10) to return the keys, and use the square of each key as its value.
+
+Here's a solution that follows the instructions:
+
+# Use a dictionary comprehension to create the dictionary squares
+squares = {x: x**2 for x in range(10)}
+
+# Print the resulting dictionary
+print(squares)
+
+When you run this code, it will print:
+
+{0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81}
+
+The dictionary comprehension {x: x**2 for x in range(10)} generates a new dictionary by iterating over the range of numbers from 0 to 9, 
+using each number as the key and its square as the corresponding value. The resulting dictionary contains the squares of the numbers in the range from 0 to 9.
+
+--------------------------------------------------------------------------------6-----------------------------------------------------------------------------------------------------------
+
+6. Construct the set odd from the odd numbers in the range using a set comprehension (10).
+
+Here's a solution that follows the instructions:
+
+# Construct the set odd from the odd numbers in the range using a set comprehension
+odd = {x for x in range(10) if x % 2 != 0}
+
+# Print the resulting set
+print(odd)
+
+When you run this code, it will print:
+
+{1, 3, 5, 7, 9}
+
+The set comprehension {x for x in range(10) if x % 2 != 0} generates a new set by iterating over the range of numbers from 0 to 9,
+checking if each number is odd (by testing if the remainder when divided by 2 is not 0),
+and adding the odd numbers to the new set. The resulting set contains the odd numbers in the range from 0 to 9.
+
+-------------------------------------------------------------------------------------------7------------------------------------------------------------------------------------------------
+
+7. Use a generator comprehension to return the string &#39;Got &#39; and a number for the numbers in range(10). Iterate through this by using a for loop.
+
+Here's a solution that follows the instructions:
+
+# Use a generator comprehension to return the string 'Got ' and a number for the numbers in range(10)
+got_nums = ('Got ' + str(n) for n in range(10))
+
+# Iterate through the generator comprehension using a for loop
+for got_num in got_nums:
+    print(got_num)
+
+When you run this code, it will print:
+
+Got 0
+Got 1
+Got 2
+Got 3
+Got 4
+Got 5
+Got 6
+Got 7
+Got 8
+Got 9
+
+The generator comprehension ('Got ' + str(n) for n in range(10)) generates a new generator that returns the string 'Got ' and a number for each number in the range from 0 to 9.
+The for loop iterates over this generator, printing each string returned.
+
+Note that a generator comprehension is similar to a list comprehension, but it returns a generator instead of a list.
+A generator is a type of iterator that returns one value at a time, rather than all the values at once.
+This can be more memory-efficient when working with large data sets, as it does not require storing all the values in memory at once.
+
+----------------------------------------------------------------------------------8----------------------------------------------------------------------------------------------------------
+
+8. Define a function called good that returns the list ['Harry', 'Ron', 'Hermione'].
+
+Here's a solution that follows the instructions:
+
+def good():
+    return ['Harry', 'Ron', 'Hermione']
+
+# Call the function and print the resulting list
+print(good())
+
+When you run this code, it will print:
+
+['Harry', 'Ron', 'Hermione']
+
+The function good returns the list ['Harry', 'Ron', 'Hermione']. The print statement calls this function and prints the resulting list.
+
+Note that the function does not take any arguments, as the instructions do not specify any input for the function. The function simply returns a fixed list of strings.
+
+-------------------------------------------------------------------------------------9-------------------------------------------------------------------------------------------------------
+
+9. Define a generator function called get_odds that returns the odd numbers from range(10). Use a for loop to find and print the third value returned.
+
+Here's a solution that follows the instructions:
+
+def get_odds():
+    for n in range(10):
+        if n % 2 != 0:
+            yield n
+
+# Iterate over the generator function and print the third value returned
+for i, odd in enumerate(get_odds()):
+    if i == 2:
+        print(odd)
+        break
+
+When you run this code, it will print:
+
+3
+
+The generator function get_odds returns the odd numbers in the range from 0 to 9. It uses a for loop to iterate over the range, 
+checking if each number is odd (by testing if the remainder when divided by 2 is not 0), 
+and using the yield keyword to return each odd number as a separate value from the generator.
+
+The for loop outside the generator function iterates over the generator, using the enumerate function to keep track of the index i of each value returned.
+When the index reaches 2, the loop prints the corresponding odd number and exits.
+
+Note that the break statement is used to exit the loop as soon as the third odd number is found, rather than continuing to iterate over the remaining values from the generator. 
+This can be more efficient than iterating over all the values from the generator and selecting the third value.
+
+-------------------------------------------------------------------------------------10--------------------------------------------------------------------------------------------------
+
+10.Define an exception called OopsException. Raise this exception to see what happens. Then write the code to catch this exception and print 'Caught an oops'.
+
+Here's a solution that follows the instructions:
+
+class OopsException(Exception):
+    pass
+
+try:
+    raise OopsException('This is an oops')
+except OopsException as e:
+    print('Caught an oops')
+
+When you run this code, it will print:
+
+Caught an oops
+
+The code defines a new exception class OopsException that inherits from the built-in Exception class.
+This class does not add any new behavior to the exception, but serves as a placeholder for a custom exception.
+
+The try block raises an instance of OopsException with an error message. The except block catches this exception and prints the message 'Caught an oops'.
+
+Note that the raise statement is used to raise an exception explicitly.
+When an exception is raised, the code execution stops and the exception is propagated up the call stack until it is caught by a except block. 
+In this case, the except block catches the OopsException and handles it by printing a message. If the except block were not present, 
+the exception would propagate up to the top-level interpreter and terminate the program with an error message.
+
+-------------------------------------------------------------------------------------11---------------------------------------------------------------------------------------------------
+
+11.Use zip() to make a dictionary called movies that pairs these lists: titles = ['Creature of Habit', 'Crewel Fate'] and plots = ['A nun turns into a monster', 'A haunted yarn shop'].
+
+Here's a solution that follows the instructions:
+
+titles = ['Creature of Habit', 'Crewel Fate']
+plots = ['A nun turns into a monster', 'A haunted yarn shop']
+
+movies = dict(zip(titles, plots))
+
+print(movies)
+
+When you run this code, it will print:
+
+{'Creature of Habit': 'A nun turns into a monster', 'Crewel Fate': 'A haunted yarn shop'}
+
+The zip function takes two lists as arguments and returns an iterator that yields tuples of corresponding elements from each list. 
+The dict function takes this iterator and returns a new dictionary with the tuples as key-value pairs.
+
+In this case, the zip function takes the titles and plots lists, and returns an iterator that yields the tuples ('Creature of Habit',
+'A nun turns into a monster') and ('Crewel Fate', 'A haunted yarn shop'). The dict function then creates a new dictionary with these tuples as key-value pairs.
+
+The resulting dictionary movies has the keys 'Creature of Habit' and 'Crewel Fate', and the corresponding values 'A nun turns into a monster' and 'A haunted yarn shop'.
+
+Note that the zip function stops iterating as soon as the shortest input iterable is exhausted. In this case, both input iterables have the same length,
+so the zip function returns all the pairs. 
+If the input iterables have different lengths, the resulting iterator will be truncated to the length of the shortest input iterable.
+
+
+
+
+
+
+
