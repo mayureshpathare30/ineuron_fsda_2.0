@@ -1,6 +1,205 @@
+                                                                                Python Assignment-22
 
 
 1.What is the result of the code, and explain?
 >>> X = 'iNeuron' >>> def func(): print(X)
 
 >>> func()
+
+The result of running this code will be:
+
+iNeuron
+
+This code defines a variable X with the value 'iNeuron'. Then, it defines a function func() that prints the value of X. When func() is called at the end,
+it prints the current value of X, which is 'iNeuron'.
+
+Here's the code in a formatted manner for better readability:
+
+X = 'iNeuron'
+
+def func():
+    print(X)
+
+func()
+
+This code demonstrates a concept called variable scope. In Python, when a variable is assigned inside a function, it becomes a local variable.
+However, when a variable is assigned outside any function, like X in this example, it becomes a global variable, which is accessible within any function in the same module.
+
+In this specific code, the variable X is assigned outside the function func(), so it is accessible within the function, and the output is 'iNeuron'.
+
+-------------------------------------------------------------------------------------2-----------------------------------------------------------------------------------------------------
+
+What is the result of the code, and explain?
+>>> X = 'iNeuron' >>> def func(): X = 'NI!'
+
+>>> func() >>> print(X)
+
+
+The result of running this code will be:
+
+iNeuron
+
+Here's the code formatted manner for better readability:
+
+X = 'iNeuron'
+
+def func():
+    X = 'NI!'
+
+func()
+print(X)
+
+In this code, a global variable X is assigned the value 'iNeuron'. Then, a function func() is defined, which assigns a local variable X with the value 'NI!'.
+When func() is called, it creates a new local variable X that exists only within the function and hides the global variable X.
+
+When the print(X) statement is executed after calling func(), it accesses the global variable X, which still holds the value 'iNeuron'. Therefore, the output is 'iNeuron'.
+
+If you want to modify a global variable within a function, you can use the global keyword, like so:
+
+X = 'iNeuron'
+
+def func():
+    global X
+    X = 'NI!'
+
+func()
+print(X)  # Output: NI!
+
+--------------------------------------------------------------------------------------3--------------------------------------------------------------------------------------------------------
+
+3.What does this code print, and why?
+>>> X = 'iNeuron' >>> def func(): X = 'NI' print(X)
+
+>>> func() >>> print(X)
+
+The result of running this code will be:
+
+NI
+iNeuron
+
+Here's the code formatted for better readability:
+
+X = 'iNeuron'
+
+def func():
+    X = 'NI'
+    print(X)
+
+func()
+print(X)
+
+In this code, a global variable X is assigned the value 'iNeuron'. Then, a function func() is defined, which creates a local variable X with the value 'NI'.
+When func() is called, it prints the local variable X, which has the value 'NI'.
+
+When the print(X) statement is executed after calling func(), it accesses the global variable X, which still holds the value 'iNeuron'. Therefore, the output is:
+
+NI from the local variable X within the func() function
+iNeuron from the global variable X after the func() function call.
+
+----------------------------------------------------------------------------------4------------------------------------------------------------------------------------------------------------
+
+4.What output does this code produce? Why?
+>>> X = 'iNeuron' >>> def func(): global X X = 'NI'
+
+>>> func() >>> print(X)
+
+The result of running this code will be:
+
+NI
+
+Here's the code formatted for better readability:
+
+X = 'iNeuron'
+
+def func():
+    global X
+    X = 'NI'
+
+func()
+print(X)
+
+In this code, a global variable X is assigned the value 'iNeuron'. Then, a function func() is defined, which modifies the global variable X using the global keyword and assigns it 
+the value 'NI'. When func() is called, the global variable X is updated to the new value 'NI'.
+
+When the print(X) statement is executed after calling func(), it accesses the global variable X, which now holds the value 'NI' due to the modification inside the func() function.
+Therefore, the output is 'NI'.
+
+-----------------------------------------------------------------------------------5------------------------------------------------------------------------------------------------------
+
+5.What about this code—what’s the output, and why?
+>>> X = 'iNeuron' >>> def func(): X = 'NI' def nested(): print(X) nested()
+
+>>> func() >>> X
+
+The code you provided has a syntax error, as the nested() function is defined within the func() function, but it is not called. 
+The inner function nested() won't be accessible outside the func() function.
+
+To fix the syntax error, I assume you meant to call nested() within the func() function. Here's the corrected code:
+
+X = 'iNeuron'
+
+def func():
+    X = 'NI'
+    def nested():
+        print(X)
+    nested()
+
+func()
+print(X)
+
+This code will produce the following output:
+
+
+NI
+iNeuron
+
+In this code, a global variable X is assigned the value 'iNeuron'. 
+Then, a function func() is defined, which creates a local variable X with the value 'NI' and an inner function nested() that prints the local variable X. 
+When func() is called, it calls the inner function nested(), which prints the local variable X with the value 'NI'.
+
+When the print(X) statement is executed after calling func(), it accesses the global variable X, which still holds the value 'iNeuron'. Therefore, the output is:
+
+NI from the local variable X within the nested() function
+iNeuron from the global variable X after the func() function call.
+
+---------------------------------------------------------------------------6--------------------------------------------------------------------------------------------------------------
+
+6. How about this code: what is its output in Python 3, and explain?
+>>> def func(): X = 'NI' def nested(): nonlocal X X = 'Spam' nested() print(X)
+
+>>> func()
+
+
+The provided code uses the nonlocal keyword, which was introduced in Python 3. This keyword is used to modify a variable in the parent scope,
+which is not the global scope. In this case, the nonlocal keyword is used to modify the X variable in the parent scope of the inner function nested().
+
+Here's the code formatted for better readability:
+
+def func():
+    X = 'NI'
+    def nested():
+        nonlocal X
+        X = 'Spam'
+    nested()
+    print(X)
+
+func()
+
+When this code is executed in Python 3, the output will be:
+
+Spam
+
+In the func() function, a local variable X is assigned the value 'NI'.
+Then, an inner function nested() is defined, which modifies the X variable in the parent scope using the nonlocal keyword and assigns it the value 'Spam'.
+
+When the nested() function is called within func(), it modifies the parent scope's X variable, changing its value to 'Spam'.
+Finally, when the print(X) statement is executed, it accesses the parent scope's X variable, which now holds the value 'Spam' due to the modification inside the nested() function.
+Therefore, the output is 'Spam'.
+
+
+Keep in mind that the nonlocal keyword is only available in Python 3 and won't work in Python 2. In Python 2, you would need to use the global keyword to modify a variable in the global scope.
+
+
+
+
+
