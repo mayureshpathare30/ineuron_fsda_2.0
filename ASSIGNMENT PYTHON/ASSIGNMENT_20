@@ -1,1 +1,344 @@
+                                                                               PYTHON ASSIGNMENT-20
+
+1.Set the variable test1 to the string 'This is a test of the emergency text system,' and save test1 to a file named test.txt.
+
+To set the variable test1 to the string 'This is a test of the emergency text system,' and then save it to a file named test.txt, you can use the following Python code:
+
+# Set the variable test1
+test1 = "This is a test of the emergency text system."
+
+# Save test1 to a file named test.txt
+with open("test.txt", "w") as f:
+    f.write(test1)
+
+This code uses the open() function with the "w" mode to open a file named test.txt for writing. The variable test1 is then written to the file using the write() method. 
+Once the with block is exited, the file is automatically closed.
+
+It's important to note that using the "w" mode will overwrite any existing content in the file. If you want to append to the file instead, you should use the "a" mode.
+
+-------------------------------------------------------------------------------------------2----------------------------------------------------------------------------------------------------
+
+2.Read the contents of the file test.txt into the variable test2. Is there a difference between test 1 and test 2?
+
+To read the contents of the file test.txt into the variable test2, you can use the following Python code:
+
+# Read the contents of test.txt into test2
+with open("test.txt", "r") as f:
+    test2 = f.read()
+
+# Compare test1 and test2
+if test1 == test2:
+    print("test1 and test2 are identical.")
+else:
+    print("test1 and test2 are different.")
+
+This code uses the open() function with the "r" mode to open the file test.txt for reading. The read() method is then used to read the contents of the file into the variable test2.
+
+If you run the code above immediately after running the code from the previous question, the output will be:
+
+test1 and test2 are identical.
+
+This is because test1 and test2 contain the same string value. However, if you modify the contents of test.txt after creating it
+(for example, by editing the file manually or running the code from the previous question again), then test1 and test2 may no longer be identical. In that case, the output will be:
+
+test1 and test2 are different.
+
+----------------------------------------------------------------------------------------------3-----------------------------------------------------------------------------------------------
+
+3.Create a CSV file called books.csv by using these lines: title,author,year The Weirdstone of Brisingamen,Alan Garner,1960 Perdido Street Station,China Miéville,2000 Thud!,
+Terry Pratchett,2005 The Spellman Files,Lisa Lutz,2007 Small Gods,Terry Pratchett,1992
+
+To create a CSV file named books.csv with the given data, you can use the following Python code:
+
+# Set the data
+data = [
+    ["title", "author", "year"],
+    ["The Weirdstone of Brisingamen", "Alan Garner", "1960"],
+    ["Perdido Street Station", "China Miéville", "2000"],
+    ["Thud!", "Terry Pratchett", "2005"],
+    ["The Spellman Files", "Lisa Lutz", "2007"],
+    ["Small Gods", "Terry Pratchett", "1992"],
+]
+
+# Write the data to a CSV file
+import csv
+
+with open("books.csv", "w", newline="") as f:
+    writer = csv.writer(f)
+    writer.writerows(data)
+
+This code defines a list data that contains the data to be written to the CSV file. The csv module is then imported, and the open() function is used with the "w" mode to 
+create a new file named books.csv. The `newline="" argument is used to prevent blank lines from being added between rows.
+
+The csv.writer() function is then used to create a writer object writer, which is used to write the rows in the data list to the file using the writerows() method.
+
+Note that the first row in the data list contains the column headers, and the remaining rows contain the data for each book.
+
+---------------------------------------------------------------------------------------4-----------------------------------------------------------------------------------------------------
+
+4.Use the sqlite3 module to create a SQLite database called books.db, and a table called books with these fields: title (text), author (text), and year (integer).
+
+To create a SQLite database named books.db with a table called books using the sqlite3 module can use the following Python code:
+
+import sqlite3
+
+# Connect to the database (or create it if it doesn't exist)
+conn = sqlite3.connect("books.db")
+cursor = conn.cursor()
+
+# Create the books table
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS books (
+    title TEXT,
+    author TEXT,
+    year INTEGER
+)
+""")
+
+# Commit the changes and close the connection
+conn.commit()
+conn.close()
+
+This code first imports the sqlite3 module and creates a connection to the database using the connect() function. If the database doesn't exist, it will be created automatically.
+
+The cursor() method is then used to create a cursor object, which is used to execute SQL commands. The CREATE TABLE statement is used to create the books table
+if it doesn't already exist. The IF NOT EXISTS clause is used to prevent an error from being raised if the table already exists.
+
+Finally, the commit() method is used to save the changes to the database, and the close() method is used to close the connection to the database.
+
+Note that the books table has three columns: title (text), author (text), and year (integer).
+
+-----------------------------------------------------------------------------------------5---------------------------------------------------------------------------------------------------
+
+5. Read books.csv and insert its data into the book table.
+
+To read the books.csv file and insert its data into the books table in the books.db SQLite database, you can use the following Python code:
+
+import csv
+import sqlite3
+
+# Connect to the database
+conn = sqlite3.connect("books.db")
+cursor = conn.cursor()
+
+# Read the CSV file
+with open("books.csv", "r") as f:
+    reader = csv.reader(f)
+    next(reader)  # Skip the header row
+    books = [(row[0], row[1], int(row[2])) for row in reader]
+
+# Insert the data into the books table
+cursor.executemany("""
+INSERT INTO books (title, author, year) VALUES (?, ?, ?)
+""", books)
+
+# Commit the changes and close the connection
+conn.commit()
+conn.close()
+
+This code first imports the csv and sqlite3 modules, and creates a connection to the books.db database using the connect() function.
+
+The csv.reader() function is then used to read the books.csv file. The header row is skipped using the next() function, 
+and the remaining rows are converted to tuples with the title, author, and year fields.
+
+The executemany() method is then used to insert the data into the books table using a parameterized SQL statement.
+This is more secure than using string formatting, as it prevents SQL injection attacks.
+
+Finally, the commit() method is used to save the changes to the database, and the close() method is used to close the connection to the database.
+
+--------------------------------------------------------------------------------------6-----------------------------------------------------------------------------------------------------
+
+6. Select and print the title column from the book table in alphabetical order.
+
+To select and print the title column from the books table in alphabetical order, you can use the following Python code:
+
+import sqlite3
+
+# Connect to the database
+conn = sqlite3.connect("books.db")
+cursor = conn.cursor()
+
+# Select and print the title column from the books table in alphabetical order
+cursor.execute("""
+SELECT title FROM books ORDER BY title
+""")
+
+rows = cursor.fetchall()
+for row in rows:
+    print(row[0])
+
+# Close the connection
+conn.close()
+
+This code first imports the sqlite3 module, and creates a connection to the books.db database using the connect() function.
+
+The execute() method is then used to execute the SQL statement SELECT title FROM books ORDER BY title,
+which selects the title column from the books table and sorts the results in alphabetical order.
+
+The fetchall() method is used to retrieve the results of the query, which is then printed to the console using a for loop.
+
+Finally, the close() method is used to close the connection to the database.
+
+The output of this code will be a list of the book titles in alphabetical order.
+
+-----------------------------------------------------------------------------------------7--------------------------------------------------------------------------------------------------
+
+7. From the book table, select and print all columns in the order of publication.
+
+To select and print all columns from the books table in order of publication, you can use the following Python code:
+
+import sqlite3
+
+# Connect to the database
+conn = sqlite3.connect("books.db")
+cursor = conn.cursor()
+
+# Select and print all columns from the books table in order of publication
+cursor.execute("""
+SELECT * FROM books ORDER BY year
+""")
+
+rows = cursor.fetchall()
+for row in rows:
+    print(row)
+
+# Close the connection
+conn.close()
+
+This code first imports the sqlite3 module, and creates a connection to the books.db database using the connect() function.
+
+The execute() method is then used to execute the SQL statement SELECT * FROM books ORDER BY year,
+which selects all columns from the books table and sorts the results by the year column in ascending order.
+
+The fetchall() method is used to retrieve the results of the query, which is then printed to the console using a for loop.
+
+Finally, the close() method is used to close the connection to the database.
+
+The output of this code will be a list of tuples, where each tuple contains the title, author, and year of a book, sorted by year of publication.
+
+Note that the year column is sorted in ascending order by default. If you want to sort the results in descending order, you can modify the SQL statement as follows:
+
+cursor.execute("""
+SELECT * FROM books ORDER BY year DESC
+""")
+
+This will sort the results by year in descending order, with the most recent publications first.
+
+----------------------------------------------------------------------------------------8---------------------------------------------------------------------------------------------------
+
+8. Use the sqlalchemy module to connect to the sqlite3 database books.db that you just made in exercise 6.
+
+To connect to the books.db SQLite database using the sqlalchemy module, you can use the following Python code:
+
+from sqlalchemy import create_engine
+
+# Create a connection to the books.db database
+engine = create_engine("sqlite:///books.db")
+connection = engine.connect()
+
+# Use the connection to execute SQL commands
+# ...
+
+# Close the connection
+connection.close()
+
+This code first imports the create_engine function from the sqlalchemy module. This function is used to create a connection to the books.db database using the sqlite:/// URL scheme.
+
+The connection is then used to execute SQL commands. For example, you can use the execute() method to select and print all columns from the books table in order of publication:
+
+from sqlalchemy import create_engine
+
+# Create a connection to the books.db database
+engine = create_engine("sqlite:///books.db")
+connection = engine.connect()
+
+# Select and print all columns from the books table in order of publication
+result = connection.execute("SELECT * FROM books ORDER BY year")
+for row in result:
+    print(row)
+
+# Close the connection
+connection.close()
+
+This code uses the execute() method to execute the SQL statement SELECT * FROM books ORDER BY year, and prints the results to the console using a for loop.
+
+Finally, the close() method is used to close the connection to the database.
+
+Note that the sqlalchemy module provides a higher-level API for working with databases, which can make it easier to write database code that is database-agnostic. 
+However, for simple tasks like connecting to a SQLite database and executing SQL commands, the sqlite3 module may be simpler and more straightforward to use.
+
+---------------------------------------------------------------------------------------------9-----------------------------------------------------------------------------------------------
+
+9.Install the Redis server and the Python redis library (pip install redis) on your computer.
+Create a Redis hash called test with the fields count (1) and name ('Fester Bestertester'). Print all the fields for test.
+
+To install the Redis server and the Python redis library, you can follow the instructions on the Redis website (https://redis.io/download).
+Once you have installed Redis, you can install the redis Python library using pip:
+
+pip install redis
+
+To create a Redis hash called test with the fields count (1) and name ('Fester Bestertester'), and print all the fields for test, you can use the following Python code:
+
+import redis
+
+# Connect to the Redis server
+r = redis.Redis(host='localhost', port=6379, db=0)
+
+# Create a hash called test with the fields count (1) and name ('Fester Bestertester')
+r.hset("test", "count", 1)
+r.hset("test", "name", "Fester Bestertester")
+
+# Print all the fields for test
+fields = r.hkeys("test")
+for field in fields:
+    print(field, r.hget("test", field))
+
+This code first imports the redis module and creates a connection to the Redis server using the Redis() constructor. The host, port,
+and db parameters are used to specify the hostname, port number, and database number of the Redis server, respectively.
+
+The hset() method is then used to create the test hash and set its count and name fields to 1 and 'Fester Bestertester', respectively.
+
+The hkeys() method is used to retrieve all the fields in the test hash, which are then printed to the console using a for loop and the hget() method.
+
+Note that Redis is an in-memory key-value store, so the data in the test hash will be lost when the Redis server is restarted. If you want to persist the data, 
+you can configure Redis to use one of its persistence mechanisms (e.g., snapshotting or append-only file).
+
+-----------------------------------------------------------------------------------10-------------------------------------------------------------------------------------------------------
+
+10. Increment the count field of test and print it.
+
+To increment the `count` field of the `test` hash in Redis and print its new value, you can use the following Python code:
+
+count = int(r.hget("test", "count")) count += 1 r.hset("test", "count", count) print("count:", count)
+
+This code first imports the `redis` module and creates a connection to the Redis server using the `Redis()` constructor.
+
+The `hget()` method is then used to retrieve the current value of the `count` field as a string, which is converted to an integer using the `int()` 
+function. The value of `count` is then incremented by 1, and the new value is set in the `test` hash using the `hset()` method.
+
+Finally, the new value of `count` is printed to the console.
+
+Note that Redis has built-in support for incrementing numeric values using the `HINCRBY` command, which can be used to increment the `count`
+field without retrieving and setting its value explicitly. For example:
+```python
+import redis
+
+# Connect to the Redis server
+r = redis.Redis(host='localhost', port=6379, db=0)
+
+# Increment the count field of test and print it
+count = r.hincrby("test", "count", amount=1)
+print("count:", count)
+
+This code uses the hincrby() method to increment the count field by 1 and return its new value. The amount parameter is used to specify the amount by which to increment the value.
+
+
+
+
+
+
+
+
+
+
 
