@@ -1,0 +1,336 @@
+                                                                                  Python Assignment-19
+
+1. Make a class called Thing with no contents and print it. Then, create an object called example from this class and also print it. Are the printed values the same or different?
+
+In Python, a class is a blueprint for creating objects. When you print a class, you'll see its name and memory address.
+When you create an object from a class, Python allocates memory for the object and initializes it with the class's attributes and methods.
+Printing the object will show its memory address and the output of its __str__ or __repr__ method, if defined.
+
+Now, let's see the code and output for the given scenario:
+
+# Create the Thing class
+class Thing:
+    pass
+
+# Print the class
+print(Thing)
+
+# Create an object from the Thing class
+example = Thing()
+
+# Print the object
+print(example)
+
+Output:
+
+<class '__main__.Thing'>
+<__main__.Thing object at 0x12345678>
+
+As you can see, the printed values are different. When you print the Thing class, you see its name and memory address. However, 
+when you create an object from the class, you see the object's memory address and its type (__main__.Thing).
+
+-------------------------------------------------------------------------------------------------2-----------------------------------------------------------------------------------------
+
+2.Create a new class called Thing2 and add the value 'abc' to the letters class attribute. Letters should be printed.
+
+Sure, here's the code for creating the Thing2 class with a class attribute letters and initializing it with the value 'abc':
+
+# Create the Thing2 class with a class attribute 'letters'
+class Thing2:
+    letters = 'abc'
+
+# Print the class attribute
+print(Thing2.letters)
+
+Output:
+
+abc
+
+In this example, the Thing2 class has a class attribute called letters, which is initialized with the value 'abc'.
+When you print the letters attribute using the class name (Thing2.letters), it outputs 'abc'. 
+Class attributes are shared by all instances of a class, so modifying this attribute will affect all instances.
+
+If you want to create a class attribute that can be modified individually for each instance, you can define it within the __init__ method as an instance attribute:
+
+# Create the Thing3 class with an instance attribute 'letters'
+class Thing3:
+    def __init__(self):
+        self.letters = 'abc'
+
+# Create an instance of the Thing3 class
+instance = Thing3()
+
+# Modify the instance attribute
+instance.letters = 'xyz'
+
+# Print the instance attribute
+print(instance.letters)
+
+Output:
+
+xyz
+
+--------------------------------------------------------------------------------3----------------------------------------------------------------------------------------------------------
+
+3.Make yet another class called, of course, Thing3. This time, assign the value 'xyz' to an instance (object) attribute called letters. 
+Print letters. Do you need to make an object from the class to do this?
+
+ To assign the value 'xyz' to an instance attribute called letters and print it, you need to create an instance (object) of the class Thing3. Here's the example:
+
+class Thing3:
+    def __init__(self):
+        self.letters = 'xyz'  # Instance attribute for Thing3 class
+
+# Create an instance of Thing3
+my_thing3 = Thing3()
+
+# Print the letters instance attribute
+print(my_thing3.letters)
+
+Output:
+
+xyz
+
+Explanation:
+
+We define a Thing3 class with an __init__ method that initializes the instance attribute letters with the value 'xyz'.
+We create an instance of the Thing3 class called my_thing3.
+Finally, we print the value of my_thing3.letters to display 'xyz'.
+Best practices:
+
+Use self to refer to the current instance and initialize instance attributes within the __init__ method.
+Always use an __init__ method in your classes to ensure proper initialization of instance attributes.
+When accessing instance attributes, use the dot notation (object.attribute).
+
+----------------------------------------------------------------------------------------------4-------------------------------------------------------------------------------------------
+
+4.Create an Element class with the instance attributes name, symbol, and number. Create a class object with the values 'Hydrogen,' 'H,' and 1.
+
+Here is a simple Python class called Element with the requested instance attributes and an example of creating a class object with the given values for 'name', 'symbol', and 'number':
+
+class Element:
+    def __init__(self, name, symbol, number):
+        self.name = name
+        self.symbol = symbol
+        self.number = number
+
+# create an object of class Element
+hydrogen = Element('Hydrogen', 'H', 1)
+
+In this example, the Element class has a special method called __init__, which is called when a new object of this class is created. 
+The __init__ method initializes the instance attributes name, symbol, and number with the given values.
+
+Then, we create an object of the Element class called hydrogen with the values 'Hydrogen', 'H', and 1 for the attributes name, symbol, and number, respectively.
+
+------------------------------------------------------------------------------------------5-----------------------------------------------------------------------------------------------------
+
+5.Make a dictionary with these keys and values: 'name': 'Hydrogen', 'symbol': 'H', 'number': 1. Then, create an object called hydrogen from class Element using this dictionary.
+
+ Here is an example of creating a dictionary with the requested keys and values and using it to create an object of the Element class called hydrogen:
+
+class Element:
+    def __init__(self, name, symbol, number):
+        self.name = name
+        self.symbol = symbol
+        self.number
+
+---------------------------------------------------------------------------------------------6-----------------------------------------------------------------------------------------------
+
+5.For the Element class, define a method called dump() that prints the values of the object’s attributes (name, symbol, and number). 
+Create the hydrogen object from this new definition and use dump() to print its attributes.
+
+Here's an example of adding a dump() method to the Element class and using it to print the attributes of the hydrogen object:
+
+class Element:
+    def __init__(self, name, symbol, number):
+        self.name = name
+        self.symbol = symbol
+        self.number = number
+    
+    def dump(self):
+        print(f'Name: {self.name}')
+        print(f'Symbol: {self.symbol}')
+        print(f'Number: {self.number}')
+
+# create an object of class Element using a dictionary
+hydrogen_dict = {'name': 'Hydrogen', 'symbol': 'H', 'number': 1}
+hydrogen = Element(**hydrogen_dict)
+
+# use the dump() method to print the attributes of the hydrogen object
+hydrogen.dump()
+
+In this example, we added a dump() method to the Element class that prints the values of the object's attributes name, symbol, and number.
+We then created a dictionary called hydrogen_dict with the requested keys and values, and used it to create an object of the Element class called hydrogen.
+Finally, we called the dump() method on the hydrogen object to print its attributes.
+
+Note that we used the ** operator to unpack the dictionary hydrogen_dict as keyword arguments to the Element constructor.
+This allows us to pass the dictionary directly to the constructor instead of extracting each key-value pair explicitly.
+
+-------------------------------------------------------------------------------7----------------------------------------------------------------------------------------------------------
+
+7.Call print(hydrogen). In the definition of Element, change the name of method dump to str, create a new hydrogen object, and call print(hydrogen) again.
+
+ here's an example of changing the name of the dump() method to __str__() and using the print() function to print an object of the Element class called hydrogen:
+
+class Element:
+    def __init__(self, name, symbol, number):
+        self.name = name
+        self.symbol = symbol
+        self.number = number
+    
+    def __str__(self):
+        return f'Element(name={self.name}, symbol={self.symbol}, number={self.number})'
+
+# create a new object of class Element
+hydrogen = Element('Hydrogen', 'H', 1)
+
+# use the print() function to print the attributes of the hydrogen object
+print(hydrogen)
+
+In this example, we changed the name of the dump() method to __str__(), which is a special method in Python that is called when an object is converted to a string, 
+such as when it is passed to the print() function. We then created a new object of the Element class called hydrogen and used the print() function to print it.
+
+When the print() function is called with an object of the Element class, it automatically calls the __str__() method on the object to get a string representation of its attributes. 
+This string representation is then printed to the console.
+
+Note that the __str__() method returns a formatted string that includes the values of the object's name, symbol, and number attributes. 
+This allows us to customize the string representation of the object to our liking.
+
+---------------------------------------------------------------------------------------8---------------------------------------------------------------------------------------------------
+
+8. Modify Element to make the attributes name, symbol, and number private. Define a getter property for each to return its value.
+
+Here's an example of modifying the Element class to make the name, symbol, and number attributes private and defining getter properties for each:
+
+class Element:
+    def __init__(self, name, symbol, number):
+        self = name
+        self.__symbol = symbol
+        self.__number = number
+    
+    @property
+    def name(self):
+        return self.__name
+    
+    @property
+    def symbol(self):
+        return self.__symbol
+    
+    @property
+    def number(self):
+        return self.__number
+
+# create an object of class Element
+hydrogen = Element('Hydrogen', 'H', 1)
+
+# use the getter properties to print the values of the hydrogen object’s attributes
+print(hydrogen.name)
+print(hydrogen.symbol)
+print(hydrogen.number)
+
+In this example, we modified the Element class to make the name, symbol, and number attributes private by prefixing their names with __. 
+We then defined getter properties for each attribute using the @property decorator. The getter properties allow us to access the private attributes like regular attributes,
+but they provide more flexibility and control over how the attributes are accessed and modified.
+
+We then created an object of the Element class called hydrogen and used the getter properties to print the values of its name, symbol, and number attributes.
+Note that we accessed the attributes using dot notation, just like we would with regular attributes.
+
+By making the attributes private and defining getter properties, we can control how the attributes are accessed and modified, and we can add additional logic or validation if needed.
+For example, we could add a setter property for each attribute to validate the input before setting its value.
+
+-----------------------------------------------------------------------------------------9--------------------------------------------------------------------------------------------------
+
+9.Define three classes: Bear, Rabbit, and Octothorpe. For each, define only one method: eats(). This should return 'berries' (Bear), 'clover' (Rabbit), or 'campers' (Octothorpe).
+Create one object from each and print what it eats.
+
+Here's an example of defining the Bear, Rabbit, and Octothorpe classes with the eats() method and creating one object from each:
+
+class Bear:
+    def eats(self):
+        return 'berries'
+
+class Rabbit:
+    def eats(self):
+        return 'clover'
+
+class Octothorpe:
+    def eats(self):
+        return 'campers'
+
+# create an object of class Bear
+bear = Bear()
+
+# create an object of class Rabbit
+rabbit = Rabbit()
+
+# create an object of class Octothorpe
+octothorpe = Octothorpe()
+
+# print what each object eats
+print(bear.eats())
+print(rabbit.eats())
+print(octothorpe.eats())
+
+In this example, we defined the Bear, Rabbit, and Octothorpe classes with the eats() method that returns the string 'berries', 'clover', or 'campers', respectively.
+We then created one object from each class and printed the result of calling the eats() method on each object.
+
+Note that we did not define any instance attributes for these classes, as the eats() method does not depend on any object-specific state. 
+We could have defined instance attributes if needed, but in this case, a class-level attribute or a constant would have sufficed.
+
+Also note that we did not define a common parent class for these classes, as they do not share a common interface or behavior beyond the eats() method. 
+If they did, we could have defined a common parent class and defined the eats() method in that class,
+or we could have used an interface or an abstract class to define the common behavior.
+
+------------------------------------------------------------------------------------10-----------------------------------------------------------------------------------------------------
+
+10.Define these classes: Laser, Claw, and SmartPhone. Each has only one method: does(). This returns 'disintegrate' (Laser), 'crush' (Claw), or 'ring' (SmartPhone). 
+Then, define the class Robot that has one instance (object) of each of these. Define a does() method for the Robot that prints what its component objects do.
+
+Here's an example of defining the Laser, Claw, and SmartPhone classes with the does() method and creating one object of each,
+and then defining the Robot class with a does() method that prints what its component objects do:
+
+class Laser:
+    def does(self):
+        return 'disintegrate'
+
+class Claw:
+    def does(self):
+        return 'crush'
+
+class SmartPhone:
+    def does(self):
+        return 'ring'
+
+class Robot:
+    def __init__(self):
+        self.laser = Laser()
+        self.claw = Claw()
+        self.smartphone = SmartPhone()
+    
+    def does(self):
+        print(f'The robot\'s {self.laser.does()}s, {self.claw.does()}s, and {self.smartphone.does()}s.')
+
+# create an object of class Robot
+robot = Robot()
+
+# print what the robot's component objects do
+robot.does()
+
+In this example, we defined the Laser, Claw, and SmartPhone classes with the does() method that returns the string 'disintegrate', 'crush', or 'ring', respectively. 
+We then created one object of each class and defined the Robot class with an __init__() method that creates one object of each of the
+Laser, Claw, and SmartPhone classes and stores them as instance attributes.
+
+We then defined a does() method for the Robot class that prints the result of calling the does() method on each of its component objects.
+
+Finally, we created an object of the Robot class and called the does() method on it to print what its component objects do.
+Note that we accessed the component objects using dot notation, just like we would with regular attributes.
+
+By defining the does() method for each component object and for the Robot class, we can encapsulate the behavior of each component and the overall behavior of the Robot class,
+and we can change the behavior of each component independently without affecting the overall behavior of the Robot class.
+
+
+
+
+
+
+
