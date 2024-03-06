@@ -1,0 +1,6 @@
+
+
+1.What is the result of the code, and explain?
+>>> X = 'iNeuron' >>> def func(): print(X)
+
+>>> func()
