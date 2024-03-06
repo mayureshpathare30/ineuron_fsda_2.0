@@ -1,3 +1,360 @@
-                                                                                 
+                                                                                    Python Assignment-19                                                                                 
+
 
 1. Add the current date to the text file today.txt as a string.
+
+To add the current date to the text file today.txt, you can use the datetime module to get the current date and then write it to the file using a Python context manager.
+
+Here's an example
+
+import datetime
+
+# Get the current date
+current_date = datetime.date.today().strftime('%Y-%m-%d')
+
+# Open the file in write mode using a context manager
+with open('today.txt', 'a') as f:
+    f.write(current_date + '\n')
+
+print('Current date added to today.txt')
+
+In this example, the datetime.date.today() method is used to get the current date, and the strftime() method is used to format the date as a string in the format YYYY-MM-DD. 
+The file today.txt is opened in append mode ('a') using a context manager, and the current date is written to the file followed by a newline character (\n).
+
+Note that using a context manager ensures that the file is properly closed after the write operation, even if an exception is raised.
+
+You can run this code once to add the current date to today.txt. If the file already exists, the current date will be added to the end of the file.
+If the file does not exist, it will be created.
+
+----------------------------------------------------------------------------------2--------------------------------------------------------------------------------------------------------
+
+2. Read the text file today.txt into the string today_string
+
+To read the contents of the text file today.txt into a string variable today_string, you can use the open() function with the 'r' mode 
+(for reading) and the read() method to read the entire file into a string.
+
+Here's an example:
+
+# Open the file in read mode
+with open('today.txt', 'r') as f:
+    today_string = f.read()
+
+print('Contents of today.txt:\n' + today_string)
+
+In this example, the file today.txt is opened in read mode ('r') using a context manager, and the read() method is used to read the entire file into the string variable today_string.
+The print() function is then used to print the contents of the file.
+
+Note that using a context manager ensures that the file is properly closed after the read operation.
+
+If the file today.txt does not exist, this code will raise a FileNotFoundError. You can handle this exception by wrapping the open() call in a try block, like this:
+
+try:
+    with open('today.txt', 'r') as f:
+        today_string = f.read()
+except FileNotFoundError:
+    print('File today.txt not found.')
+
+In this example, if the file today.txt is not found, the FileNotFoundError exception is caught and a message is printed to the console.
+
+-------------------------------------------------------------------------------------------3-------------------------------------------------------------------------------------------------
+
+3. Parse the date from today_string.
+
+To parse the date from the string today_string, you can use the datetime.datetime.strptime() method to convert the date string into a datetime object.
+
+Here's an example:
+
+from datetime import datetime
+
+# Parse the date from today_string
+date_format = '%Y-%m-%d'
+try:
+    date_string = next(line.strip() for line in today_string.splitlines() if line.strip())
+    date = datetime.strptime(date_string, date_format)
+except (ValueError, StopIteration):
+    print('Failed to parse date from today_string')
+
+print('Parsed date:', date)
+
+In this example, the next() function is used to find the first non-empty line in today_string that contains a date string in the format YYYY-MM-DD. 
+The datetime.strptime() method is then used to parse the date string into a datetime object.
+
+Note that the datetime.strptime() method can raise a ValueError if the date string does not match the specified format. 
+The next() function can also raise a StopIteration exception if there are no non-empty lines in today_string. 
+To handle these exceptions, we wrap the parsing code in a try block and catch these exceptions in the except block.
+
+If the date is successfully parsed, the print() function is used to print the parsed date. If parsing fails, an error message is printed to the console.
+
+Note that this code assumes that the date string is the first non-empty line in today_string.
+If the date string is located elsewhere in the file, you will need to modify the code accordingly.
+
+------------------------------------------------------------------------------4-------------------------------------------------------------------------------------------------------------
+
+4. List the files in your current directory
+
+To list the files in the current directory, you can use the os module and its listdir() function. Here's an example:
+
+import os
+
+# Get the current directory
+current_dir = os.getcwd()
+
+# List the files in the current directory
+files = [f for f in os.listdir(current_dir) if os.path.isfile(os.path.join(current_dir, f))]
+
+print('Files in current directory:')
+for file in files:
+    print(file)
+
+In this example, the os.getcwd() function is used to get the current working directory, and the os.listdir() function 
+is used to get a list of all the files and directories in the current directory. The list comprehension is used to filter out the directories and keep only the files.
+
+The os.path.isfile() function is used to check if a given path is a file or not. 
+The os.path.join() function is used to join the current directory and the file name to get the full file path.
+
+The print() function is used to print the list of files in the current directory.
+
+Note that this code will also list hidden files and files in subdirectories.
+If you want to exclude hidden files and files in subdirectories, you can modify the list comprehension accordingly.
+
+Also note that this code may produce different results on different operating systems, as the file system layout and naming conventions may differ.
+
+---------------------------------------------------------------------------------5-----------------------------------------------------------------------------------------------------------
+
+5. Create a list of all of the files in your parent directory (minimum five files should be available).
+
+To create a list of all the files in the parent directory, you can use the os module and its chdir() and listdir() functions. Here's an example:
+
+import os
+
+# Change the current directory to the parent directory
+parent_dir = os.path.abspath(os.path.join(os.getcwd(), '..'))
+os.chdir(parent_dir)
+
+# List the files in the parent directory
+files = [f for f in os.listdir(parent_dir) if os.path.isfile(os.path.join(parent_dir, f))]
+
+# Ensure that there are at least five files in the directory
+if len(files) < 5:
+    print('There are less than five files in the parent directory')
+else:
+    print('Files in parent directory:')
+    for file in files[:5]:
+        print(file)
+
+In this example, the os.path.abspath() and os.path.join() functions are used to get the absolute path of the parent directory.
+The os.chdir() function is then used to change the current directory to the parent directory.
+
+The os.listdir() function is used to get a list of all the files and directories in the parent directory. 
+The list comprehension is used to filter out the directories and keep only the files.
+
+The code then checks if there are at least five files in the directory. If there are less than five files, an error message is printed to the console.
+Otherwise, the print() function is used to print the first five file names in the parent directory.
+
+Note that this code will also list hidden files and files in subdirectories. 
+If you want to exclude hidden files and files in subdirectories, you can modify the list comprehension accordingly.
+
+Also note that this code may produce different results on different operating systems, as the file system layout and naming conventions may differ.
+
+--------------------------------------------------------------------------------6-------------------------------------------------------------------------------------------------------------
+
+6. Use multiprocessing to create three separate processes. Make each one wait a random number of seconds between one and five, print the current time, and then exit.
+
+To create three separate processes that each wait a random number of seconds between one and five, print the current time, and then exit, you can use the multiprocessing module in Python.
+Here's an example:
+
+import multiprocessing
+import random
+import time
+
+def print_current_time():
+    # Wait for a random number of seconds between one and five
+    time.sleep(random.randint(1, 5))
+
+    # Get the current time
+    current_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
+
+    # Print the current time
+    print(current_time)
+
+if __name__ == '__main__':
+    # Create three separate processes
+    process1 = multiprocessing.Process(target=print_current_time)
+    process2 = multiprocessing.Process(target=print_current_time)
+    process3 = multiprocessing.Process(target=print_current_time)
+
+    # Start the three processes
+    process1.start()
+    process2.start()
+    process3.start()
+
+    # Wait for the three processes to finish
+    process1.join()
+    process2.join()
+    process3.join()
+
+    print('All processes have finished')
+
+In this example, the multiprocessing module is used to create three separate processes, each of which runs the print_current_time() function.
+This function waits for a random number of seconds between one and five, gets the current time, and prints it to the console.
+
+The if __name__ == '__main__': block is used to ensure that the code is only executed when the script is run directly, and not when it is imported as a module.
+
+The multiprocessing.Process() function is used to create three separate processes, each of which runs the print_current_time() function. 
+The target argument specifies the function to be run in the new process.
+
+The start() method is then used to start each of the three processes.
+
+Finally, the join() method is used to wait for each process to finish before continuing. Once all three processes have finished, 
+the print() function is used to print a message indicating that all processes have finished.
+
+Note that the random.randint() function is used to generate a random integer between one and five,
+which is used to determine how long each process should wait before printing the current time.
+This ensures that the three processes do not all print the current time at the same time.
+
+Also note that this code may produce different results on different operating systems, as the process creation and synchronization mechanisms may differ.
+
+-------------------------------------------------------------------------------7-------------------------------------------------------------------------------------------------------------
+
+7. Create a date object of your day of birth.
+
+To create a date object of your day of birth, you can use the datetime module in Python. Here's an example:
+
+from datetime import date
+
+# Set the date components for your day of birth
+year = 1990
+month = 1
+day = 1
+
+# Create a date object for your day of birth
+dob = date(year, month, day)
+
+print('Your date of birth is:', dob)
+
+In this example, the datetime module is imported and the date class is used to create a date object for your day of birth.
+
+The year, month, and day variables are set to the appropriate values for your day of birth.
+
+The date() function is then used to create a date object for your day of birth, using the year, month, and day variables as arguments.
+
+The print() function is used to print a message indicating the date of birth.
+
+Note that the date object can be used to perform various operations, such as calculating the number of days between two dates or formatting the date as a string.
+
+Also note that the date format used in this example is YYYY-MM-DD. If you prefer a different date format, you can use the strftime() method to format the date object as a string.
+For example, to format the date object as MM/DD/YYYY, you can use the following code:
+
+print('Your date of birth is:', dob.strftime('%m/%d/%Y'))
+
+This will format the date object as a string in the MM/DD/YYYY format.
+
+---------------------------------------------------------------------------8-----------------------------------------------------------------------------------------------------------------
+
+8. What day of the week was your day of birth?
+
+To determine the day of the week for a given date, you can use the datetime module in Python. Here's an example:
+
+from datetime import date
+
+# Set the date components for your day of birth
+year = 1990
+month = 1
+day = 1
+
+# Create a date object for your day of birth
+dob = date(year, month, day)
+
+# Get the weekday for your day of birth
+weekday = dob.weekday()
+
+# Convert the weekday index to a day name
+day_names = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+day_name = day_names[weekday]
+
+print('Your day of birth was:', day_name)
+
+In this example, the datetime module is imported and the date class is used to create a date object for your day of birth.
+
+The year, month, and day variables are set to the appropriate values for your day of birth.
+
+The date() function is then used to create a date object for your day of birth, using the year, month, and day variables as arguments.
+
+The weekday() method is used to get the weekday index for your day of birth. The weekday index is an integer value between 0 and 6,
+where 0 represents Monday and 6 represents Sunday.
+
+The weekday variable is then used to index into the day_names list, which contains the names of the days of the week. 
+The day_name variable is then set to the name of the day of the week for your day of birth.
+
+The print() function is used to print a message indicating the day of the week for your day of birth.
+
+Note that the weekday() method returns the weekday index as an integer value. If you prefer to get the day of the week as a string, 
+you can use the strftime() method to format the date object as a string. For example, 
+to format the date object as a string in the Day DD, YYYY format, you can use the following code:
+
+print('Your day of birth was:', dob.strftime('%A %d, %Y'))
+
+This will format the date object as a string in the Day DD, YYYY format, where Day is the name of the day of the week.
+
+-----------------------------------------------------------------------------9----------------------------------------------------------------------------------------------------------------
+
+9. When will you be (or when were you) 10,000 days old?
+
+To calculate when you will be (or when you were) 10,000 days old, you can use the datetime module in Python. Here's an example:
+
+from datetime import date, timedelta
+
+# Set your date of birth
+dob = date(1990, 1, 1)
+
+# Calculate the number of days from your date of birth to today
+today = date.today()
+age_days = (today - dob).days
+
+# Calculate the date when you will be 10000 days old
+future_date = dob + timedelta(days=10000)
+
+print('You will be (or were) 10000 days old on:', future_date)
+
+In this example, the datetime module is imported and the date and timedelta classes are used to calculate when you will be (or when you were) 10,000 days old.
+
+The date object for your date of birth is created using the date() function.
+
+The number of days from your date of birth to today is calculated using the today attribute of the date class and the days attribute of the timedelta object.
+
+The date when you will be 10,000 days old is calculated by adding a timedelta object with 10,000 days to your date of birth using the + operator.
+
+The print() function is used to print a message indicating the date when you will be (or when you were) 10,000 days old.
+
+Note that the timedelta class is used to create a time duration object, which can be added to or subtracted from a date object to calculate a new date.
+
+Also note that this code assumes that the current date is today's date. If you want to calculate the date when you were 10,000 days old, 
+you can replace the today attribute with a specific date in the past. 
+For example, to calculate the date when you were 10,000 days old as of January 1, 2022, you can use the following code:
+
+from datetime import date, timedelta
+
+# Set your date of birth
+dob = date(1990, 1, 1)
+
+# Set the reference date
+ref_date = date(2022, 1, 1)
+
+# Calculate the number of days from your date of birth to the reference date
+age_days = (ref_date - dob).days
+
+# Calculate the date when you were 10000 days old
+past_date = dob + timedelta(days=age_days - 10000)
+
+print('You were 10000 days old on:', past_date)
+
+This will calculate the date when you were 10,000 days old as of January 1, 2022.
+
+Note that the - operator is used to subtract the date objects, which returns a timedelta object.
+The days attribute of the timedelta object is then used to extract the number of days. 
+The - 10000 expression is used to subtract 10,000 days from the number of days from your date of birth to the reference date. 
+The resulting number of days is then added to your date of birth using the + operator to get the date when you were 10,000 days old.
+
+
+
+
