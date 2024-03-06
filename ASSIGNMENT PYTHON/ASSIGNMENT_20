@@ -2,7 +2,7 @@
 
 1.Set the variable test1 to the string 'This is a test of the emergency text system,' and save test1 to a file named test.txt.
 
-To set the variable test1 to the string 'This is a test of the emergency text system,' and then save it to a file named test.txt, you can use the following Python code:
+To set the variable test1 to the string 'This is a test of the emergency text system,' and then save it to a file named test.txt, you can use the following Python code: 
 
 # Set the variable test1
 test1 = "This is a test of the emergency text system."
